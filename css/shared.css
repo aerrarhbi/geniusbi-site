@@ -194,7 +194,7 @@ body {
 .btn-primary:hover::before { left:100%; }
 .btn-primary:hover {
   background:var(--purple-light); transform:translateY(-2px);
-  box-shadow:0 12px 36px rgba(138,101,196,0.35);
+  box-shadow:0 6px 20px rgba(138,101,196,0.18);
 }
 .btn-primary svg { width:18px; height:18px; transition:transform 0.3s ease; }
 .btn-primary:hover svg { transform:translateX(4px); }

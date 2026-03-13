@@ -778,18 +778,20 @@
       .hero h1 { font-size:2.2rem; }
     }
   </style>
+  <link rel="stylesheet" href="css/magic-animations.css">
 </head>
 <body>
+  <div class="scroll-progress"></div>
 
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="navbar-inner">
-      <a href="#" class="navbar-logo">
+      <a href="index.html" class="navbar-logo">
         <svg viewBox="0 0 259.77 42.09" xmlns="http://www.w3.org/2000/svg"><g><path fill="#fff" d="M92,13.62h-4.35c-2.07-4.77-6.57-7.84-12.51-7.84-8.21,0-14.52,5.94-14.52,15.53s6.31,15.58,14.52,15.58c7.79,0,13.51-5.25,14.1-13.67h-15.58v-3.02h19.5v2.7c-.58,9.8-7.9,17.33-18.02,17.33s-18.34-7.79-18.34-18.92,7.95-18.92,18.34-18.92c7.95,0,14.2,4.19,16.85,11.24Z"/><path fill="#fff" d="M109.8,40.28c-8.21,0-14.2-5.72-14.2-14.89s5.88-14.89,14.2-14.89,13.67,6.04,13.67,13.41c0,1.17,0,1.91-.11,2.92h-24.01c.32,6.78,5.03,10.33,10.44,10.33,4.93,0,8.27-2.6,9.33-6.46h3.92c-1.32,5.46-5.99,9.59-13.25,9.59ZM99.36,23.79h20.35c.16-6.73-4.72-10.12-10.07-10.12s-9.86,3.39-10.28,10.12Z"/><path fill="#fff" d="M149.28,23.32c0-6.41-3.5-9.7-8.8-9.7s-9.17,3.39-9.17,10.44v15.79h-3.71V10.92h3.71v4.93c1.85-3.6,5.56-5.46,9.86-5.46,6.57,0,11.76,4.03,11.76,12.51v16.96h-3.66v-16.53Z"/><path fill="#fff" d="M157.65,2.7c0-1.59,1.22-2.7,2.7-2.7s2.7,1.11,2.7,2.7-1.22,2.76-2.7,2.76-2.7-1.17-2.7-2.76ZM158.5,10.92h3.71v28.93h-3.71V10.92Z"/><path fill="#fff" d="M193.05,39.85h-3.71v-5.09c-1.75,3.66-5.56,5.56-9.86,5.56-6.57,0-11.76-4.03-11.76-12.51V10.92h3.66v16.48c0,6.41,3.5,9.7,8.8,9.7s9.17-3.39,9.17-10.44v-15.74h3.71v28.93Z"/><path fill="#fff" d="M208.84,40.28c-6.57,0-11.18-3.29-11.66-8.58h3.82c.32,3.18,3.07,5.46,7.79,5.46,4.13,0,6.46-2.23,6.46-4.98,0-7.15-17.38-2.97-17.38-13.83,0-4.29,4.08-7.84,10.17-7.84s10.28,3.29,10.6,8.85h-3.71c-.21-3.23-2.6-5.67-7-5.67-3.87,0-6.31,2.07-6.31,4.61,0,7.84,17.12,3.66,17.28,13.88,0,4.66-4.08,8.11-10.07,8.11Z"/><path fill="#fff" d="M237.72,39.85h-14.73V3.02h14.04c7.79,0,11.92,4.29,11.92,9.49,0,4.45-2.7,7.15-6.25,8.43,3.92.69,7.1,4.61,7.1,9.01,0,5.62-4.56,9.91-12.08,9.91ZM236.51,7.95h-7.47v10.55h7.47c3.92,0,6.31-1.85,6.31-5.25s-2.38-5.3-6.31-5.3ZM236.98,23.42h-7.95v11.5h8.16c4.08,0,6.57-2.07,6.57-5.62s-2.76-5.88-6.78-5.88Z"/><path fill="#fff" d="M253.73,3.02h6.04v36.83h-6.04V3.02Z"/></g><rect fill="#7DBCDB" x="22.89" y="31.51" width="6.92" height="10.58" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="22.81" y="22.32" width="7.08" height="7.08" rx="3.54" ry="3.54"/><rect fill="#7DBCDB" x="11.37" y="13.47" width="7.08" height="7.08" rx="3.54" ry="3.54"/><rect fill="#8A65C4" x="0" y="27.15" width="6.92" height="14.94" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="11.45" y="22.67" width="6.92" height="19.42" rx="3.46" ry="3.46"/><rect fill="#7DBCDB" x="34.34" y="17.7" width="6.92" height="24.39" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="11.45" y=".78" width="6.92" height="10.58" rx="3.46" ry="3.46" transform="translate(29.82 12.14) rotate(-180)"/><rect fill="#7DBCDB" x="34.34" y=".78" width="6.92" height="14.94" rx="3.46" ry="3.46" transform="translate(75.6 16.5) rotate(-180)"/><rect fill="#7DBCDB" x="22.89" y=".78" width="6.92" height="19.42" rx="3.46" ry="3.46" transform="translate(52.71 20.98) rotate(180)"/><rect fill="#8A65C4" x="0" y=".78" width="6.92" height="24.39" rx="3.46" ry="3.46" transform="translate(6.92 25.95) rotate(180)"/></svg>
       </a>
       <ul class="navbar-links">
         <li><a href="#about">À propos</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="services.html">Services</a></li>
         <li><a href="#tech">Technologies</a></li>
         <li><a href="#cases">Réalisations</a></li>
         <li><a href="#academy">Academy</a></li>
@@ -803,6 +805,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-grid"></div>
+    
     <div class="hero-orb hero-orb-1"></div>
     <div class="hero-orb hero-orb-2"></div>
     <div class="hero-orb hero-orb-3"></div>
@@ -817,14 +820,14 @@
     </div>
     <div class="hero-content">
       <div class="hero-tag"><span class="hero-tag-dot"></span>Cabinet de conseil Data & IA — Casablanca</div>
-      <h1>Décidez avec précision<br>grâce à la <span class="text-shimmer">Data et IA</span></h1>
+      <h1>Décidez avec précision<br>grâce à la <span class="gradient-text-animated">Data et IA</span></h1>
       <p class="hero-sub">Nous accompagnons les entreprises de la stratégie Data et IA jusqu'à l'industrialisation, pour transformer des données complexes en décisions fiables, sécurisées et mesurables.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary">
+        <a href="contact.html" class="btn-primary">
           Échanger avec un expert
           <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
-        <a href="#services" class="btn-secondary">Découvrir nos services</a>
+        <a href="services.html" class="btn-secondary">Découvrir nos services</a>
       </div>
     </div>
     <div class="hero-scroll"><div class="hero-scroll-inner"><div class="hero-scroll-dot"></div></div></div>
@@ -832,7 +835,7 @@
 
   <!-- PILLARS -->
   <section class="pillars">
-    <div class="pillars-grid">
+    <div class="pillars-grid stagger-children">
       <div class="pillar reveal reveal-delay-1">
         <div class="pillar-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v-5.5m3 5.5v-3.5m3 3.5v-1.5"/></svg></div>
         <p>Projets Data et IA orientés impact business</p>
@@ -855,42 +858,42 @@
   <!-- SERVICES -->
   <section class="section-light" id="services">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header blur-fade">
         <span class="section-tag">Une approche Data et IA pensée pour la décision business</span>
         <h2 class="section-title">Stratégie, gouvernance, sécurité, accélération et adoption</h2>
         <p class="section-subtitle">Pour garantir des résultats durables à chaque étape de votre trajectoire Data & IA.</p>
       </div>
       <div class="services-grid">
-        <div class="service-card reveal reveal-delay-1">
+        <div class="service-card blur-fade" data-tilt class="service-card blur-fade blur-fade-delay-1">
           <div class="service-icon purple"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v-5.5m3 5.5v-3.5m3 3.5v-1.5"/></svg></div>
           <h3>Conseil & Stratégie Data & IA</h3>
           <p>Audit Data & IA, stratégie et roadmap orientées valeur, operating model & gouvernance, accompagnement au changement.</p>
-          <a href="#" class="service-link">En savoir plus <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+          <a href="services.html#conseil" class="service-link">En savoir plus <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
         </div>
-        <div class="service-card reveal reveal-delay-2">
+        <div class="service-card blur-fade" data-tilt class="service-card blur-fade blur-fade-delay-2">
           <div class="service-icon teal"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg></div>
           <h3>Gouvernance & Qualité des données</h3>
           <p>Data governance, data security, règles de qualité, contrôles automatisés, catalogues, glossaires et politiques d'accès.</p>
-          <a href="#" class="service-link">En savoir plus <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+          <a href="services.html#gouvernance" class="service-link">En savoir plus <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
         </div>
-        <div class="service-card reveal reveal-delay-3">
+        <div class="service-card blur-fade" data-tilt class="service-card blur-fade blur-fade-delay-3">
           <div class="service-icon purple"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg></div>
           <h3>Plateformes Data, BI & Cloud</h3>
           <p>Architecture Data (Lakehouse, Mesh, Platform), data engineering, BI & dataviz, migration Cloud, run & support.</p>
-          <a href="#" class="service-link">En savoir plus <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+          <a href="services.html#architecture" class="service-link">En savoir plus <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
         </div>
-        <div class="service-card reveal reveal-delay-4">
+        <div class="service-card blur-fade" data-tilt class="service-card blur-fade blur-fade-delay-4">
           <div class="service-icon teal"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"/></svg></div>
           <h3>Accélération par l'IA</h3>
           <p>Accélérateurs IA, copilots et self-service, automatisation, documentation et tests, réduction du time-to-value.</p>
-          <a href="#" class="service-link">En savoir plus <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+          <a href="services.html#acceleration" class="service-link">En savoir plus <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
         </div>
         <div class="service-card service-card-wide reveal reveal-delay-5">
           <div>
             <div class="service-icon purple"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg></div>
             <h3>Formation & Acculturation Data</h3>
             <p>Parcours de formation BI, Data, Cloud, IA. Coaching terrain, sessions d'adoption, Data CoE, playbooks et autonomie des équipes.</p>
-            <a href="#academy" class="service-link">Découvrir l'Academy <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+            <a href="services.html#formation" class="service-link">Découvrir l'Academy <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
           </div>
           <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;">
             <span style="padding:7px 16px;border-radius:100px;font-size:0.78rem;font-weight:500;background:var(--purple-soft);border:1px solid rgba(138,101,196,0.12);color:var(--purple);">Power BI</span>
@@ -908,12 +911,12 @@
   <!-- METHODOLOGY -->
   <section class="section-gray" id="method">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header blur-fade">
         <span class="section-tag">Notre approche</span>
         <h2 class="section-title">Une approche simplifiée pour transformer la donnée en impact</h2>
         <p class="section-subtitle">Chaque mission suit un cadre clair, pensé pour réduire les risques et accélérer les résultats.</p>
       </div>
-      <div class="method-grid">
+      <div class="method-grid stagger-children">
         <div class="method-card reveal reveal-delay-1"><div class="method-step">1</div><h3>Découvrir</h3><p>Vous clarifiez vos enjeux business et identifiez les priorités réelles.</p><ul class="method-list"><li>Audit Data & IA</li><li>Analyse des usages métiers</li><li>Alignement business / IT</li></ul></div>
         <div class="method-card reveal reveal-delay-2"><div class="method-step">2</div><h3>Concevoir</h3><p>Vous choisissez une trajectoire claire et sécurisez vos investissements.</p><ul class="method-list"><li>Stratégie et roadmap Data & IA</li><li>Architecture des plateformes</li><li>Cas d'usage à fort impact</li></ul></div>
         <div class="method-card reveal reveal-delay-3"><div class="method-step">3</div><h3>Déployer</h3><p>Vous impliquez vos équipes et sécurisez l'adoption.</p><ul class="method-list"><li>Mise en œuvre technique</li><li>Accélérateurs et automatisation</li><li>Formation et acculturation</li></ul></div>
@@ -925,7 +928,7 @@
   <!-- TECHNOLOGIES -->
   <section class="section-light" id="tech">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header blur-fade">
         <span class="section-tag">Technologies et outils</span>
         <h2 class="section-title">Technologies et outils Data et IA, pour la décision</h2>
         <p class="section-subtitle">Une stack Data & IA éprouvée, sécurisée et scalable, choisie pour réduire la complexité et garantir l'adoption.</p>
@@ -939,18 +942,18 @@
         <div class="tech-card reveal reveal-delay-3"><div class="tech-card-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751"/></svg></div><h3>Microsoft Purview</h3><p>Catalogue, lineage, gouvernance et conformité pour une donnée compréhensible et traçable.</p></div>
       </div>
       <div class="tech-cta-row reveal">
-        <a href="#" class="btn-text">Découvrir notre stack technologique <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        <a href="technologies.html" class="btn-text">Découvrir notre stack technologique <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
       </div>
     </div>
   </section>
 
   <!-- STATS -->
   <section class="stats-section">
-    <div class="stats-grid">
-      <div class="stat-item reveal reveal-delay-1"><div class="stat-value" data-target="40" data-prefix="−" data-suffix="%"><span class="accent">−40</span>%</div><p class="stat-label">Time to value moyen</p><div class="stat-line"></div></div>
-      <div class="stat-item reveal reveal-delay-2"><div class="stat-value"><span class="accent">600</span>+</div><p class="stat-label">Personnes formées</p><div class="stat-line"></div></div>
-      <div class="stat-item reveal reveal-delay-3"><div class="stat-value"><span class="accent">98</span>%</div><p class="stat-label">Taux d'adoption</p><div class="stat-line"></div></div>
-      <div class="stat-item reveal reveal-delay-4"><div class="stat-value">1.8<span class="accent">K+</span></div><p class="stat-label">Risques réduits</p><div class="stat-line"></div></div>
+    <div class="stats-grid stagger-children">
+      <div class="stat-item reveal reveal-delay-1"><div class="stat-value" data-target="40" data-prefix="−" data-suffix="%"><span class="number-tick" data-target="40" data-prefix="−" data-suffix="%">0%</span></div><p class="stat-label">Time to value moyen</p><div class="stat-line"></div></div>
+      <div class="stat-item reveal reveal-delay-2"><div class="stat-value"><span class="number-tick" data-target="600" data-suffix="+">0+</span></div><p class="stat-label">Personnes formées</p><div class="stat-line"></div></div>
+      <div class="stat-item reveal reveal-delay-3"><div class="stat-value"><span class="number-tick" data-target="98" data-suffix="%">0%</span></div><p class="stat-label">Taux d'adoption</p><div class="stat-line"></div></div>
+      <div class="stat-item reveal reveal-delay-4"><div class="stat-value"><span class="number-tick" data-target="1.8" data-suffix="K+">0K+</span></div><p class="stat-label">Risques réduits</p><div class="stat-line"></div></div>
     </div>
   </section>
 
@@ -966,7 +969,7 @@
           <div class="academy-feat"><div class="academy-feat-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197"/></svg></div><div><h4>Coaching & adoption terrain</h4><p>PO, analystes, équipes métier — usage réel, pas théorique</p></div></div>
           <div class="academy-feat"><div class="academy-feat-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg></div><div><h4>Playbooks & CoE</h4><p>Guides opérationnels pour l'autonomie durable des équipes</p></div></div>
         </div>
-        <div style="margin-top:32px;"><a href="#" class="btn-primary">Découvrir l'Academy <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a></div>
+        <div style="margin-top:32px;"><a href="academy.html" class="btn-primary">Découvrir l'Academy <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a></div>
       </div>
       <div class="academy-cards reveal-right">
         <div class="academy-card"><h4>Power BI — Niveau avancé</h4><p>DAX, modélisation, déploiement et gouvernance des rapports</p><span class="academy-card-tag tag-bi">BI & Dataviz</span></div>
@@ -979,26 +982,26 @@
   <!-- BLOG -->
   <section class="section-gray" id="blog">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header blur-fade">
         <span class="section-tag">Blog & Insights</span>
         <h2 class="section-title">Comprendre, structurer et réussir vos projets Data & IA</h2>
       </div>
       <div class="blog-grid">
-        <a href="#" class="blog-card reveal reveal-delay-1"><div class="blog-card-cat">Stratégie Data</div><h3>Structurer une roadmap Data & IA orientée ROI</h3><p>Les étapes clés pour aligner vos projets Data avec les enjeux business et éviter les dérives.</p><div class="blog-card-link">Lire l'article <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div></a>
-        <a href="#" class="blog-card reveal reveal-delay-2"><div class="blog-card-cat">Gouvernance</div><h3>Gouvernance Data : poser un cadre sans ralentir l'exécution</h3><p>Comment sécuriser qualité, conformité et adoption sans complexifier l'organisation.</p><div class="blog-card-link">Lire l'article <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div></a>
+        <a href="blog.html" class="blog-card reveal reveal-delay-1"><div class="blog-card-cat">Stratégie Data</div><h3>Structurer une roadmap Data & IA orientée ROI</h3><p>Les étapes clés pour aligner vos projets Data avec les enjeux business et éviter les dérives.</p><div class="blog-card-link">Lire l'article <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div></a>
+        <a href="blog.html" class="blog-card reveal reveal-delay-2"><div class="blog-card-cat">Gouvernance</div><h3>Gouvernance Data : poser un cadre sans ralentir l'exécution</h3><p>Comment sécuriser qualité, conformité et adoption sans complexifier l'organisation.</p><div class="blog-card-link">Lire l'article <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div></a>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="cta-section" id="contact">
-    <div class="cta-box reveal-scale">
+    <div class="cta-box border-beam reveal-scale">
       <span class="section-tag">Prêt à avancer ?</span>
       <h2>Savez-vous réellement où vous en êtes dans votre maturité Data & IA ?</h2>
       <p>Disposer d'un diagnostic clair est essentiel pour réduire les risques. Échangeons sur vos enjeux.</p>
       <div class="cta-actions">
-        <a href="#" class="btn-primary">Parler à un expert <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-        <a href="#" class="btn-outline">Démarrer un diagnostic</a>
+        <a href="contact.html" class="btn-primary">Parler à un expert <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        <a href="contact.html" class="btn-outline">Démarrer un diagnostic</a>
       </div>
     </div>
   </section>
@@ -1007,13 +1010,13 @@
   <footer class="footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <svg viewBox="0 0 259.77 42.09" xmlns="http://www.w3.org/2000/svg"><g><path fill="#fff" d="M92,13.62h-4.35c-2.07-4.77-6.57-7.84-12.51-7.84-8.21,0-14.52,5.94-14.52,15.53s6.31,15.58,14.52,15.58c7.79,0,13.51-5.25,14.1-13.67h-15.58v-3.02h19.5v2.7c-.58,9.8-7.9,17.33-18.02,17.33s-18.34-7.79-18.34-18.92,7.95-18.92,18.34-18.92c7.95,0,14.2,4.19,16.85,11.24Z"/><path fill="#fff" d="M109.8,40.28c-8.21,0-14.2-5.72-14.2-14.89s5.88-14.89,14.2-14.89,13.67,6.04,13.67,13.41c0,1.17,0,1.91-.11,2.92h-24.01c.32,6.78,5.03,10.33,10.44,10.33,4.93,0,8.27-2.6,9.33-6.46h3.92c-1.32,5.46-5.99,9.59-13.25,9.59ZM99.36,23.79h20.35c.16-6.73-4.72-10.12-10.07-10.12s-9.86,3.39-10.28,10.12Z"/><path fill="#fff" d="M149.28,23.32c0-6.41-3.5-9.7-8.8-9.7s-9.17,3.39-9.17,10.44v15.79h-3.71V10.92h3.71v4.93c1.85-3.6,5.56-5.46,9.86-5.46,6.57,0,11.76,4.03,11.76,12.51v16.96h-3.66v-16.53Z"/><path fill="#fff" d="M157.65,2.7c0-1.59,1.22-2.7,2.7-2.7s2.7,1.11,2.7,2.7-1.22,2.76-2.7,2.76-2.7-1.17-2.7-2.76ZM158.5,10.92h3.71v28.93h-3.71V10.92Z"/><path fill="#fff" d="M193.05,39.85h-3.71v-5.09c-1.75,3.66-5.56,5.56-9.86,5.56-6.57,0-11.76-4.03-11.76-12.51V10.92h3.66v16.48c0,6.41,3.5,9.7,8.8,9.7s9.17-3.39,9.17-10.44v-15.74h3.71v28.93Z"/><path fill="#fff" d="M208.84,40.28c-6.57,0-11.18-3.29-11.66-8.58h3.82c.32,3.18,3.07,5.46,7.79,5.46,4.13,0,6.46-2.23,6.46-4.98,0-7.15-17.38-2.97-17.38-13.83,0-4.29,4.08-7.84,10.17-7.84s10.28,3.29,10.6,8.85h-3.71c-.21-3.23-2.6-5.67-7-5.67-3.87,0-6.31,2.07-6.31,4.61,0,7.84,17.12,3.66,17.28,13.88,0,4.66-4.08,8.11-10.07,8.11Z"/><path fill="#fff" d="M237.72,39.85h-14.73V3.02h14.04c7.79,0,11.92,4.29,11.92,9.49,0,4.45-2.7,7.15-6.25,8.43,3.92.69,7.1,4.61,7.1,9.01,0,5.62-4.56,9.91-12.08,9.91ZM236.51,7.95h-7.47v10.55h7.47c3.92,0,6.31-1.85,6.31-5.25s-2.38-5.3-6.31-5.3ZM236.98,23.42h-7.95v11.5h8.16c4.08,0,6.57-2.07,6.57-5.62s-2.76-5.88-6.78-5.88Z"/><path fill="#fff" d="M253.73,3.02h6.04v36.83h-6.04V3.02Z"/></g><rect fill="#7DBCDB" x="22.89" y="31.51" width="6.92" height="10.58" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="22.81" y="22.32" width="7.08" height="7.08" rx="3.54" ry="3.54"/><rect fill="#7DBCDB" x="11.37" y="13.47" width="7.08" height="7.08" rx="3.54" ry="3.54"/><rect fill="#8A65C4" x="0" y="27.15" width="6.92" height="14.94" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="11.45" y="22.67" width="6.92" height="19.42" rx="3.46" ry="3.46"/><rect fill="#7DBCDB" x="34.34" y="17.7" width="6.92" height="24.39" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="11.45" y=".78" width="6.92" height="10.58" rx="3.46" ry="3.46" transform="translate(29.82 12.14) rotate(-180)"/><rect fill="#7DBCDB" x="34.34" y=".78" width="6.92" height="14.94" rx="3.46" ry="3.46" transform="translate(75.6 16.5) rotate(-180)"/><rect fill="#7DBCDB" x="22.89" y=".78" width="6.92" height="19.42" rx="3.46" ry="3.46" transform="translate(52.71 20.98) rotate(180)"/><rect fill="#8A65C4" x="0" y=".78" width="6.92" height="24.39" rx="3.46" ry="3.46" transform="translate(6.92 25.95) rotate(180)"/></svg>
+        <a href="index.html"><svg viewBox="0 0 259.77 42.09" xmlns="http://www.w3.org/2000/svg"><g><path fill="#fff" d="M92,13.62h-4.35c-2.07-4.77-6.57-7.84-12.51-7.84-8.21,0-14.52,5.94-14.52,15.53s6.31,15.58,14.52,15.58c7.79,0,13.51-5.25,14.1-13.67h-15.58v-3.02h19.5v2.7c-.58,9.8-7.9,17.33-18.02,17.33s-18.34-7.79-18.34-18.92,7.95-18.92,18.34-18.92c7.95,0,14.2,4.19,16.85,11.24Z"/><path fill="#fff" d="M109.8,40.28c-8.21,0-14.2-5.72-14.2-14.89s5.88-14.89,14.2-14.89,13.67,6.04,13.67,13.41c0,1.17,0,1.91-.11,2.92h-24.01c.32,6.78,5.03,10.33,10.44,10.33,4.93,0,8.27-2.6,9.33-6.46h3.92c-1.32,5.46-5.99,9.59-13.25,9.59ZM99.36,23.79h20.35c.16-6.73-4.72-10.12-10.07-10.12s-9.86,3.39-10.28,10.12Z"/><path fill="#fff" d="M149.28,23.32c0-6.41-3.5-9.7-8.8-9.7s-9.17,3.39-9.17,10.44v15.79h-3.71V10.92h3.71v4.93c1.85-3.6,5.56-5.46,9.86-5.46,6.57,0,11.76,4.03,11.76,12.51v16.96h-3.66v-16.53Z"/><path fill="#fff" d="M157.65,2.7c0-1.59,1.22-2.7,2.7-2.7s2.7,1.11,2.7,2.7-1.22,2.76-2.7,2.76-2.7-1.17-2.7-2.76ZM158.5,10.92h3.71v28.93h-3.71V10.92Z"/><path fill="#fff" d="M193.05,39.85h-3.71v-5.09c-1.75,3.66-5.56,5.56-9.86,5.56-6.57,0-11.76-4.03-11.76-12.51V10.92h3.66v16.48c0,6.41,3.5,9.7,8.8,9.7s9.17-3.39,9.17-10.44v-15.74h3.71v28.93Z"/><path fill="#fff" d="M208.84,40.28c-6.57,0-11.18-3.29-11.66-8.58h3.82c.32,3.18,3.07,5.46,7.79,5.46,4.13,0,6.46-2.23,6.46-4.98,0-7.15-17.38-2.97-17.38-13.83,0-4.29,4.08-7.84,10.17-7.84s10.28,3.29,10.6,8.85h-3.71c-.21-3.23-2.6-5.67-7-5.67-3.87,0-6.31,2.07-6.31,4.61,0,7.84,17.12,3.66,17.28,13.88,0,4.66-4.08,8.11-10.07,8.11Z"/><path fill="#fff" d="M237.72,39.85h-14.73V3.02h14.04c7.79,0,11.92,4.29,11.92,9.49,0,4.45-2.7,7.15-6.25,8.43,3.92.69,7.1,4.61,7.1,9.01,0,5.62-4.56,9.91-12.08,9.91ZM236.51,7.95h-7.47v10.55h7.47c3.92,0,6.31-1.85,6.31-5.25s-2.38-5.3-6.31-5.3ZM236.98,23.42h-7.95v11.5h8.16c4.08,0,6.57-2.07,6.57-5.62s-2.76-5.88-6.78-5.88Z"/><path fill="#fff" d="M253.73,3.02h6.04v36.83h-6.04V3.02Z"/></g><rect fill="#7DBCDB" x="22.89" y="31.51" width="6.92" height="10.58" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="22.81" y="22.32" width="7.08" height="7.08" rx="3.54" ry="3.54"/><rect fill="#7DBCDB" x="11.37" y="13.47" width="7.08" height="7.08" rx="3.54" ry="3.54"/><rect fill="#8A65C4" x="0" y="27.15" width="6.92" height="14.94" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="11.45" y="22.67" width="6.92" height="19.42" rx="3.46" ry="3.46"/><rect fill="#7DBCDB" x="34.34" y="17.7" width="6.92" height="24.39" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="11.45" y=".78" width="6.92" height="10.58" rx="3.46" ry="3.46" transform="translate(29.82 12.14) rotate(-180)"/><rect fill="#7DBCDB" x="34.34" y=".78" width="6.92" height="14.94" rx="3.46" ry="3.46" transform="translate(75.6 16.5) rotate(-180)"/><rect fill="#7DBCDB" x="22.89" y=".78" width="6.92" height="19.42" rx="3.46" ry="3.46" transform="translate(52.71 20.98) rotate(180)"/><rect fill="#8A65C4" x="0" y=".78" width="6.92" height="24.39" rx="3.46" ry="3.46" transform="translate(6.92 25.95) rotate(180)"/></svg></a>
         <p>Cabinet de conseil Data & IA basé à Casablanca. Nous guidons les organisations de la stratégie à l'industrialisation.</p>
       </div>
-      <div class="footer-col"><h4>Nos services</h4><ul><li><a href="#">Conseil & Stratégie</a></li><li><a href="#">Gouvernance</a></li><li><a href="#">Plateformes Data</a></li><li><a href="#">Accélération IA</a></li></ul></div>
-      <div class="footer-col"><h4>GeniusBI</h4><ul><li><a href="#">À propos</a></li><li><a href="#">Nos expertises</a></li><li><a href="#">Réalisations</a></li><li><a href="#">Technologies</a></li></ul></div>
-      <div class="footer-col"><h4>Academy</h4><ul><li><a href="#">L'Academy</a></li><li><a href="#">Formations</a></li><li><a href="#">Blog & Actualités</a></li></ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul><li><a href="#">Contactez-nous</a></li><li><a href="#">Rejoindre l'équipe</a></li></ul></div>
+      <div class="footer-col"><h4>Nos services</h4><ul><li><a href="services.html#conseil">Conseil & Stratégie</a></li><li><a href="services.html#gouvernance">Gouvernance</a></li><li><a href="services.html#architecture">Plateformes Data</a></li><li><a href="services.html#acceleration">Accélération IA</a></li></ul></div>
+      <div class="footer-col"><h4>GeniusBI</h4><ul><li><a href="about.html">À propos</a></li><li><a href="services.html">Nos expertises</a></li><li><a href="realisations.html">Réalisations</a></li><li><a href="technologies.html">Technologies</a></li></ul></div>
+      <div class="footer-col"><h4>Academy</h4><ul><li><a href="academy.html">L'Academy</a></li><li><a href="academy.html">Formations</a></li><li><a href="blog.html">Blog & Actualités</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="contact.html">Contactez-nous</a></li><li><a href="contact.html">Rejoindre l'équipe</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <p>GeniusBI &copy; 2026. Tous droits réservés.</p>
@@ -1084,5 +1087,6 @@
       });
     });
   </script>
+  <script src="js/magic-animations.js"></script>
 </body>
 </html>
