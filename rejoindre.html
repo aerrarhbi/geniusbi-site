@@ -181,6 +181,7 @@
             <input type="hidden" name="access_key" value="0902ec57-2f5d-426b-a88a-58f9c41bb16f">
             <input type="hidden" name="subject" value="Nouvelle candidature — geniusbi.ma">
             <input type="hidden" name="from_name" value="GeniusBI Recrutement">
+            <input type="hidden" name="redirect" value="https://geniusbi.ma/rejoindre?success=true">
             <input type="checkbox" name="botcheck" style="display:none;">
             <div class="form-row">
               <div class="form-group"><label class="form-label">Nom complet</label><input type="text" name="name" class="form-input" placeholder="Votre nom complet" required></div>
@@ -257,40 +258,13 @@
       }
     });
 
-    // Form submission with FormData (supports file upload)
-    const form = document.getElementById('joinForm');
-    const btn = document.getElementById('joinSubmitBtn');
-    const successMsg = document.getElementById('joinSuccess');
-    const errorMsg = document.getElementById('joinError');
-    const btnHTML = btn.innerHTML;
-
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      btn.disabled = true;
-      btn.innerHTML = 'Envoi en cours...';
-      errorMsg.style.display = 'none';
-
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form)
-        });
-        const data = await response.json();
-
-        if (data.success) {
-          form.style.display = 'none';
-          successMsg.style.display = 'block';
-        } else {
-          errorMsg.style.display = 'block';
-          btn.disabled = false;
-          btn.innerHTML = btnHTML;
-        }
-      } catch (err) {
-        errorMsg.style.display = 'block';
-        btn.disabled = false;
-        btn.innerHTML = btnHTML;
-      }
-    });
+    // Check if redirected back after success
+    if (new URLSearchParams(window.location.search).get('success') === 'true') {
+      document.getElementById('joinForm').style.display = 'none';
+      document.getElementById('joinSuccess').style.display = 'block';
+      // Clean URL
+      window.history.replaceState({}, '', window.location.pathname);
+    }
   </script>
 </body>
 </html>
