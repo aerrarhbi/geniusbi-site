@@ -210,6 +210,7 @@
           </div>
           <div id="joinError" style="display:none;text-align:center;padding:20px;margin-top:16px;background:rgba(239,68,68,0.08);border-radius:var(--radius-md);">
             <p style="font-size:0.88rem;color:#DC2626;">Une erreur est survenue. Veuillez réessayer ou nous contacter à contact@geniusbi.ma</p>
+            <p id="errorDetails" style="font-size:0.75rem;color:#999;margin-top:8px;"></p>
           </div>
         </div>
       </div>
@@ -296,6 +297,7 @@
             document.getElementById('joinSuccess').style.display = 'block';
           } else {
             console.log('Error:', json);
+            document.getElementById('errorDetails').textContent = 'Status: ' + response.status + ' — ' + (json.message || JSON.stringify(json));
             document.getElementById('joinError').style.display = 'block';
             btn.disabled = false;
             btn.innerHTML = btnHTML;
@@ -303,6 +305,7 @@
         })
         .catch(function(error) {
           console.log('Fetch error:', error);
+          document.getElementById('errorDetails').textContent = 'Fetch error: ' + error.message;
           document.getElementById('joinError').style.display = 'block';
           btn.disabled = false;
           btn.innerHTML = btnHTML;
