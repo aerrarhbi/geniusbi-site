@@ -12,19 +12,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // === Mobile menu toggle ===
+  // === Mobile menu toggle (iOS compatible) ===
   const toggle = document.querySelector('.navbar-toggle');
   const navLinks = document.querySelector('.navbar-links');
   if (toggle && navLinks) {
-    toggle.addEventListener('click', () => {
+    let lastToggle = 0;
+    function toggleMenu(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var now = Date.now();
+      if (now - lastToggle < 300) return; // debounce
+      lastToggle = now;
       navLinks.classList.toggle('open');
       toggle.classList.toggle('active');
-    });
+      document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+    }
+    toggle.addEventListener('click', toggleMenu, false);
+    toggle.addEventListener('touchend', toggleMenu, false);
     // Close menu when clicking a link
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
+    navLinks.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
         navLinks.classList.remove('open');
         toggle.classList.remove('active');
+        document.body.style.overflow = '';
       });
     });
   }
