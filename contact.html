@@ -151,9 +151,12 @@
       errorMsg.style.display = 'none';
 
       try {
+        const formData = new FormData(form);
+        const json = JSON.stringify(Object.fromEntries(formData));
         const response = await fetch(form.action, {
           method: 'POST',
-          body: new FormData(form)
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: json
         });
         const data = await response.json();
 
