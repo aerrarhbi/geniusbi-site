@@ -60,41 +60,99 @@
       <button class="navbar-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
-  
+
   <section class="page-hero">
     <div class="page-hero-grid"></div>
     <div class="page-hero-orb1 parallax-orb"></div>
     <div class="page-hero-orb2 parallax-orb"></div>
     <div class="page-hero-content">
-      <h1>Articles d'experts & <span class="gradient-text-animated">Actualités</span></h1>
+      <h1>Insights Data & IA par <span class="gradient-text-animated">nos experts</span></h1>
       <p>Comprendre, structurer et réussir vos projets Data & IA.</p>
-      <div class="page-hero-actions">
-        <a href="/contact" class="btn-primary">Échanger avec un expert <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-      </div>
     </div>
   </section>
+
   <div class="blog-hero-dark">
-    <div class="blog-filters">
-      <span class="blog-filter active">Tous</span><span class="blog-filter">Data</span><span class="blog-filter">IA</span><span class="blog-filter">Data Gov</span><span class="blog-filter">Architecture</span><span class="blog-filter">BI</span><span class="blog-filter">Cloud</span>
+    <div class="blog-filters" id="blogFilters">
+      <span class="blog-filter active" data-filter="all">Tous</span>
+      <span class="blog-filter" data-filter="data">Stratégie Data</span>
+      <span class="blog-filter" data-filter="ia">IA</span>
+      <span class="blog-filter" data-filter="data-gov">Gouvernance</span>
+      <span class="blog-filter" data-filter="architecture">Architecture</span>
     </div>
   </div>
+
   <section class="section-light">
     <div class="container">
-      <div class="articles-grid">
-        <a href="/blog" class="article-card blur-fade"><div class="article-cat">Stratégie Data</div><h3>Structurer une roadmap Data & IA orientée ROI</h3><p>Les étapes clés pour aligner vos projets Data avec les enjeux business et éviter les dérives.</p><div class="article-link">Lire l'article <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div></a>
-        <a href="/blog" class="article-card blur-fade"><div class="article-cat">Gouvernance</div><h3>Gouvernance Data : poser un cadre sans ralentir l'exécution</h3><p>Comment sécuriser qualité, conformité et adoption sans complexifier l'organisation.</p><div class="article-link">Lire l'article <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div></a>
-        <a href="/blog" class="article-card blur-fade"><div class="article-cat">Intelligence artificielle</div><h3>IA générative en entreprise : par où commencer ?</h3><p>Un cadre pragmatique pour identifier et déployer vos premiers cas d'usage IA concrètement.</p><div class="article-link">Lire l'article <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div></a>
-        <a href="/blog" class="article-card blur-fade"><div class="article-cat">Architecture</div><h3>Lakehouse vs Data Mesh : quel modèle choisir ?</h3><p>Comparaison des approches architecturales et critères de choix selon votre contexte.</p><div class="article-link">Lire l'article <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div></a>
-        <a href="/blog" class="article-card blur-fade"><div class="article-cat">BI & Dataviz</div><h3>Power BI : 5 erreurs à éviter dans vos modèles de données</h3><p>Les pièges courants qui impactent la performance et la fiabilité de vos rapports.</p><div class="article-link">Lire l'article <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div></a>
-        <a href="/blog" class="article-card blur-fade"><div class="article-cat">Cloud</div><h3>Migration Cloud : réussir sans tout casser</h3><p>Approche progressive pour migrer vers Azure en réduisant les risques et en garantissant la continuité.</p><div class="article-link">Lire l'article <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div></a>
+      <div class="articles-grid" id="articlesGrid">
+        <a href="/blog-roadmap-data-ia" class="article-card blur-fade" data-cat="data">
+          <div class="article-meta">
+            <div class="article-cat">Stratégie Data</div>
+            <span class="article-date">10 Mars 2026</span>
+          </div>
+          <h3>Structurer une roadmap Data & IA orientée ROI</h3>
+          <p>Les étapes clés pour aligner vos projets Data avec les enjeux business, prioriser les cas d'usage et éviter les dérives.</p>
+          <div class="article-footer">
+            <div class="article-author">
+              <div class="author-avatar">AE</div>
+              <div><span class="author-name">Ayoub Errarhbi</span><span class="author-role">Fondateur & Consultant Data & IA</span></div>
+            </div>
+            <span class="article-read">8 min</span>
+          </div>
+        </a>
+        <a href="/blog-gouvernance-data" class="article-card blur-fade" data-cat="data-gov">
+          <div class="article-meta">
+            <div class="article-cat">Gouvernance</div>
+            <span class="article-date">5 Mars 2026</span>
+          </div>
+          <h3>Gouvernance Data : poser un cadre sans ralentir l'exécution</h3>
+          <p>Comment sécuriser qualité, conformité et adoption sans complexifier l'organisation ni freiner les projets.</p>
+          <div class="article-footer">
+            <div class="article-author">
+              <div class="author-avatar">AE</div>
+              <div><span class="author-name">Ayoub Errarhbi</span><span class="author-role">Fondateur & Consultant Data & IA</span></div>
+            </div>
+            <span class="article-read">7 min</span>
+          </div>
+        </a>
+        <a href="/blog-ia-generative-entreprise" class="article-card blur-fade" data-cat="ia">
+          <div class="article-meta">
+            <div class="article-cat">Intelligence artificielle</div>
+            <span class="article-date">28 Février 2026</span>
+          </div>
+          <h3>IA générative en entreprise : par où commencer ?</h3>
+          <p>Un cadre pragmatique pour identifier, cadrer et déployer vos premiers cas d'usage IA générative concrètement.</p>
+          <div class="article-footer">
+            <div class="article-author">
+              <div class="author-avatar">AE</div>
+              <div><span class="author-name">Ayoub Errarhbi</span><span class="author-role">Fondateur & Consultant Data & IA</span></div>
+            </div>
+            <span class="article-read">9 min</span>
+          </div>
+        </a>
+        <a href="/blog-lakehouse-vs-datamesh" class="article-card blur-fade" data-cat="architecture">
+          <div class="article-meta">
+            <div class="article-cat">Architecture</div>
+            <span class="article-date">20 Février 2026</span>
+          </div>
+          <h3>Lakehouse vs Data Mesh : quel modèle choisir ?</h3>
+          <p>Comparaison des deux approches architecturales dominantes et critères de choix selon votre contexte et maturité.</p>
+          <div class="article-footer">
+            <div class="article-author">
+              <div class="author-avatar">AE</div>
+              <div><span class="author-name">Ayoub Errarhbi</span><span class="author-role">Fondateur & Consultant Data & IA</span></div>
+            </div>
+            <span class="article-read">10 min</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
+
   <section class="section-gray">
     <div class="container">
       <div class="newsletter-box blur-fade">
         <h3>Restez informé</h3>
-        <p>Abonnez-vous à notre newsletter pour recevoir nos derniers articles et actualités.</p>
+        <p>Recevez nos derniers articles et actualités Data & IA.</p>
         <div class="newsletter-form"><input type="email" class="newsletter-input" placeholder="Votre adresse email..."><button class="newsletter-btn">S'abonner</button></div>
       </div>
     </div>
@@ -134,5 +192,57 @@
   <script src="js/main.js"></script>
   <script src="js/magic-animations.js"></script>
   
+</body>
+</html>
+
+  <style>
+.blog-hero-dark{background:var(--navy);padding:0 24px 40px;}
+.blog-filters{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+.blog-filter{padding:7px 18px;border-radius:100px;font-size:0.8rem;font-weight:500;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);cursor:pointer;transition:all 0.3s ease;}
+.blog-filter:hover,.blog-filter.active{background:var(--purple);border-color:var(--purple);color:var(--white);}
+.articles-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.article-card{background:var(--white);border:1px solid var(--gray-100);border-radius:16px;padding:28px;transition:all 0.5s var(--ease);text-decoration:none;display:flex;flex-direction:column;position:relative;overflow:hidden;}
+.article-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:linear-gradient(180deg,var(--purple),var(--teal));transition:height 0.5s var(--ease);}
+.article-card:hover::before{height:100%;}
+.article-card:hover{box-shadow:0 8px 28px rgba(26,31,54,0.06);transform:translateY(-4px);}
+.article-card.hidden{display:none;}
+.article-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.article-cat{font-family:var(--font-heading);font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--purple);padding:4px 10px;background:var(--purple-soft);border-radius:100px;}
+.article-date{font-size:0.72rem;color:var(--gray-400);}
+.article-card h3{font-family:var(--font-heading);font-size:1.05rem;font-weight:600;color:var(--text-dark);margin-bottom:8px;line-height:1.3;}
+.article-card>p{font-size:0.82rem;color:var(--text-body);line-height:1.55;margin-bottom:20px;flex:1;}
+.article-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:16px;border-top:1px solid var(--gray-100);}
+.article-author{display:flex;align-items:center;gap:10px;}
+.author-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--teal));display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:0.65rem;font-weight:700;color:#fff;flex-shrink:0;}
+.author-name{font-family:var(--font-heading);font-size:0.78rem;font-weight:600;color:var(--text-dark);display:block;}
+.author-role{font-size:0.68rem;color:var(--gray-400);display:block;}
+.article-read{font-size:0.72rem;color:var(--gray-400);white-space:nowrap;}
+.newsletter-box{max-width:600px;margin:0 auto;text-align:center;}
+.newsletter-box h3{font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--text-dark);margin-bottom:8px;}
+.newsletter-box p{font-size:0.9rem;color:var(--text-body);margin-bottom:20px;}
+.newsletter-form{display:flex;gap:10px;max-width:440px;margin:0 auto;}
+.newsletter-input{flex:1;padding:12px 18px;border:1px solid var(--gray-100);border-radius:100px;font-size:0.88rem;font-family:var(--font-body);outline:none;transition:border-color 0.3s ease;}
+.newsletter-input:focus{border-color:var(--purple);}
+.newsletter-btn{padding:12px 24px;border-radius:100px;background:var(--purple);color:var(--white);font-family:var(--font-body);font-size:0.85rem;font-weight:600;border:none;cursor:pointer;transition:all 0.3s ease;}
+.newsletter-btn:hover{background:var(--purple-light);}
+@media(max-width:768px){.articles-grid{grid-template-columns:1fr;} .newsletter-form{flex-direction:column;}}
+</style>
+  <script>
+    // Blog filter
+    document.querySelectorAll('.blog-filter').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.blog-filter').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var filter = btn.dataset.filter;
+        document.querySelectorAll('.article-card').forEach(function(card) {
+          if (filter === 'all' || card.dataset.cat === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
