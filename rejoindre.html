@@ -177,11 +177,7 @@
       </div>
       <div class="join-form-section">
         <div class="join-form blur-fade border-beam">
-          <form id="joinForm" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="access_key" value="0902ec57-2f5d-426b-a88a-58f9c41bb16f">
-            <input type="hidden" name="subject" value="Nouvelle candidature — geniusbi.ma">
-            <input type="hidden" name="from_name" value="GeniusBI Recrutement">
-            <input type="hidden" name="redirect" value="https://geniusbi.ma/rejoindre?success=true">
+          <form id="joinForm" method="POST" enctype="multipart/form-data">
             <input type="checkbox" name="botcheck" style="display:none;">
             <div class="form-row">
               <div class="form-group"><label class="form-label">Nom complet</label><input type="text" name="name" class="form-input" placeholder="Votre nom complet" required></div>
@@ -193,7 +189,7 @@
             </div>
             <div class="form-group"><label class="form-label">Lien LinkedIn (optionnel)</label><input type="url" name="linkedin" class="form-input" placeholder="https://linkedin.com/in/votre-profil"></div>
             <div class="form-group">
-              <label class="form-label">CV (PDF, DOC, DOCX — 25 Mo max)</label>
+              <label class="form-label">CV (PDF, DOC, DOCX — 5 Mo max)</label>
               <div class="file-upload" id="fileUploadZone">
                 <input type="file" name="attachment" accept=".pdf,.doc,.docx" id="cvInput" required>
                 <div class="file-upload-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/></svg></div>
@@ -258,13 +254,60 @@
       }
     });
 
-    // Check if redirected back after success
-    if (new URLSearchParams(window.location.search).get('success') === 'true') {
-      document.getElementById('joinForm').style.display = 'none';
-      document.getElementById('joinSuccess').style.display = 'block';
-      // Clean URL
-      window.history.replaceState({}, '', window.location.pathname);
-    }
+    // Form submission — exact Web3Forms pattern for file uploads
+    const form = document.getElementById('joinForm');
+    const btn = document.getElementById('joinSubmitBtn');
+    const btnHTML = btn.innerHTML;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.innerHTML = 'Envoi en cours...';
+      document.getElementById('joinError').style.display = 'none';
+
+      const formData = new FormData(form);
+
+      // Append access_key and metadata via JS (as per Web3Forms docs)
+      formData.append('access_key', '0902ec57-2f5d-426b-a88a-58f9c41bb16f');
+      formData.append('subject', 'Nouvelle candidature — geniusbi.ma');
+      formData.append('from_name', 'GeniusBI Recrutement');
+
+      // Check file size (max 5MB for standard attachment)
+      const fileInput = document.getElementById('cvInput');
+      if (fileInput.files.length > 0) {
+        const filesize = fileInput.files[0].size / 1024;
+        if (filesize > 5000) {
+          alert('Le fichier doit faire moins de 5 Mo.');
+          btn.disabled = false;
+          btn.innerHTML = btnHTML;
+          return;
+        }
+      }
+
+      // Don't add headers or content-type — browser auto-adds them for multipart
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      })
+        .then(async function(response) {
+          var json = await response.json();
+          if (response.status === 200) {
+            form.style.display = 'none';
+            document.getElementById('joinSuccess').style.display = 'block';
+          } else {
+            console.log('Error:', json);
+            document.getElementById('joinError').style.display = 'block';
+            btn.disabled = false;
+            btn.innerHTML = btnHTML;
+          }
+        })
+        .catch(function(error) {
+          console.log('Fetch error:', error);
+          document.getElementById('joinError').style.display = 'block';
+          btn.disabled = false;
+          btn.innerHTML = btnHTML;
+        });
+    });
   </script>
 </body>
 </html>
