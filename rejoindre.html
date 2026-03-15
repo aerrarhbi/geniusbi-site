@@ -177,7 +177,7 @@
       </div>
       <div class="join-form-section">
         <div class="join-form blur-fade border-beam">
-          <form id="joinForm" method="POST" enctype="multipart/form-data">
+          <form id="joinForm">
             <input type="checkbox" name="botcheck" style="display:none;">
             <div class="form-row">
               <div class="form-group"><label class="form-label">Nom complet</label><input type="text" name="name" class="form-input" placeholder="Votre nom complet" required></div>
@@ -295,6 +295,7 @@
           if (response.status === 200) {
             form.style.display = 'none';
             document.getElementById('joinSuccess').style.display = 'block';
+            document.getElementById('joinSuccess').scrollIntoView({ behavior:'smooth', block:'center' });
           } else {
             console.log('Error:', json);
             document.getElementById('errorDetails').textContent = 'Status: ' + response.status + ' — ' + (json.message || JSON.stringify(json));
