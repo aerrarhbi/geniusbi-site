@@ -125,6 +125,7 @@ body {
 .navbar-cta::after { display:none !important; }
 .navbar-toggle { display:none; background:none; border:none; cursor:pointer; padding:12px; -webkit-tap-highlight-color:transparent; touch-action:manipulation; user-select:none; }
 .navbar-toggle span { display:block; width:22px; height:2px; background:var(--white); margin:5px 0; border-radius:2px; transition:all 0.3s ease; pointer-events:none; }
+.navbar-toggle .close-icon { display:none;pointer-events:none; }
 
 /* Mobile nav */
 .mobile-menu {
@@ -390,10 +391,10 @@ body {
   .navbar-links a::after { display:none !important; }
   .navbar-links .navbar-cta { margin-top:16px;font-size:1rem;padding:12px 28px;display:inline-block; }
   .navbar-toggle { display:flex;position:relative;z-index:10001;flex-direction:column;align-items:center;justify-content:center;width:44px;height:44px;padding:0; }
-  .navbar-toggle.active { position:fixed;top:24px;right:20px;top:calc(24px + env(safe-area-inset-top)); }
-  .navbar-toggle.active span:nth-child(1) { transform:rotate(45deg) translate(5px,7px); }
-  .navbar-toggle.active span:nth-child(2) { opacity:0; }
-  .navbar-toggle.active span:nth-child(3) { transform:rotate(-45deg) translate(5px,-7px); }
+  .navbar-toggle.active { position:fixed;top:calc(24px + env(safe-area-inset-top));right:20px; }
+  .navbar-toggle.active span { display:none; }
+  .navbar-toggle .close-icon { display:none; }
+  .navbar-toggle.active .close-icon { display:block;width:24px;height:24px;color:#fff; }
   .cta-box { padding:40px 24px; }
   .footer-grid { grid-template-columns:1fr 1fr; gap:28px; }
   .footer-bottom { flex-direction:column; gap:12px; text-align:center; }

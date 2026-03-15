@@ -160,9 +160,7 @@
     .navbar-cta::after { display:none !important; }
     .navbar-toggle { display:none; background:none; border:none; cursor:pointer; padding:12px; -webkit-tap-highlight-color:transparent; touch-action:manipulation; user-select:none; }
     .navbar-toggle span { display:block; width:22px; height:2px; background:var(--white); margin:5px 0; border-radius:2px; transition:all 0.3s ease; pointer-events:none; }
-    .navbar-toggle.active span:nth-child(1) { transform:rotate(45deg) translate(5px,7px); }
-    .navbar-toggle.active span:nth-child(2) { opacity:0; }
-    .navbar-toggle.active span:nth-child(3) { transform:rotate(-45deg) translate(5px,-7px); }
+    .navbar-toggle .close-icon { display:none;pointer-events:none; }
 
     /* ===== HERO ===== */
     .hero {
@@ -797,7 +795,10 @@
       .navbar-links a::after { display:none !important; }
       .navbar-links .navbar-cta { margin-top:16px;font-size:1rem;padding:12px 28px;display:inline-block; }
       .navbar-toggle { display:flex;position:relative;z-index:10001;flex-direction:column;align-items:center;justify-content:center;width:44px;height:44px;padding:0; }
-      .navbar-toggle.active { position:fixed;top:24px;right:20px;top:calc(24px + env(safe-area-inset-top)); }
+      .navbar-toggle.active { position:fixed;top:calc(24px + env(safe-area-inset-top));right:20px; }
+      .navbar-toggle.active span { display:none; }
+      .navbar-toggle .close-icon { display:none; }
+      .navbar-toggle.active .close-icon { display:block;width:24px;height:24px;color:#fff; }
       .pillars-grid { grid-template-columns:1fr; }
       .pillar::after { display:none; }
       .stats-grid, .method-grid { grid-template-columns:1fr; }
@@ -831,7 +832,7 @@
         <li><a href="/blog">Blog</a></li>
         <li><a href="/contact" class="navbar-cta">Contactez-nous</a></li>
       </ul>
-      <button type="button" class="navbar-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button type="button" class="navbar-toggle" aria-label="Menu"><span></span><span></span><span></span><svg class="close-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
     </div>
   </nav>
 
