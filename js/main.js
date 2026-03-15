@@ -136,4 +136,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // === Grid Spotlight — cursor reveals bright grid on hero sections ===
+  var gridBrightEls = document.querySelectorAll('.page-hero-grid-bright');
+  if (gridBrightEls.length > 0) {
+    var gmx = -500, gmy = -500, gsx = -500, gsy = -500;
+    document.addEventListener('mousemove', function(e) { gmx = e.clientX; gmy = e.clientY; });
+    function animateGrid() {
+      gsx += (gmx - gsx) * 0.12;
+      gsy += (gmy - gsy) * 0.12;
+      gridBrightEls.forEach(function(el) {
+        el.style.setProperty('--mx', gsx + 'px');
+        el.style.setProperty('--my', gsy + 'px');
+      });
+      requestAnimationFrame(animateGrid);
+    }
+    animateGrid();
+  }
+
 });

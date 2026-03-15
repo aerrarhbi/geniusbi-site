@@ -171,15 +171,22 @@
     }
     /* Grid pattern */
     .hero-grid {
-      position:absolute; inset:0;
+      position:absolute; inset:0; z-index:1;
       background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
       background-size:72px 72px;
       mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
     }
-    .hero:hover .hero-grid { opacity:0.12; background-size:28px 28px; }
-    .hero-grid { transition:opacity 0.6s ease, background-size 0.6s ease; }
+    .hero-grid-bright {
+      position:absolute; inset:0; z-index:2; pointer-events:none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px);
+      background-size:72px 72px;
+      -webkit-mask-image:radial-gradient(circle 280px at var(--mx, -500px) var(--my, -500px), black 0%, transparent 65%);
+      mask-image:radial-gradient(circle 280px at var(--mx, -500px) var(--my, -500px), black 0%, transparent 65%);
+    }
     /* Abstract orbs */
     .hero-orb {
       position:absolute; border-radius:50%; filter:blur(80px); pointer-events:none;
@@ -814,6 +821,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-grid"></div>
+    <div class="hero-grid-bright" id="gridBright"></div>
     
     <div class="hero-orb hero-orb-1"></div>
     <div class="hero-orb hero-orb-2"></div>
@@ -1079,10 +1087,22 @@
   <script>
     // Navbar scroll
     const navbar=document.getElementById('navbar');
-    let lastScroll=0;
     window.addEventListener('scroll',()=>{
       navbar.classList.toggle('scrolled',window.scrollY>40);
     });
+
+    // Grid spotlight — cursor reveals bright grid
+    var gridBright=document.getElementById('gridBright');
+    var gmx=-500,gmy=-500,gsx=-500,gsy=-500;
+    document.addEventListener('mousemove',function(e){gmx=e.clientX;gmy=e.clientY;});
+    function animateGrid(){
+      gsx+=(gmx-gsx)*0.12;
+      gsy+=(gmy-gsy)*0.12;
+      if(gridBright)gridBright.style.setProperty('--mx',gsx+'px');
+      if(gridBright)gridBright.style.setProperty('--my',gsy+'px');
+      requestAnimationFrame(animateGrid);
+    }
+    animateGrid();
 
     // Intersection Observer for all reveal types
     const obs=new IntersectionObserver((entries)=>{
