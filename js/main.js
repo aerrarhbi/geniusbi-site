@@ -42,7 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.left = '';
         document.body.style.right = '';
         document.body.style.overflow = '';
+        document.documentElement.style.scrollBehavior = 'auto';
         window.scrollTo(0, savedScroll);
+        requestAnimationFrame(function(){ document.documentElement.style.scrollBehavior = ''; });
       }
     }
     toggle.addEventListener('click', toggleMenu, false);
@@ -57,7 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.left = '';
         document.body.style.right = '';
         document.body.style.overflow = '';
+        document.documentElement.style.scrollBehavior = 'auto';
         window.scrollTo(0, savedScroll);
+        requestAnimationFrame(function(){ document.documentElement.style.scrollBehavior = ''; });
       });
     });
   }
