@@ -15,26 +15,49 @@ document.addEventListener('DOMContentLoaded', () => {
   // === Mobile menu toggle (iOS compatible) ===
   const toggle = document.querySelector('.navbar-toggle');
   const navLinks = document.querySelector('.navbar-links');
+  const navBar = document.getElementById('navbar');
+  var savedScroll = 0;
   if (toggle && navLinks) {
     let lastToggle = 0;
     function toggleMenu(e) {
       e.preventDefault();
       e.stopPropagation();
       var now = Date.now();
-      if (now - lastToggle < 300) return; // debounce
+      if (now - lastToggle < 300) return;
       lastToggle = now;
+      var willOpen = !navLinks.classList.contains('open');
       navLinks.classList.toggle('open');
       toggle.classList.toggle('active');
-      document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+      if (navBar) navBar.style.zIndex = willOpen ? '99999' : '';
+      if (willOpen) {
+        savedScroll = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = -savedScroll + 'px';
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, savedScroll);
+      }
     }
     toggle.addEventListener('click', toggleMenu, false);
     toggle.addEventListener('touchend', toggleMenu, false);
-    // Close menu when clicking a link
     navLinks.querySelectorAll('a').forEach(function(link) {
       link.addEventListener('click', function() {
         navLinks.classList.remove('open');
         toggle.classList.remove('active');
+        if (navBar) navBar.style.zIndex = '';
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
         document.body.style.overflow = '';
+        window.scrollTo(0, savedScroll);
       });
     });
   }
