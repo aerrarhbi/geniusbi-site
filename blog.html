@@ -153,7 +153,7 @@
       <div class="newsletter-box blur-fade">
         <h3>Restez informé</h3>
         <p>Recevez nos derniers articles et actualités Data & IA directement dans votre boîte mail.</p>
-        <form class="newsletter-form" id="blogNewsletter">
+        <form class="newsletter-form" id="blogNewsletter" onsubmit="return handleBlogNl(event)">
           <input type="hidden" name="access_key" value="0902ec57-2f5d-426b-a88a-58f9c41bb16f">
           <input type="hidden" name="subject" value="Nouvelle inscription newsletter — GeniusBI">
           <input type="hidden" name="from_name" value="GeniusBI Newsletter">
@@ -167,6 +167,22 @@
       </div>
     </div>
   </section>
+  <script>
+  async function handleBlogNl(e){
+    e.preventDefault();
+    var form=document.getElementById('blogNewsletter');
+    var btn=form.querySelector('.newsletter-btn');
+    btn.disabled=true;btn.textContent='Envoi...';
+    try{
+      var fd=new FormData(form);
+      var res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(Object.fromEntries(fd))});
+      var data=await res.json();
+      if(data.success){form.style.display='none';document.getElementById('blogNlSuccess').style.display='block';}
+      else{btn.disabled=false;btn.textContent="S'abonner";}
+    }catch(err){btn.disabled=false;btn.textContent="S'abonner";}
+    return false;
+  }
+  </script>
 
   <section class="cta-section">
     <div class="cta-box border-beam reveal-scale">
@@ -254,30 +270,6 @@ img.author-avatar{object-fit:cover;}
         });
       });
     });
-
-    // Newsletter AJAX
-    var nlForm = document.getElementById('blogNewsletter');
-    if (nlForm) {
-      nlForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        var btn = nlForm.querySelector('.newsletter-btn');
-        btn.disabled = true;
-        btn.textContent = 'Envoi...';
-        try {
-          var fd = new FormData(nlForm);
-          var res = await fetch('https://api.web3forms.com/submit', {
-            method:'POST',
-            headers:{'Content-Type':'application/json','Accept':'application/json'},
-            body:JSON.stringify(Object.fromEntries(fd))
-          });
-          var data = await res.json();
-          if (data.success) {
-            nlForm.style.display = 'none';
-            document.getElementById('blogNlSuccess').style.display = 'block';
-          } else { btn.disabled=false; btn.textContent="S'abonner"; }
-        } catch(err) { btn.disabled=false; btn.textContent="S'abonner"; }
-      });
-    }
   </script>
 </body>
 </html>
