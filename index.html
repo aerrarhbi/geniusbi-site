@@ -465,6 +465,22 @@
       font-family:var(--font-heading); font-size:clamp(3rem,5vw,4.5rem); font-weight:800;
       color:var(--navy); letter-spacing:-0.04em; line-height:1;
     }
+    .counter { display:inline-block; }
+    .stat-item.counted .counter {
+      animation:counterPop 0.6s cubic-bezier(0.2,0,0,1) both;
+    }
+    @keyframes counterPop {
+      0% { transform:translateY(20px); opacity:0; }
+      60% { transform:translateY(-4px); opacity:1; }
+      100% { transform:translateY(0); opacity:1; }
+    }
+    .stat-item.counted .stat-desc {
+      animation:descFade 0.5s ease both;
+    }
+    @keyframes descFade {
+      0% { opacity:0; transform:translateY(10px); }
+      100% { opacity:1; transform:translateY(0); }
+    }
     .stat-value { display:none; }
     .stat-label { display:none; }
     .stat-line { display:none; }
@@ -773,14 +789,14 @@
     @media (max-width:768px) {
       [style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
       [style*="grid-template-columns:1fr 1fr"] img { min-height:220px !important; }
-      .navbar-links { display:none !important; position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(11,17,32,0.98);backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:6px;z-index:100;animation:none;padding:0; }
+      .navbar-links { display:none !important; position:fixed;top:0;left:0;right:0;bottom:0;background:var(--navy);backdrop-filter:none;flex-direction:column;align-items:center;justify-content:center;gap:6px;z-index:9999;animation:none;padding:0; }
       .navbar-links.open { display:flex !important; }
       .navbar-links li { list-style:none;width:100%;text-align:center; }
       .navbar-links a { font-size:1.1rem;padding:14px 0;color:rgba(255,255,255,0.7) !important;display:block; }
       .navbar-links a:hover { color:#fff !important; }
       .navbar-links a::after { display:none !important; }
       .navbar-links .navbar-cta { margin-top:16px;font-size:1rem;padding:12px 28px;display:inline-block; }
-      .navbar-toggle { display:flex;position:relative;z-index:110;flex-direction:column;align-items:center;justify-content:center; }
+      .navbar-toggle { display:flex;position:relative;z-index:10000;flex-direction:column;align-items:center;justify-content:center; }
       .pillars-grid { grid-template-columns:1fr; }
       .pillar::after { display:none; }
       .stats-grid, .method-grid { grid-template-columns:1fr; }
@@ -873,7 +889,7 @@
   </section>
 
   <!-- IMAGE BREAK: Consulting -->
-  <section style="padding:40px 24px 0;">
+  <section style="padding:80px 24px 80px;">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:20px;overflow:hidden;max-width:1200px;margin:0 auto;" class="reveal">
       <div style="background:var(--navy);padding:48px 44px;display:flex;flex-direction:column;justify-content:center;">
         <span class="section-tag" style="color:var(--teal);">Pourquoi GeniusBI</span>
@@ -986,15 +1002,15 @@
     <div class="stats-grid stagger-children">
       <div class="stat-item reveal reveal-delay-1">
         <p class="stat-desc">Satisfaction client sur l'ensemble de nos missions de conseil et d'accompagnement</p>
-        <div class="stat-big">90%</div>
+        <div class="stat-big"><span class="counter" data-target="90" data-suffix="%">0%</span></div>
       </div>
       <div class="stat-item reveal reveal-delay-2">
         <p class="stat-desc">Secteurs d'activité accompagnés dans leur transformation Data & IA</p>
-        <div class="stat-big">+6</div>
+        <div class="stat-big"><span class="counter" data-target="6" data-prefix="+">+0</span></div>
       </div>
       <div class="stat-item reveal reveal-delay-3">
         <p class="stat-desc">Gain de vitesse dans la mise en production des cas d'usage grâce à nos accélérateurs</p>
-        <div class="stat-big">x10</div>
+        <div class="stat-big"><span class="counter" data-target="10" data-prefix="x">x0</span></div>
       </div>
     </div>
   </section>
@@ -1077,8 +1093,8 @@
       <p>GeniusBI &copy; 2026. Tous droits réservés.</p>
       <div class="footer-social">
         <a href="https://linkedin.com/company/geniusbi" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-        <a href="https://x.com/geniusbi" target="_blank" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-        <a href="https://youtube.com/@geniusbi" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://x.com/geniusbi_ai?s=21" target="_blank" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://youtube.com/@geniusbi_ai?si=AAAgzUwq5IsjoJEh" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
       </div>
     </div>
   </footer>
@@ -1154,6 +1170,53 @@
       card.addEventListener('mouseleave',function(){
         this.style.transform='';
       });
+    });
+
+    // === COUNTER ANIMATION — numbers count up on scroll ===
+    function animateCounter(el) {
+      var target = parseFloat(el.dataset.target);
+      var prefix = el.dataset.prefix || '';
+      var suffix = el.dataset.suffix || '';
+      var duration = 2000;
+      var start = 0;
+      var startTime = null;
+      var isFloat = target % 1 !== 0;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        // Ease out cubic
+        var ease = 1 - Math.pow(1 - progress, 3);
+        var current = Math.round(ease * target);
+        if (isFloat) current = (ease * target).toFixed(1);
+        el.textContent = prefix + current + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = prefix + target + suffix;
+        }
+      }
+      requestAnimationFrame(step);
+    }
+
+    var counterObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+          entry.target.classList.add('counted');
+          var counter = entry.target.querySelector('.counter');
+          if (counter) {
+            // Delay based on reveal-delay class
+            var delay = 0;
+            if (entry.target.classList.contains('reveal-delay-2')) delay = 200;
+            if (entry.target.classList.contains('reveal-delay-3')) delay = 400;
+            setTimeout(function() { animateCounter(counter); }, delay);
+          }
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.stat-item').forEach(function(item) {
+      counterObserver.observe(item);
     });
   </script>
   <script src="js/magic-animations.js"></script>
