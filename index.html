@@ -691,6 +691,16 @@
     .blog-card:hover .blog-card-link svg { transform:translateX(5px); }
 
     /* ===== CTA ===== */
+    /* ===== NEWSLETTER ===== */
+    .newsletter-box{max-width:600px;margin:0 auto;text-align:center;}
+    .newsletter-box h3{font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--text-dark);margin-bottom:8px;}
+    .newsletter-box p{font-size:0.9rem;color:var(--text-body);margin-bottom:20px;}
+    .newsletter-form{display:flex;gap:10px;max-width:440px;margin:0 auto;}
+    .newsletter-input{flex:1;padding:12px 18px;border:1px solid var(--gray-100);border-radius:100px;font-size:0.88rem;font-family:var(--font-body);outline:none;transition:border-color 0.3s ease;background:#fff;}
+    .newsletter-input:focus{border-color:var(--purple);}
+    .newsletter-btn{padding:12px 24px;border-radius:100px;background:var(--purple);color:var(--white);font-family:var(--font-body);font-size:0.85rem;font-weight:600;border:none;cursor:pointer;transition:all 0.3s ease;white-space:nowrap;}
+    .newsletter-btn:hover{background:var(--purple-light);}
+
     .cta-section { padding:110px 24px; background:var(--white); }
     .cta-box {
       max-width:880px; margin:0 auto;
@@ -804,6 +814,7 @@
       .stats-grid, .method-grid { grid-template-columns:1fr; }
       .tech-grid { grid-template-columns:1fr; }
       .blog-grid { grid-template-columns:1fr; }
+      .newsletter-form { flex-direction:column; }
       .cta-box { padding:40px 24px; }
       .footer-grid { grid-template-columns:1fr 1fr; gap:28px; }
       .footer-bottom { flex-direction:column; gap:12px; text-align:center; }
@@ -1062,6 +1073,24 @@
       </div>
       <div style="text-align:center;margin-top:32px;">
         <a href="/blog" class="btn-text">Voir tous les articles <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="section-gray" style="padding:64px 24px;">
+    <div class="container">
+      <div class="newsletter-box reveal">
+        <h3>Restez informé</h3>
+        <p>Recevez nos derniers articles et actualités Data & IA directement dans votre boîte mail.</p>
+        <form class="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="0902ec57-2f5d-426b-a88a-58f9c41bb16f">
+          <input type="hidden" name="subject" value="Nouvelle inscription newsletter — GeniusBI">
+          <input type="hidden" name="from_name" value="GeniusBI Newsletter">
+          <input type="email" name="email" class="newsletter-input" placeholder="Votre adresse email..." required>
+          <button type="submit" class="newsletter-btn">S'abonner</button>
+        </form>
+        <p style="font-size:0.72rem;color:var(--gray-400);margin-top:10px;">Pas de spam. Désabonnement en un clic.</p>
       </div>
     </div>
   </section>
