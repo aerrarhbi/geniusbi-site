@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://geniusbi.ma/sitemap.xml
+
+# Block admin/test pages
+Disallow: /realisations
