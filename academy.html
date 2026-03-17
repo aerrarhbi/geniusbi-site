@@ -39,6 +39,9 @@
 .course-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--teal));transform:scaleX(0);transform-origin:left;transition:transform 0.5s var(--ease);}
 .course-card:hover::after{transform:scaleX(1);}
 .course-card:hover{box-shadow:0 12px 40px rgba(26,31,54,0.08);transform:translateY(-5px);}
+.course-active{background:linear-gradient(135deg,rgba(250,204,21,0.08) 0%,rgba(255,255,255,1) 50%,rgba(30,58,138,0.08) 100%);border:1px solid rgba(250,204,21,0.25);box-shadow:0 4px 20px rgba(250,204,21,0.06),0 4px 20px rgba(30,58,138,0.04);}
+.course-active:hover{box-shadow:0 12px 40px rgba(250,204,21,0.12),0 12px 40px rgba(30,58,138,0.08);border-color:rgba(250,204,21,0.4);}
+.course-active::after{background:linear-gradient(90deg,#facc15,#1e3a8a);}
 .course-disabled{opacity:0.5;pointer-events:none;filter:grayscale(0.4);}
 .course-disabled::after{display:none;}
 .course-soon{position:absolute;top:16px;right:16px;padding:4px 12px;border-radius:100px;font-size:0.68rem;font-weight:600;background:var(--gray-100);color:var(--gray-400);letter-spacing:0.02em;}
@@ -90,8 +93,8 @@
     <div class="container">
       <div class="section-header blur-fade"><span class="section-tag">Nos formations</span><h2 class="section-title">Nos formations conçues pour l'impact et l'autonomie</h2></div>
       <div class="courses-grid stagger-children">
-        <a href="/formation-powerbi-fondamentaux" class="course-card" data-tilt><div class="course-meta"><span>4 semaines · Débutant</span></div><h3>Power BI Fondamentaux</h3><p>Apprenez les bases de Power BI : connexion aux données, modélisation, DAX, création de dashboards orientés décision.</p><span class="course-tag ct-bi">BI & Dataviz</span></a>
-        <a href="/formation-powerbi-avance" class="course-card" data-tilt><div class="course-meta"><span>6 semaines · Intermédiaire</span></div><h3>Power BI Avancé</h3><p>DAX avancé, modélisation complexe, Row Level Security, déploiement et gouvernance des rapports en entreprise.</p><span class="course-tag ct-bi">BI & Dataviz</span></a>
+        <a href="/formation-powerbi-fondamentaux" class="course-card course-active" data-tilt><div class="course-meta"><span>4 semaines · Débutant</span></div><h3>Power BI Fondamentaux</h3><p>Apprenez les bases de Power BI : connexion aux données, modélisation, DAX, création de dashboards orientés décision.</p><span class="course-tag ct-bi">BI & Dataviz</span></a>
+        <a href="/formation-powerbi-avance" class="course-card course-active" data-tilt><div class="course-meta"><span>6 semaines · Intermédiaire</span></div><h3>Power BI Avancé</h3><p>DAX avancé, modélisation complexe, Row Level Security, déploiement et gouvernance des rapports en entreprise.</p><span class="course-tag ct-bi">BI & Dataviz</span></a>
         <div class="course-card course-disabled" data-tilt><div class="course-soon">Bientôt disponible</div><div class="course-meta"><span>8 semaines · Intermédiaire</span></div><h3>Azure Data Engineering</h3><p>Pipelines d'ingestion, Lakehouse, Data Factory, Databricks, orchestration et bonnes pratiques d'industrialisation.</p><span class="course-tag ct-cloud">Cloud & Data</span></div>
         <div class="course-card course-disabled" data-tilt><div class="course-soon">Bientôt disponible</div><div class="course-meta"><span>6 semaines · Avancé</span></div><h3>IA Générative appliquée</h3><p>Copilots, RAG, prompt engineering, Azure AI Foundry, déploiement de cas d'usage IA en entreprise.</p><span class="course-tag ct-ai">IA & GenAI</span></div>
         <div class="course-card course-disabled" data-tilt><div class="course-soon">Bientôt disponible</div><div class="course-meta"><span>4 semaines · Débutant</span></div><h3>SQL & Data Analytics</h3><p>Fondamentaux SQL, requêtes analytiques, optimisation, cas pratiques sur données réelles.</p><span class="course-tag ct-cloud">Cloud & Data</span></div>
