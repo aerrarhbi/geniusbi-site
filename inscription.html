@@ -155,7 +155,7 @@
                 <option value="">Sélectionnez une formation...</option>
                 <optgroup label="Disponibles">
                   <option value="Power BI Fondamentaux">Power BI Fondamentaux — 4 semaines · Débutant</option>
-                  <option value="Power BI Avancé">Power BI Avancé — 6 semaines · Intermédiaire</option>
+                  <option value="Power BI Avancé">Power BI Avancé — 4 semaines · Intermédiaire</option>
                 </optgroup>
                 <optgroup label="Bientôt disponibles">
                   <option value="Azure Data Engineering">Azure Data Engineering — 8 semaines · Intermédiaire</option>
@@ -226,6 +226,25 @@
     const btn = document.getElementById('submitBtn');
     const successMsg = document.getElementById('formSuccess');
     const errorMsg = document.getElementById('formError');
+
+    // Pre-select formation from URL query param
+    const urlParams = new URLSearchParams(window.location.search);
+    const formationParam = urlParams.get('formation');
+    if (formationParam) {
+      const formationMap = {
+        'powerbi-fondamentaux': 'Power BI Fondamentaux',
+        'powerbi-avance': 'Power BI Avancé',
+        'azure-data-engineering': 'Azure Data Engineering',
+        'ia-generative': 'IA Générative appliquée',
+        'sql-data-analytics': 'SQL & Data Analytics',
+        'cloud-azure': 'Cloud Azure Fondamentaux'
+      };
+      const selectEl = form.querySelector('select[name="formation"]');
+      const matchValue = formationMap[formationParam];
+      if (matchValue && selectEl) {
+        selectEl.value = matchValue;
+      }
+    }
     const ARROW = '<svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>';
 
     form.addEventListener('submit', async function(e) {
