@@ -79,9 +79,12 @@
 .related-card h4{font-family:var(--font-heading);font-size:0.88rem;font-weight:600;color:var(--text-dark);line-height:1.3;}
 @media(max-width:768px){.related-grid{grid-template-columns:1fr;}}
 
+a.skip-to-content{position:absolute;top:-100%;left:16px;z-index:9999;padding:8px 16px;background:var(--purple);color:#fff;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;transition:top 0.3s ease;}
+a.skip-to-content:focus{top:12px;}
 </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
   <div class="scroll-progress"></div>
   <nav class="navbar" id="navbar">
     <div class="navbar-inner">
@@ -98,7 +101,7 @@
     </div>
   </nav>
 
-  <div class="article-hero">
+  <div class="article-hero" id="main-content">
     <nav class="breadcrumb" aria-label="Fil d'Ariane">
       <a href="/">Accueil</a><span class="breadcrumb-sep">/</span>
       <a href="/blog">Blog</a><span class="breadcrumb-sep">/</span>

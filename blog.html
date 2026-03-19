@@ -59,9 +59,17 @@
 .newsletter-btn{padding:12px 24px;border-radius:100px;background:var(--purple);color:var(--white);font-family:var(--font-body);font-size:0.85rem;font-weight:600;border:none;cursor:pointer;transition:all 0.3s ease;}
 .newsletter-btn:hover{background:var(--purple-light);}
 @media(max-width:768px){.articles-grid{grid-template-columns:1fr;} .newsletter-form{flex-direction:column;}}
+.page-breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.8rem;margin-bottom:16px;flex-wrap:wrap;}
+.page-breadcrumb a{color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.3s ease;}
+.page-breadcrumb a:hover{color:#fff;}
+.page-breadcrumb .bc-sep{color:rgba(255,255,255,0.25);font-size:0.7rem;}
+.page-breadcrumb .bc-current{color:rgba(255,255,255,0.8);font-weight:500;}
+a.skip-to-content{position:absolute;top:-100%;left:16px;z-index:9999;padding:8px 16px;background:var(--purple);color:#fff;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;transition:top 0.3s ease;}
+a.skip-to-content:focus{top:12px;}
 </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
   <div class="scroll-progress"></div>
   <nav class="navbar" id="navbar">
     <div class="navbar-inner">
@@ -78,12 +86,15 @@
     </div>
   </nav>
 
-  <section class="page-hero">
+  <section class="page-hero" id="main-content">
     <div class="page-hero-grid"></div>
     <div class="page-hero-grid-bright"></div>
     <div class="page-hero-orb1 parallax-orb"></div>
     <div class="page-hero-orb2 parallax-orb"></div>
     <div class="page-hero-content">
+      <nav class="page-breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a><span class="bc-sep">/</span><span class="bc-current">Blog</span>
+      </nav>
       <h1>Insights Data & IA par <span class="gradient-text-animated">nos experts</span></h1>
       <p>Comprendre, structurer et réussir vos projets Data & IA.</p>
     </div>
@@ -114,7 +125,7 @@
           <p>Les étapes clés pour aligner vos projets Data avec les enjeux business, prioriser les cas d'usage et éviter les dérives.</p>
           <div class="article-footer">
             <div class="article-author">
-              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi">
+              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi" width="32" height="32">
               <div><span class="author-name">Ayoub Errarhbi</span><span class="author-role">Fondateur & Consultant Data & IA</span></div>
             </div>
             <span class="article-read">8 min</span>
@@ -129,7 +140,7 @@
           <p>Comment sécuriser qualité, conformité et adoption sans complexifier l'organisation ni freiner les projets.</p>
           <div class="article-footer">
             <div class="article-author">
-              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi">
+              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi" width="32" height="32">
               <div><span class="author-name">Ayoub Errarhbi</span><span class="author-role">Fondateur & Consultant Data & IA</span></div>
             </div>
             <span class="article-read">7 min</span>
@@ -144,7 +155,7 @@
           <p>Un cadre pragmatique pour identifier, cadrer et déployer vos premiers cas d'usage IA générative concrètement.</p>
           <div class="article-footer">
             <div class="article-author">
-              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi">
+              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi" width="32" height="32">
               <div><span class="author-name">Ayoub Errarhbi</span><span class="author-role">Fondateur & Consultant Data & IA</span></div>
             </div>
             <span class="article-read">9 min</span>
@@ -159,7 +170,7 @@
           <p>Comparaison des deux approches architecturales dominantes et critères de choix selon votre contexte et maturité.</p>
           <div class="article-footer">
             <div class="article-author">
-              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi">
+              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi" width="32" height="32">
               <div><span class="author-name">Ayoub Errarhbi</span><span class="author-role">Fondateur & Consultant Data & IA</span></div>
             </div>
             <span class="article-read">10 min</span>
@@ -175,7 +186,7 @@
           <p>Guide complet Microsoft Fabric : architecture, composants, avantages et cas d'usage pour unifier votre stack data.</p>
           <div class="article-footer">
             <div class="article-author">
-              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi">
+              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi" width="32" height="32">
               <div><span class="author-name">Ayoub Errarhbi</span><span class="author-role">Fondateur & Consultant Data & IA</span></div>
             </div>
             <span class="article-read">10 min</span>
@@ -191,7 +202,7 @@
           <p>Guide pratique pour les PME marocaines qui veulent exploiter leurs données. Budget, outils, méthodologie et quick wins.</p>
           <div class="article-footer">
             <div class="article-author">
-              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi">
+              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi" width="32" height="32">
               <div><span class="author-name">Ayoub Errarhbi</span><span class="author-role">Fondateur & Consultant Data & IA</span></div>
             </div>
             <span class="article-read">8 min</span>
@@ -207,7 +218,7 @@
           <p>Comparatif détaillé Databricks vs Snowflake : architecture, performance, pricing et cas d'usage pour bien choisir.</p>
           <div class="article-footer">
             <div class="article-author">
-              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi">
+              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi" width="32" height="32">
               <div><span class="author-name">Ayoub Errarhbi</span><span class="author-role">Fondateur & Consultant Data & IA</span></div>
             </div>
             <span class="article-read">9 min</span>
@@ -223,7 +234,7 @@
           <p>Comment concevoir un tableau de bord Power BI qui génère de la valeur. Structure, KPIs, design et erreurs à éviter.</p>
           <div class="article-footer">
             <div class="article-author">
-              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi">
+              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi" width="32" height="32">
               <div><span class="author-name">Ayoub Errarhbi</span><span class="author-role">Fondateur & Consultant Data & IA</span></div>
             </div>
             <span class="article-read">8 min</span>
@@ -239,7 +250,7 @@
           <p>Maîtrisez les formules DAX indispensables : CALCULATE, FILTER, ALL, DATEADD, SUMX et plus encore.</p>
           <div class="article-footer">
             <div class="article-author">
-              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi">
+              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi" width="32" height="32">
               <div><span class="author-name">Ayoub Errarhbi</span><span class="author-role">Fondateur & Consultant Data & IA</span></div>
             </div>
             <span class="article-read">12 min</span>
@@ -255,7 +266,7 @@
           <p>Comment réussir votre migration vers Azure au Maroc. Étapes, bonnes pratiques, coûts et pièges à éviter.</p>
           <div class="article-footer">
             <div class="article-author">
-              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi">
+              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi" width="32" height="32">
               <div><span class="author-name">Ayoub Errarhbi</span><span class="author-role">Fondateur & Consultant Data & IA</span></div>
             </div>
             <span class="article-read">9 min</span>
@@ -271,7 +282,7 @@
           <p>Comment améliorer la qualité de vos données : dimensions, outils, gouvernance et plan d'action concret.</p>
           <div class="article-footer">
             <div class="article-author">
-              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi">
+              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi" width="32" height="32">
               <div><span class="author-name">Ayoub Errarhbi</span><span class="author-role">Fondateur & Consultant Data & IA</span></div>
             </div>
             <span class="article-read">8 min</span>
@@ -287,7 +298,7 @@
           <p>Le rôle du consultant Data au Maroc : missions, compétences, avantages et comment choisir le bon partenaire.</p>
           <div class="article-footer">
             <div class="article-author">
-              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi">
+              <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi" width="32" height="32">
               <div><span class="author-name">Ayoub Errarhbi</span><span class="author-role">Fondateur & Consultant Data & IA</span></div>
             </div>
             <span class="article-read">7 min</span>

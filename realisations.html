@@ -40,9 +40,17 @@
 .sector-card h4{font-family:var(--font-heading);font-size:0.92rem;font-weight:600;color:var(--text-dark);}
 @media(max-width:1024px){.case-card,.case-card:nth-child(even){grid-template-columns:1fr;} .case-card:nth-child(even) .case-card-visual{order:0;} .sectors-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:768px){.sectors-grid{grid-template-columns:1fr;}}
+.page-breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.8rem;margin-bottom:16px;flex-wrap:wrap;}
+.page-breadcrumb a{color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.3s ease;}
+.page-breadcrumb a:hover{color:#fff;}
+.page-breadcrumb .bc-sep{color:rgba(255,255,255,0.25);font-size:0.7rem;}
+.page-breadcrumb .bc-current{color:rgba(255,255,255,0.8);font-weight:500;}
+a.skip-to-content{position:absolute;top:-100%;left:16px;z-index:9999;padding:8px 16px;background:var(--purple);color:#fff;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;transition:top 0.3s ease;}
+a.skip-to-content:focus{top:12px;}
 </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
   <div class="scroll-progress"></div>
   <nav class="navbar" id="navbar">
     <div class="navbar-inner">
@@ -59,11 +67,14 @@
     </div>
   </nav>
   
-  <section class="page-hero">
+  <section class="page-hero" id="main-content">
     <div class="page-hero-grid"></div>
     <div class="page-hero-orb1 parallax-orb"></div>
     <div class="page-hero-orb2 parallax-orb"></div>
     <div class="page-hero-content">
+      <nav class="page-breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a><span class="bc-sep">/</span><span class="bc-current">Réalisations</span>
+      </nav>
       <h1>Des projets Data & IA orientés <span class="gradient-text-animated">résultats concrets</span></h1>
       <p>Nous créons un impact mesurable sur la décision et la performance.</p>
       <div class="page-hero-actions">

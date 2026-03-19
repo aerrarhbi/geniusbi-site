@@ -65,9 +65,17 @@
 .history-section p{font-size:1rem;color:var(--text-body);line-height:1.75;margin-bottom:16px;}
 @media(max-width:1024px){.about-intro,.values-grid,.mission-grid{grid-template-columns:1fr 1fr;} .about-intro{gap:40px;}}
 @media(max-width:768px){.about-intro,.values-grid,.mission-grid{grid-template-columns:1fr;}}
+.page-breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.8rem;margin-bottom:16px;flex-wrap:wrap;}
+.page-breadcrumb a{color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.3s ease;}
+.page-breadcrumb a:hover{color:#fff;}
+.page-breadcrumb .bc-sep{color:rgba(255,255,255,0.25);font-size:0.7rem;}
+.page-breadcrumb .bc-current{color:rgba(255,255,255,0.8);font-weight:500;}
+a.skip-to-content{position:absolute;top:-100%;left:16px;z-index:9999;padding:8px 16px;background:var(--purple);color:#fff;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;transition:top 0.3s ease;}
+a.skip-to-content:focus{top:12px;}
 </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
   <div class="scroll-progress"></div>
   <nav class="navbar" id="navbar">
     <div class="navbar-inner">
@@ -84,12 +92,15 @@
     </div>
   </nav>
   
-  <section class="page-hero">
+  <section class="page-hero" id="main-content">
     <div class="page-hero-grid"></div>
     <div class="page-hero-grid-bright"></div>
     <div class="page-hero-orb1 parallax-orb"></div>
     <div class="page-hero-orb2 parallax-orb"></div>
     <div class="page-hero-content">
+      <nav class="page-breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a><span class="bc-sep">/</span><span class="bc-current">À propos</span>
+      </nav>
       <h1>Cabinet de conseil Data et IA pour sécuriser vos <span class="gradient-text-animated">décisions et investissements</span></h1>
       <p>Nous accompagnons les organisations dans la structuration, le déploiement et l'adoption de leurs projets Data & IA, pour obtenir des résultats concrets, mesurables et durables.</p>
       <div class="page-hero-actions">
