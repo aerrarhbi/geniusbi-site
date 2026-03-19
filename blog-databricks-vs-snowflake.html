@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Databricks vs Snowflake : quel choix pour votre plateforme data ? — GeniusBI Blog</title>
+  <meta name="description" content="Comparatif détaillé Databricks vs Snowflake : architecture, performance, pricing, cas d'usage.">
+  <meta name="keywords" content="Databricks vs Snowflake, comparatif plateforme data">
+  <meta name="author" content="GeniusBI">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://geniusbi.ma/blog-databricks-vs-snowflake">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Databricks vs Snowflake : quel choix pour votre plateforme data ? — GeniusBI Blog">
+  <meta property="og:description" content="Comparatif détaillé Databricks vs Snowflake : architecture, performance, pricing, cas d'usage.">
+  <meta property="og:url" content="https://geniusbi.ma/blog-databricks-vs-snowflake">
+  <meta property="og:image" content="https://geniusbi.ma/favicon-512.png">
+  <meta property="og:site_name" content="GeniusBI">
+  <meta property="og:locale" content="fr_MA">
+  <meta property="article:published_time" content="2026-03-06T00:00:00+01:00">
+  <meta property="article:author" content="GeniusBI">
+  <meta property="article:section" content="Data & IA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Databricks vs Snowflake : quel choix pour votre plateforme data ? — GeniusBI Blog">
+  <meta name="twitter:description" content="Comparatif détaillé Databricks vs Snowflake : architecture, performance, pricing, cas d'usage.">
+  <meta name="twitter:image" content="https://geniusbi.ma/favicon-512.png">
+  <meta name="twitter:site" content="@geniusbi_ai">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Databricks vs Snowflake : quel choix pour votre plateforme data ?","description":"Comparatif détaillé Databricks vs Snowflake : architecture, performance, pricing, cas d'usage.","url":"https://geniusbi.ma/blog-databricks-vs-snowflake","datePublished":"2026-03-06","dateModified":"2026-03-06","author":{"@type":"Organization","name":"GeniusBI","url":"https://geniusbi.ma"},"publisher":{"@type":"Organization","name":"GeniusBI","url":"https://geniusbi.ma","logo":{"@type":"ImageObject","url":"https://geniusbi.ma/favicon-512.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://geniusbi.ma/blog-databricks-vs-snowflake"},"inLanguage":"fr"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://geniusbi.ma/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://geniusbi.ma/blog"},{"@type":"ListItem","position":3,"name":"Databricks vs Snowflake : quel choix pour votre plateforme data ?"}]}</script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0B1120">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/magic-animations.css">
+  <style>
+.article-hero{max-width:800px;margin:0 auto;padding:120px 24px 40px;}
+.article-hero .back-link{display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;color:var(--gray-400);text-decoration:none;margin-bottom:24px;transition:color 0.3s ease;}
+.article-hero .back-link:hover{color:var(--purple);}
+.article-hero .back-link svg{width:16px;height:16px;}
+.article-hero .article-cat{display:inline-block;padding:5px 14px;border-radius:100px;font-family:var(--font-heading);font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--purple);background:var(--purple-soft);margin-bottom:16px;}
+.article-hero h1{font-family:var(--font-heading);font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:var(--text-dark);line-height:1.2;letter-spacing:-0.02em;margin-bottom:16px;}
+.article-hero .article-info{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.article-hero .author-block{display:flex;align-items:center;gap:10px;}
+.article-hero .author-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--teal));display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:0.75rem;font-weight:700;color:#fff;}
+.article-hero .author-name{font-family:var(--font-heading);font-size:0.85rem;font-weight:600;color:var(--text-dark);display:block;}
+.article-hero .author-role{font-size:0.72rem;color:var(--gray-400);display:block;}
+.article-hero .meta-sep{width:4px;height:4px;border-radius:50%;background:var(--gray-400);opacity:0.4;}
+.article-hero .meta-text{font-size:0.8rem;color:var(--gray-400);}
+.article-body{max-width:720px;margin:0 auto;padding:0 24px 60px;}
+.article-body p{font-size:0.95rem;color:var(--text-body);line-height:1.8;margin-bottom:20px;}
+.article-body h2{font-family:var(--font-heading);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin:40px 0 14px;letter-spacing:-0.01em;}
+.article-body h3{font-family:var(--font-heading);font-size:1.05rem;font-weight:600;color:var(--text-dark);margin:28px 0 10px;}
+.article-body strong{color:var(--text-dark);}
+</style>
+<style>.navbar{background:var(--navy) !important;}</style>
+</head>
+<body>
+  <div class="scroll-progress"></div>
+<body>
+  <div class="scroll-progress"></div>
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-logo"><svg viewBox="0 0 259.77 42.09" xmlns="http://www.w3.org/2000/svg"><g><path fill="#fff" d="M92,13.62h-4.35c-2.07-4.77-6.57-7.84-12.51-7.84-8.21,0-14.52,5.94-14.52,15.53s6.31,15.58,14.52,15.58c7.79,0,13.51-5.25,14.1-13.67h-15.58v-3.02h19.5v2.7c-.58,9.8-7.9,17.33-18.02,17.33s-18.34-7.79-18.34-18.92,7.95-18.92,18.34-18.92c7.95,0,14.2,4.19,16.85,11.24Z"/><path fill="#fff" d="M109.8,40.28c-8.21,0-14.2-5.72-14.2-14.89s5.88-14.89,14.2-14.89,13.67,6.04,13.67,13.41c0,1.17,0,1.91-.11,2.92h-24.01c.32,6.78,5.03,10.33,10.44,10.33,4.93,0,8.27-2.6,9.33-6.46h3.92c-1.32,5.46-5.99,9.59-13.25,9.59ZM99.36,23.79h20.35c.16-6.73-4.72-10.12-10.07-10.12s-9.86,3.39-10.28,10.12Z"/><path fill="#fff" d="M149.28,23.32c0-6.41-3.5-9.7-8.8-9.7s-9.17,3.39-9.17,10.44v15.79h-3.71V10.92h3.71v4.93c1.85-3.6,5.56-5.46,9.86-5.46,6.57,0,11.76,4.03,11.76,12.51v16.96h-3.66v-16.53Z"/><path fill="#fff" d="M157.65,2.7c0-1.59,1.22-2.7,2.7-2.7s2.7,1.11,2.7,2.7-1.22,2.76-2.7,2.76-2.7-1.17-2.7-2.76ZM158.5,10.92h3.71v28.93h-3.71V10.92Z"/><path fill="#fff" d="M193.05,39.85h-3.71v-5.09c-1.75,3.66-5.56,5.56-9.86,5.56-6.57,0-11.76-4.03-11.76-12.51V10.92h3.66v16.48c0,6.41,3.5,9.7,8.8,9.7s9.17-3.39,9.17-10.44v-15.74h3.71v28.93Z"/><path fill="#fff" d="M208.84,40.28c-6.57,0-11.18-3.29-11.66-8.58h3.82c.32,3.18,3.07,5.46,7.79,5.46,4.13,0,6.46-2.23,6.46-4.98,0-7.15-17.38-2.97-17.38-13.83,0-4.29,4.08-7.84,10.17-7.84s10.28,3.29,10.6,8.85h-3.71c-.21-3.23-2.6-5.67-7-5.67-3.87,0-6.31,2.07-6.31,4.61,0,7.84,17.12,3.66,17.28,13.88,0,4.66-4.08,8.11-10.07,8.11Z"/><path fill="#fff" d="M237.72,39.85h-14.73V3.02h14.04c7.79,0,11.92,4.29,11.92,9.49,0,4.45-2.7,7.15-6.25,8.43,3.92.69,7.1,4.61,7.1,9.01,0,5.62-4.56,9.91-12.08,9.91ZM236.51,7.95h-7.47v10.55h7.47c3.92,0,6.31-1.85,6.31-5.25s-2.38-5.3-6.31-5.3ZM236.98,23.42h-7.95v11.5h8.16c4.08,0,6.57-2.07,6.57-5.62s-2.76-5.88-6.78-5.88Z"/><path fill="#fff" d="M253.73,3.02h6.04v36.83h-6.04V3.02Z"/></g><rect fill="#7DBCDB" x="22.89" y="31.51" width="6.92" height="10.58" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="22.81" y="22.32" width="7.08" height="7.08" rx="3.54" ry="3.54"/><rect fill="#7DBCDB" x="11.37" y="13.47" width="7.08" height="7.08" rx="3.54" ry="3.54"/><rect fill="#8A65C4" x="0" y="27.15" width="6.92" height="14.94" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="11.45" y="22.67" width="6.92" height="19.42" rx="3.46" ry="3.46"/><rect fill="#7DBCDB" x="34.34" y="17.7" width="6.92" height="24.39" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="11.45" y=".78" width="6.92" height="10.58" rx="3.46" ry="3.46" transform="translate(29.82 12.14) rotate(-180)"/><rect fill="#7DBCDB" x="34.34" y=".78" width="6.92" height="14.94" rx="3.46" ry="3.46" transform="translate(75.6 16.5) rotate(-180)"/><rect fill="#7DBCDB" x="22.89" y=".78" width="6.92" height="19.42" rx="3.46" ry="3.46" transform="translate(52.71 20.98) rotate(180)"/><rect fill="#8A65C4" x="0" y=".78" width="6.92" height="24.39" rx="3.46" ry="3.46" transform="translate(6.92 25.95) rotate(180)"/></svg></a>
+      <ul class="navbar-links">
+        <li><a href="/about">À propos</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/technologies">Technologies</a></li>
+        <li><a href="/academy">Academy</a></li>
+        <li><a href="/blog" >Blog</a></li>
+        <li><a href="/contact" class="navbar-cta">Contactez-nous</a></li>
+      </ul>
+      <button type="button" class="navbar-toggle" aria-label="Menu"><span></span><span></span><span></span><svg class="close-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
+    </div>
+  </nav>
+
+  <div class="article-hero">
+    <a href="/blog" class="back-link"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg> Retour au blog</a>
+    <div class="article-cat">Architecture Data</div>
+    <h1>Databricks vs Snowflake : quel choix pour votre plateforme data ?</h1>
+    <div class="article-info">
+      <div class="author-block">
+        <img src="ayoub.jpg" class="author-avatar" alt="Ayoub Errarhbi">
+        <div><span class="author-name">Ayoub Errarhbi</span><span class="author-role">Fondateur & Consultant Data & IA</span></div>
+      </div>
+      <div class="meta-sep"></div>
+      <span class="meta-text">6 Mars 2026</span>
+      <div class="meta-sep"></div>
+      <span class="meta-text">9 min de lecture</span>
+    </div>
+  </div>
+
+  <div class="article-body">
+<p>Le choix entre Databricks et Snowflake est l'une des décisions architecturales les plus fréquentes pour les entreprises qui construisent leur plateforme data. Les deux solutions excellent, mais dans des registres très différents.</p>
+
+<h2>Databricks en bref</h2>
+<p>Databricks est une <strong>plateforme lakehouse</strong> fondée par les créateurs d'Apache Spark. Son architecture repose sur <strong>Delta Lake</strong>, un format de stockage ouvert qui combine les avantages du data lake (flexibilité, coût) et du data warehouse (performance, transactions ACID).</p>
+<p>Points forts : <strong>ML/AI natif</strong> avec MLflow intégré, <strong>traitement streaming</strong> avec Structured Streaming, <strong>Unity Catalog</strong> pour la gouvernance unifiée, et une communauté open source active. Databricks est le choix naturel pour les équipes data science et les workloads ML intensifs.</p>
+
+<h2>Snowflake en bref</h2>
+<p>Snowflake est un <strong>cloud data warehouse</strong> conçu pour la performance analytique. Son architecture unique sépare complètement le compute du storage, permettant un scaling indépendant de chaque couche.</p>
+<p>Points forts : <strong>performance SQL exceptionnelle</strong>, <strong>data sharing</strong> natif entre organisations, <strong>Snowpark</strong> pour le développement en Python/Java/Scala, et une facilité d'utilisation remarquable. Snowflake est idéal pour les équipes BI et les workloads SQL-first.</p>
+
+<h2>Comparatif point par point</h2>
+<p><strong>Performance SQL</strong> : Snowflake domine sur les requêtes SQL analytiques complexes. Databricks rattrape son retard avec Photon mais reste en dessous sur les workloads purement SQL. <strong>ML/AI</strong> : Databricks est largement en avance grâce à Spark, MLflow et les GPU clusters natifs. <strong>Pricing</strong> : Snowflake facture au crédit (consommation), Databricks facture en DBU. Les deux peuvent être coûteux sans optimisation.</p>
+<p><strong>Gouvernance</strong> : Unity Catalog (Databricks) et Horizon (Snowflake) offrent des capacités similaires. <strong>Écosystème</strong> : Snowflake a plus de connecteurs natifs BI. Databricks a un écosystème ML plus riche. <strong>Facilité</strong> : Snowflake est plus simple à prendre en main pour les équipes SQL.</p>
+
+<h2>Quand choisir Databricks ?</h2>
+<p>Choisissez Databricks si votre priorité est la <strong>data science et le ML</strong>, si vous avez des <strong>workloads streaming</strong>, si vous voulez une architecture <strong>lakehouse ouverte</strong> (Delta Lake, Apache Iceberg), ou si vos équipes sont <strong>techniques</strong> (Python, Spark, SQL avancé).</p>
+
+<h2>Quand choisir Snowflake ?</h2>
+<p>Choisissez Snowflake si votre priorité est l'<strong>analytics et la BI</strong>, si vous avez besoin de <strong>data sharing</strong> avec des partenaires, si vos équipes sont principalement <strong>SQL</strong>, ou si vous cherchez la <strong>simplicité</strong> d'administration.</p>
+
+<h2>Et Microsoft Fabric dans tout ça ?</h2>
+<p>Microsoft Fabric propose une <strong>troisième voie</strong> : une plateforme unifiée qui combine lakehouse, warehouse, data science et Power BI natif. Pour les organisations déjà dans l'écosystème Microsoft, Fabric offre l'avantage de l'intégration complète avec OneLake comme couche de stockage unique. C'est une option à considérer sérieusement, surtout pour les entreprises qui utilisent déjà Power BI et Azure.</p>
+  </div>
+
+  <div class="article-author-box" style="margin-left:auto;margin-right:auto;max-width:720px;padding-left:24px;padding-right:24px;">
+    <div style="max-width:720px;margin:0 auto 60px;padding:32px;background:var(--off-white);border-radius:16px;display:flex;gap:20px;align-items:center;width:100%;">
+      <div class="avatar-lg" style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--teal));display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:1rem;font-weight:700;color:#fff;flex-shrink:0;overflow:hidden;"><img src="ayoub.jpg" alt="Ayoub Errarhbi" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+      <div>
+        <h4 style="font-family:var(--font-heading);font-size:0.95rem;font-weight:600;color:var(--text-dark);">Ayoub Errarhbi</h4>
+        <p style="font-size:0.8rem;color:var(--text-body);line-height:1.5;margin-top:2px;">Fondateur & Consultant Data & IA chez GeniusBI. Passionné par la donnée, l'IA et l'impact business.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="cta-section">
+    <div class="cta-box border-beam reveal-scale">
+      <span class="section-tag">Prêt à avancer ?</span>
+      <h2>Besoin d'aide pour choisir ?</h2>
+      <p>Nos architectes data vous aident à choisir la plateforme adaptée à votre contexte.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn-primary">Parler à un expert <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        <a href="/contact" class="btn-outline">Démarrer un diagnostic</a>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/"><svg viewBox="0 0 259.77 42.09" xmlns="http://www.w3.org/2000/svg"><g><path fill="#fff" d="M92,13.62h-4.35c-2.07-4.77-6.57-7.84-12.51-7.84-8.21,0-14.52,5.94-14.52,15.53s6.31,15.58,14.52,15.58c7.79,0,13.51-5.25,14.1-13.67h-15.58v-3.02h19.5v2.7c-.58,9.8-7.9,17.33-18.02,17.33s-18.34-7.79-18.34-18.92,7.95-18.92,18.34-18.92c7.95,0,14.2,4.19,16.85,11.24Z"/><path fill="#fff" d="M109.8,40.28c-8.21,0-14.2-5.72-14.2-14.89s5.88-14.89,14.2-14.89,13.67,6.04,13.67,13.41c0,1.17,0,1.91-.11,2.92h-24.01c.32,6.78,5.03,10.33,10.44,10.33,4.93,0,8.27-2.6,9.33-6.46h3.92c-1.32,5.46-5.99,9.59-13.25,9.59ZM99.36,23.79h20.35c.16-6.73-4.72-10.12-10.07-10.12s-9.86,3.39-10.28,10.12Z"/><path fill="#fff" d="M149.28,23.32c0-6.41-3.5-9.7-8.8-9.7s-9.17,3.39-9.17,10.44v15.79h-3.71V10.92h3.71v4.93c1.85-3.6,5.56-5.46,9.86-5.46,6.57,0,11.76,4.03,11.76,12.51v16.96h-3.66v-16.53Z"/><path fill="#fff" d="M157.65,2.7c0-1.59,1.22-2.7,2.7-2.7s2.7,1.11,2.7,2.7-1.22,2.76-2.7,2.76-2.7-1.17-2.7-2.76ZM158.5,10.92h3.71v28.93h-3.71V10.92Z"/><path fill="#fff" d="M193.05,39.85h-3.71v-5.09c-1.75,3.66-5.56,5.56-9.86,5.56-6.57,0-11.76-4.03-11.76-12.51V10.92h3.66v16.48c0,6.41,3.5,9.7,8.8,9.7s9.17-3.39,9.17-10.44v-15.74h3.71v28.93Z"/><path fill="#fff" d="M208.84,40.28c-6.57,0-11.18-3.29-11.66-8.58h3.82c.32,3.18,3.07,5.46,7.79,5.46,4.13,0,6.46-2.23,6.46-4.98,0-7.15-17.38-2.97-17.38-13.83,0-4.29,4.08-7.84,10.17-7.84s10.28,3.29,10.6,8.85h-3.71c-.21-3.23-2.6-5.67-7-5.67-3.87,0-6.31,2.07-6.31,4.61,0,7.84,17.12,3.66,17.28,13.88,0,4.66-4.08,8.11-10.07,8.11Z"/><path fill="#fff" d="M237.72,39.85h-14.73V3.02h14.04c7.79,0,11.92,4.29,11.92,9.49,0,4.45-2.7,7.15-6.25,8.43,3.92.69,7.1,4.61,7.1,9.01,0,5.62-4.56,9.91-12.08,9.91ZM236.51,7.95h-7.47v10.55h7.47c3.92,0,6.31-1.85,6.31-5.25s-2.38-5.3-6.31-5.3ZM236.98,23.42h-7.95v11.5h8.16c4.08,0,6.57-2.07,6.57-5.62s-2.76-5.88-6.78-5.88Z"/><path fill="#fff" d="M253.73,3.02h6.04v36.83h-6.04V3.02Z"/></g><rect fill="#7DBCDB" x="22.89" y="31.51" width="6.92" height="10.58" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="22.81" y="22.32" width="7.08" height="7.08" rx="3.54" ry="3.54"/><rect fill="#7DBCDB" x="11.37" y="13.47" width="7.08" height="7.08" rx="3.54" ry="3.54"/><rect fill="#8A65C4" x="0" y="27.15" width="6.92" height="14.94" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="11.45" y="22.67" width="6.92" height="19.42" rx="3.46" ry="3.46"/><rect fill="#7DBCDB" x="34.34" y="17.7" width="6.92" height="24.39" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="11.45" y=".78" width="6.92" height="10.58" rx="3.46" ry="3.46" transform="translate(29.82 12.14) rotate(-180)"/><rect fill="#7DBCDB" x="34.34" y=".78" width="6.92" height="14.94" rx="3.46" ry="3.46" transform="translate(75.6 16.5) rotate(-180)"/><rect fill="#7DBCDB" x="22.89" y=".78" width="6.92" height="19.42" rx="3.46" ry="3.46" transform="translate(52.71 20.98) rotate(180)"/><rect fill="#8A65C4" x="0" y=".78" width="6.92" height="24.39" rx="3.46" ry="3.46" transform="translate(6.92 25.95) rotate(180)"/></svg></a>
+        <p>Cabinet de conseil Data & IA basé à Casablanca. Nous guidons les organisations de la stratégie à l'industrialisation.</p>
+      </div>
+      <div class="footer-col"><h4>Nos services</h4><ul><li><a href="/services#conseil">Conseil & Stratégie</a></li><li><a href="/services#gouvernance">Gouvernance</a></li><li><a href="/services#architecture">Plateformes Data</a></li><li><a href="/services#acceleration">Accélération IA</a></li></ul></div>
+      <div class="footer-col"><h4>GeniusBI</h4><ul><li><a href="/about">À propos</a></li><li><a href="/services">Nos expertises</a></li><li><a href="/technologies">Technologies</a></li></ul></div>
+      <div class="footer-col"><h4>Academy</h4><ul><li><a href="/academy">L'Academy</a></li><li><a href="/academy">Formations</a></li><li><a href="/blog">Blog & Actualités</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="/contact">Contactez-nous</a></li><li><a href="/rejoindre">Rejoindre l'équipe</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>GeniusBI &copy; 2026. Tous droits réservés.</p>
+      <div class="footer-social">
+        <a href="https://linkedin.com/company/geniusbi" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://x.com/geniusbi_ai?s=21" target="_blank" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://youtube.com/@geniusbi_ai?si=AAAgzUwq5IsjoJEh" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/magic-animations.js"></script>
+  
+</body>
+  <script src="js/main.js"></script>
+  <script src="js/magic-animations.js"></script>
+</body>
+</html>
