@@ -78,6 +78,12 @@ body {
 .reveal-right.visible { opacity:1; transform:translateX(0); }
 
 /* ========================================
+   SKIP TO CONTENT (accessibility)
+   ======================================== */
+a.skip-to-content{position:absolute;top:-100%;left:16px;z-index:9999;padding:8px 16px;background:var(--purple);color:#fff;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;transition:top 0.3s ease;}
+a.skip-to-content:focus{top:12px;}
+
+/* ========================================
    NAVBAR
    ======================================== */
 .navbar {
