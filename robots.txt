@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /realisations
 
 Sitemap: https://geniusbi.ma/sitemap.xml
