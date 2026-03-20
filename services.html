@@ -29,12 +29,24 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#0B1120">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/shared.css">
   <link rel="stylesheet" href="css/magic-animations.css">
   <link rel="stylesheet" href="css/services.css">
+  <style>
+a.skip-to-content{position:absolute;top:-100%;left:16px;z-index:9999;padding:8px 16px;background:var(--purple);color:#fff;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;transition:top 0.3s ease;}
+a.skip-to-content:focus{top:12px;}
+.page-breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.8rem;margin-bottom:16px;flex-wrap:wrap;}
+.page-breadcrumb a{color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.3s ease;}
+.page-breadcrumb a:hover{color:#fff;}
+.page-breadcrumb .bc-sep{color:rgba(255,255,255,0.25);font-size:0.7rem;}
+.page-breadcrumb .bc-current{color:rgba(255,255,255,0.8);font-weight:500;}
+.page-hero-content h1, .page-hero-content p, .page-hero-actions{opacity:1!important;transform:none!important;}
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>

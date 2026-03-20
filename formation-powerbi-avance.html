@@ -30,6 +30,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#0B1120">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
@@ -134,10 +136,9 @@ a.skip-to-content:focus{top:12px;}
 
   <section class="formation-hero">
     <div class="formation-hero-inner">
-      <div class="formation-top-row">
-        <a href="/academy" class="formation-back"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg> Retour à l'Academy</a>
-        <span class="formation-badge">BI & Dataviz</span>
-      </div>
+      <nav class="page-breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a><span class="bc-sep">/</span><a href="/academy">Academy</a><span class="bc-sep">/</span><span class="bc-current">Power BI Avancé</span>
+      </nav>
       <h1>Power BI Avancé</h1>
       <p class="sub">Passez au niveau supérieur : DAX avancé, modélisation complexe, RLS, déploiement et gouvernance des rapports en entreprise.</p>
       <div class="formation-meta">
