@@ -37,114 +37,9 @@
 /* Visual side — larger */
 .svc-visual{flex:1;display:flex;align-items:center;justify-content:center;min-height:520px;position:relative;}
 
-/* ===========================
-   LIQUID GLASS — Shared
-   =========================== */
-.glass-scene{position:relative;width:300px;height:320px;}
-.orb{position:absolute;border-radius:50%;filter:blur(2px);animation:orbFloat 6s ease infinite;}
-.orb.p{background:var(--purple);}
-.orb.t{background:var(--teal);}
-@keyframes orbFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-20px);}}
-
-/* ===========================
-   3: LIQUID MORPH (Accélération IA)
-   =========================== */
-.liquid-morph{position:relative;width:320px;height:320px;animation:morphFloat 8s ease infinite;}
-.morph-outer{position:absolute;inset:0;border-radius:60% 40% 50% 50% / 50% 60% 40% 50%;background:linear-gradient(135deg,rgba(138,101,196,0.18),rgba(125,188,219,0.2));backdrop-filter:blur(10px);border:1.5px solid rgba(138,101,196,0.15);box-shadow:0 16px 48px rgba(26,31,54,0.1),inset 0 0 40px rgba(138,101,196,0.04);animation:morphShape 10s ease infinite;}
-.morph-inner{position:absolute;inset:40px;border-radius:50% 40% 60% 40% / 40% 50% 40% 60%;background:rgba(138,101,196,0.12);backdrop-filter:blur(6px);border:1px solid rgba(138,101,196,0.2);animation:morphShape 10s ease 3s infinite reverse;}
-.morph-refract{position:absolute;width:60%;height:35%;top:20%;left:15%;border-radius:50%;background:linear-gradient(180deg,rgba(138,101,196,0.2),transparent);filter:blur(5px);}
-.morph-center{position:absolute;inset:90px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;}
-.morph-center svg{width:42px;height:42px;color:var(--purple);opacity:0.8;}
-@keyframes morphShape{0%,100%{border-radius:60% 40% 50% 50% / 50% 60% 40% 50%;}25%{border-radius:40% 60% 40% 60% / 60% 40% 60% 40%;}50%{border-radius:50% 50% 60% 40% / 40% 50% 50% 60%;}75%{border-radius:40% 50% 40% 60% / 60% 50% 60% 40%;}}
-@keyframes morphFloat{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-18px) rotate(2deg);}}
-
-/* ===========================
-   1: FROSTED DASHBOARD (Conseil)
-   =========================== */
-.glass-dash{position:relative;width:360px;height:340px;}
-.gdash-card{position:absolute;border-radius:14px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.1);padding:14px 16px;animation:dashFloat 6s ease infinite;}
-.gdash-card h5{font-size:0.6rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;}
-.gdash-card .gdash-val{font-family:'Outfit',var(--font-heading);font-size:1.7rem;font-weight:700;letter-spacing:-0.03em;}
-.gdash-card .gdash-bar{height:3px;border-radius:2px;margin-top:10px;opacity:0.45;}
-.gdash-card:nth-child(1){width:145px;top:0;left:0;background:var(--off-white);box-shadow:0 10px 32px rgba(26,31,54,0.1);border:1px solid rgba(138,101,196,0.1);}
-.gdash-card:nth-child(1) .gdash-val{color:var(--purple-light);}
-.gdash-card:nth-child(2){width:155px;top:0;right:0;background:var(--off-white);box-shadow:0 8px 28px rgba(26,31,54,0.06);border:1px solid var(--gray-100);animation-delay:0.8s;}
-.gdash-card:nth-child(2) .gdash-val{color:var(--teal);}
-.gdash-card:nth-child(3){width:210px;bottom:20px;left:40px;background:var(--off-white);box-shadow:0 8px 28px rgba(26,31,54,0.06);border:1px solid var(--gray-100);animation-delay:1.5s;padding:16px 18px;}
-.gdash-card:nth-child(3) .gdash-val{color:var(--text-dark);font-size:1.1rem;}
-.gdash-mini-bars{display:flex;gap:4px;align-items:flex-end;height:30px;margin-top:8px;}
-.gdash-mini-bars span{width:8px;border-radius:3px 3px 0 0;opacity:0.5;}
-@keyframes dashFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
-
-/* ===========================
-   2: GLASS SHIELD (Gouvernance)
-   =========================== */
-.glass-shield{position:relative;width:300px;height:330px;animation:shieldFloat 6s ease infinite;}
-.gshield-main{position:absolute;width:200px;height:240px;top:20px;left:30px;border-radius:100px 100px 24px 24px;backdrop-filter:blur(14px);background:linear-gradient(180deg,rgba(138,101,196,0.2),rgba(125,188,219,0.08));border:1.5px solid rgba(138,101,196,0.12);box-shadow:0 12px 36px rgba(26,31,54,0.1);}
-.gshield-inner{position:absolute;width:150px;height:185px;top:50px;left:55px;border-radius:75px 75px 18px 18px;backdrop-filter:blur(8px);background:rgba(138,101,196,0.14);border:1px solid rgba(138,101,196,0.22);}
-.gshield-icon{position:absolute;top:105px;left:50%;transform:translateX(-50%);}
-.gshield-icon svg{width:44px;height:44px;color:var(--purple);opacity:0.85;}
-.gshield-badge{position:absolute;top:5px;right:10px;width:50px;height:50px;border-radius:50%;backdrop-filter:blur(10px);background:var(--teal-soft);border:1px solid rgba(125,188,219,0.15);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,0.12);animation:badgePulse 3s ease infinite;}
-.gshield-badge svg{width:22px;height:22px;color:var(--teal);opacity:0.85;}
-@keyframes shieldFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-18px);}}
-@keyframes badgePulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
-
-/* ===========================
-   3: LIQUID BUBBLE (Accélération IA)
-   =========================== */
-.liquid-bubble{position:relative;width:200px;height:200px;animation:bubbleFloat 7s ease infinite;}
-.bubble-main{position:absolute;inset:0;border-radius:50%;background:linear-gradient(135deg,rgba(138,101,196,0.12),rgba(125,188,219,0.12) 40%,rgba(138,101,196,0.1));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1.5px solid rgba(255,255,255,0.12);box-shadow:inset 0 -20px 40px rgba(138,101,196,0.1),inset 0 20px 40px rgba(125,188,219,0.04),0 20px 60px rgba(0,0,0,0.15),0 0 80px rgba(138,101,196,0.12);}
-.bubble-refract{position:absolute;width:80px;height:50px;top:30px;left:40px;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,0.15),transparent);filter:blur(4px);animation:refractShift 5s ease infinite;}
-.bubble-refract2{position:absolute;width:40px;height:30px;bottom:50px;right:40px;border-radius:50%;background:rgba(125,188,219,0.1);filter:blur(6px);animation:refractShift 6s ease 1s infinite;}
-.bubble-inner{position:absolute;inset:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
-.bubble-inner svg{width:40px;height:40px;color:rgba(255,255,255,0.3);}
-.bubble-mini{position:absolute;border-radius:50%;background:linear-gradient(135deg,rgba(138,101,196,0.1),rgba(125,188,219,0.12));backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.08);box-shadow:0 8px 24px rgba(0,0,0,0.1);}
-.bubble-mini:nth-of-type(5){width:50px;height:50px;top:-10px;right:-20px;animation:bubbleFloat 5s ease 1s infinite;}
-.bubble-mini:nth-of-type(6){width:35px;height:35px;bottom:-5px;left:-15px;animation:bubbleFloat 6s ease 0.5s infinite;}
-@keyframes bubbleFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
-@keyframes refractShift{0%,100%{transform:translateX(0) scale(1);opacity:0.8;}50%{transform:translateX(5px) scale(1.1);opacity:1;}}
-
-/* ===========================
-   4: LIQUID PANEL STACK (Architecture)
-   =========================== */
-.liquid-panels{position:relative;width:340px;height:380px;transform-style:preserve-3d;transform:rotateX(8deg) rotateY(-5deg);}
-.lpanel{position:absolute;border-radius:18px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1.5px solid rgba(138,101,196,0.1);box-shadow:0 10px 32px rgba(26,31,54,0.1);display:flex;flex-direction:column;justify-content:flex-end;padding:16px 18px;}
-.lpanel span{font-size:0.68rem;color:var(--text-body);font-weight:500;letter-spacing:0.03em;}
-.lpanel .lbar{height:4px;border-radius:2px;margin-top:8px;opacity:0.6;}
-.lpanel:nth-child(1){width:260px;height:88px;bottom:0;left:15px;background:var(--off-white);animation:panelFloat 5s ease infinite;}
-.lpanel:nth-child(1) .lbar{background:var(--teal);width:70%;}
-.lpanel:nth-child(2){width:248px;height:88px;bottom:72px;left:5px;background:rgba(138,101,196,0.08);animation:panelFloat 5s ease 0.6s infinite;}
-.lpanel:nth-child(2) .lbar{background:var(--purple);width:55%;}
-.lpanel:nth-child(3){width:236px;height:88px;bottom:144px;left:25px;background:var(--off-white);animation:panelFloat 5s ease 1.2s infinite;}
-.lpanel:nth-child(3) .lbar{background:var(--teal);width:85%;}
-.lpanel:nth-child(4){width:224px;height:88px;bottom:216px;left:35px;background:rgba(138,101,196,0.08);animation:panelFloat 5s ease 1.8s infinite;}
-.lpanel:nth-child(4) .lbar{background:var(--purple);width:40%;}
-@keyframes panelFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-16px);}}
-
-/* ===========================
-   5: HOLOGRAPHIC CARD (Formation)
-   =========================== */
-.holo-card{position:relative;width:300px;height:370px;border-radius:22px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);background:var(--off-white);border:1.5px solid var(--gray-100);box-shadow:0 12px 36px rgba(26,31,54,0.06);overflow:hidden;animation:holoFloat 6s ease infinite;}
-.holo-card::before{content:'';position:absolute;inset:-2px;border-radius:24px;background:conic-gradient(from 0deg,var(--purple),var(--teal),var(--purple-light),var(--teal),var(--purple));opacity:0.25;animation:holoSpin 6s linear infinite;z-index:-1;}
-.holo-card::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.08),transparent);animation:holoSheen 4s ease infinite;}
-.holo-content{padding:24px;height:100%;display:flex;flex-direction:column;justify-content:flex-end;position:relative;z-index:2;}
-.holo-icon{width:52px;height:52px;border-radius:15px;background:rgba(138,101,196,0.1);backdrop-filter:blur(4px);border:1px solid rgba(138,101,196,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:auto;}
-.holo-icon svg{width:24px;height:24px;color:var(--purple-light);}
-.holo-content h4{font-size:0.95rem;color:var(--text-dark);margin-bottom:4px;}
-.holo-content p{font-size:0.72rem;color:var(--text-body);line-height:1.5;}
-.holo-dots{display:flex;gap:5px;margin-top:12px;}
-.holo-dots span{width:6px;height:6px;border-radius:50%;opacity:0.5;}
-.holo-dots span:nth-child(odd){background:var(--purple);}
-.holo-dots span:nth-child(even){background:var(--teal);}
-@keyframes holoFloat{0%,100%{transform:translateY(0) rotateX(0);}50%{transform:translateY(-16px) rotateX(2deg);}}
-@keyframes holoSpin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
-@keyframes holoSheen{0%{left:-100%;}100%{left:200%;}}
-
-/* ===========================
-   GLASS SCENE — Dark container
-   =========================== */
-.svc-glass{width:100%;height:100%;min-height:320px;background:transparent;border-radius:20px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
-.svc-glass::before{display:none;}
+/* Service images */
+.svc-img{width:100%;max-width:420px;height:auto;object-fit:contain;animation:svcImgFloat 6s ease infinite;filter:drop-shadow(0 20px 40px rgba(138,101,196,0.15)) drop-shadow(0 8px 16px rgba(0,0,0,0.1));}
+@keyframes svcImgFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-18px);}}
 
 /* ===========================
    GROWTH SECTION
@@ -171,5 +66,5 @@
 .method-process-step p{font-size:0.75rem;color:rgba(255,255,255,0.35);line-height:1.45;}
 
 /* RESPONSIVE */
-@media(max-width:1024px){.svc-row{gap:48px;} .svc-visual{min-height:340px;} .growth-grid,.method-process-track{grid-template-columns:1fr 1fr;}}
-@media(max-width:768px){.svc-row,.svc:nth-child(even) .svc-row{flex-direction:column;} .svc-visual{min-height:300px;} .svc{padding:60px 24px 40px;} .svc-subs{grid-template-columns:1fr;} .growth-grid,.method-process-track{grid-template-columns:1fr;} .method-process-track::before{display:none;}}
+@media(max-width:1024px){.svc-row{gap:48px;} .svc-visual{min-height:340px;} .svc-img{max-width:340px;} .growth-grid,.method-process-track{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.svc-row,.svc:nth-child(even) .svc-row{flex-direction:column;} .svc-visual{min-height:auto;} .svc{padding:60px 24px 40px;} .svc-img{max-width:280px;} .svc-subs{grid-template-columns:1fr;} .growth-grid,.method-process-track{grid-template-columns:1fr;} .method-process-track::before{display:none;}}
