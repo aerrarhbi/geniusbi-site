@@ -81,6 +81,11 @@
       "sourceType": "github",
       "computedHash": "c64b93f5351acef98be341d2158394a09f39e9be7539452b07925e79baf5c3a3"
     },
+    "remotion-best-practices": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "computedHash": "2f673b7710813ac07c71c0a54657f740078aec6585f15edf351494499e1f9ac3"
+    },
     "schema-markup-generator": {
       "source": "aaron-he-zhu/seo-geo-claude-skills",
       "sourceType": "github",
