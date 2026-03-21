@@ -1,0 +1,68 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7DBCDB"/>
+      <stop offset="100%" stop-color="#8A65C4"/>
+    </linearGradient>
+    <linearGradient id="gfill" x1="256" y1="60" x2="256" y2="460" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7DBCDB" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#8A65C4" stop-opacity="0.08"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="20" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="shieldClip">
+      <path d="M256 58 L418 118 L418 282 C418 372 338 432 256 460 C174 432 94 372 94 282 L94 118 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Shield body fill -->
+  <path d="M256 58 L418 118 L418 282 C418 372 338 432 256 460 C174 432 94 372 94 282 L94 118 Z"
+        fill="url(#gfill)"/>
+
+  <!-- Data mesh nodes (hexagonal layout) inside shield -->
+  <!-- Row 1 -->
+  <circle cx="256" cy="148" r="5" fill="#7DBCDB" opacity="0.75"/>
+  <!-- Row 2 -->
+  <circle cx="200" cy="202" r="5" fill="#8A65C4" opacity="0.65"/>
+  <circle cx="312" cy="202" r="5" fill="#8A65C4" opacity="0.65"/>
+  <!-- Row 3 -->
+  <circle cx="170" cy="266" r="5" fill="#7DBCDB" opacity="0.55"/>
+  <circle cx="256" cy="266" r="5" fill="#7DBCDB" opacity="0.85"/>
+  <circle cx="342" cy="266" r="5" fill="#7DBCDB" opacity="0.55"/>
+  <!-- Row 4 -->
+  <circle cx="200" cy="330" r="5" fill="#8A65C4" opacity="0.5"/>
+  <circle cx="312" cy="330" r="5" fill="#8A65C4" opacity="0.5"/>
+  <!-- Row 5 -->
+  <circle cx="256" cy="384" r="5" fill="#7DBCDB" opacity="0.4"/>
+
+  <!-- Mesh lines -->
+  <line x1="256" y1="148" x2="200" y2="202" stroke="url(#g)" stroke-width="1.5" opacity="0.3"/>
+  <line x1="256" y1="148" x2="312" y2="202" stroke="url(#g)" stroke-width="1.5" opacity="0.3"/>
+  <line x1="200" y1="202" x2="170" y2="266" stroke="url(#g)" stroke-width="1.5" opacity="0.25"/>
+  <line x1="200" y1="202" x2="256" y2="266" stroke="url(#g)" stroke-width="1.5" opacity="0.35"/>
+  <line x1="312" y1="202" x2="256" y2="266" stroke="url(#g)" stroke-width="1.5" opacity="0.35"/>
+  <line x1="312" y1="202" x2="342" y2="266" stroke="url(#g)" stroke-width="1.5" opacity="0.25"/>
+  <line x1="170" y1="266" x2="200" y2="330" stroke="url(#g)" stroke-width="1.5" opacity="0.2"/>
+  <line x1="256" y1="266" x2="200" y2="330" stroke="url(#g)" stroke-width="1.5" opacity="0.3"/>
+  <line x1="256" y1="266" x2="312" y2="330" stroke="url(#g)" stroke-width="1.5" opacity="0.3"/>
+  <line x1="342" y1="266" x2="312" y2="330" stroke="url(#g)" stroke-width="1.5" opacity="0.2"/>
+  <line x1="200" y1="330" x2="256" y2="384" stroke="url(#g)" stroke-width="1.5" opacity="0.2"/>
+  <line x1="312" y1="330" x2="256" y2="384" stroke="url(#g)" stroke-width="1.5" opacity="0.2"/>
+
+  <!-- Shield outline -->
+  <path d="M256 58 L418 118 L418 282 C418 372 338 432 256 460 C174 432 94 372 94 282 L94 118 Z"
+        stroke="url(#g)" stroke-width="3"/>
+
+  <!-- Center glow -->
+  <circle cx="256" cy="266" r="32" fill="#7DBCDB" opacity="0.08" filter="url(#softglow)"/>
+
+  <!-- Checkmark -->
+  <path d="M220 265 L245 292 L296 230" stroke="url(#g)" stroke-width="6"
+        stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+</svg>

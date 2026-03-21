@@ -1,0 +1,71 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="512" x2="512" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8A65C4"/>
+      <stop offset="100%" stop-color="#7DBCDB"/>
+    </linearGradient>
+    <linearGradient id="fill" x1="80" y1="420" x2="430" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8A65C4" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#7DBCDB" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="bigglow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background area under curve -->
+  <path d="M80 420 C140 390 180 340 230 290 C270 250 310 200 370 150 L430 110 L430 420 Z"
+        fill="url(#fill)"/>
+
+  <!-- Grid lines (subtle) -->
+  <line x1="80" y1="420" x2="430" y2="420" stroke="url(#g)" stroke-width="1" opacity="0.12"/>
+  <line x1="80" y1="350" x2="430" y2="350" stroke="url(#g)" stroke-width="1" opacity="0.08"/>
+  <line x1="80" y1="280" x2="430" y2="280" stroke="url(#g)" stroke-width="1" opacity="0.08"/>
+  <line x1="80" y1="210" x2="430" y2="210" stroke="url(#g)" stroke-width="1" opacity="0.08"/>
+  <line x1="80" y1="140" x2="430" y2="140" stroke="url(#g)" stroke-width="1" opacity="0.08"/>
+  <line x1="80" y1="420" x2="80"  y2="90"  stroke="url(#g)" stroke-width="1" opacity="0.12"/>
+  <line x1="165" y1="420" x2="165" y2="90" stroke="url(#g)" stroke-width="1" opacity="0.06"/>
+  <line x1="250" y1="420" x2="250" y2="90" stroke="url(#g)" stroke-width="1" opacity="0.06"/>
+  <line x1="335" y1="420" x2="335" y2="90" stroke="url(#g)" stroke-width="1" opacity="0.06"/>
+  <line x1="430" y1="420" x2="430" y2="90" stroke="url(#g)" stroke-width="1" opacity="0.08"/>
+
+  <!-- Ascending curve path -->
+  <path d="M80 420 C140 390 180 340 230 290 C270 250 310 200 370 150 L430 110"
+        stroke="url(#g)" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Milestone nodes along path -->
+  <!-- Node 1: (80, 420) -->
+  <circle cx="80"  cy="420" r="11" fill="#8A65C4" filter="url(#glow)" opacity="0.75"/>
+  <circle cx="80"  cy="420" r="5"  fill="white" opacity="0.85"/>
+  <!-- Node 2: (180, 350) approx on curve -->
+  <circle cx="180" cy="348" r="13" fill="#8A65C4" filter="url(#glow)" opacity="0.8"/>
+  <circle cx="180" cy="348" r="6"  fill="white" opacity="0.9"/>
+  <!-- Node 3: (280, 258) approx on curve -->
+  <circle cx="280" cy="258" r="15" fill="#7DBCDB" filter="url(#glow)" opacity="0.85"/>
+  <circle cx="280" cy="258" r="7"  fill="white" opacity="0.9"/>
+  <!-- Node 4: (380, 145) approx on curve -->
+  <circle cx="378" cy="147" r="17" fill="#7DBCDB" filter="url(#bigglow)"/>
+  <circle cx="378" cy="147" r="8"  fill="white" opacity="0.95"/>
+
+  <!-- Vertical drop lines from nodes to baseline -->
+  <line x1="180" y1="348" x2="180" y2="420" stroke="url(#g)" stroke-width="1" stroke-dasharray="4 4" opacity="0.25"/>
+  <line x1="280" y1="258" x2="280" y2="420" stroke="url(#g)" stroke-width="1" stroke-dasharray="4 4" opacity="0.2"/>
+  <line x1="378" y1="147" x2="378" y2="420" stroke="url(#g)" stroke-width="1" stroke-dasharray="4 4" opacity="0.18"/>
+
+  <!-- Star / spark at top node -->
+  <g transform="translate(378, 100)" filter="url(#glow)">
+    <line x1="0" y1="-18" x2="0"  y2="18"  stroke="#7DBCDB" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="-18" y1="0" x2="18" y2="0"   stroke="#7DBCDB" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="-13" y1="-13" x2="13" y2="13" stroke="#7DBCDB" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+    <line x1="13" y1="-13" x2="-13" y2="13" stroke="#7DBCDB" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+  <!-- Upward arrow at end of curve -->
+  <line x1="430" y1="110" x2="430" y2="70" stroke="url(#g)" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+  <polygon points="430,62 422,82 438,82" fill="url(#g)" opacity="0.6"/>
+</svg>

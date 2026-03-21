@@ -1,0 +1,58 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7DBCDB"/>
+      <stop offset="100%" stop-color="#8A65C4"/>
+    </linearGradient>
+    <linearGradient id="gr" x1="512" y1="0" x2="0" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8A65C4"/>
+      <stop offset="100%" stop-color="#7DBCDB"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer ring -->
+  <circle cx="256" cy="256" r="205" stroke="url(#g)" stroke-width="1.5" opacity="0.15"/>
+  <!-- Mid ring -->
+  <circle cx="256" cy="256" r="150" stroke="url(#g)" stroke-width="2" opacity="0.28"/>
+  <!-- Inner ring -->
+  <circle cx="256" cy="256" r="95" stroke="url(#g)" stroke-width="2.5" opacity="0.5"/>
+  <!-- Core ring -->
+  <circle cx="256" cy="256" r="42" stroke="url(#g)" stroke-width="3" opacity="0.75" fill="#8A65C4" fill-opacity="0.08"/>
+
+  <!-- Crosshair — split at center -->
+  <line x1="51" y1="256" x2="214" y2="256" stroke="url(#g)" stroke-width="1.5" opacity="0.25"/>
+  <line x1="298" y1="256" x2="461" y2="256" stroke="url(#g)" stroke-width="1.5" opacity="0.25"/>
+  <line x1="256" y1="51" x2="256" y2="214" stroke="url(#g)" stroke-width="1.5" opacity="0.25"/>
+  <line x1="256" y1="298" x2="256" y2="461" stroke="url(#g)" stroke-width="1.5" opacity="0.25"/>
+
+  <!-- Accent dots at cardinal points on 150 ring -->
+  <circle cx="256" cy="106" r="8" fill="#7DBCDB" filter="url(#glow)"/>
+  <circle cx="406" cy="256" r="8" fill="#7DBCDB" filter="url(#glow)"/>
+  <circle cx="256" cy="406" r="6" fill="#8A65C4" opacity="0.65"/>
+  <circle cx="106" cy="256" r="6" fill="#8A65C4" opacity="0.65"/>
+
+  <!-- Small tick marks on outer ring -->
+  <circle cx="256" cy="51" r="4" fill="#7DBCDB" opacity="0.4"/>
+  <circle cx="461" cy="256" r="4" fill="#8A65C4" opacity="0.4"/>
+  <circle cx="256" cy="461" r="4" fill="#7DBCDB" opacity="0.3"/>
+  <circle cx="51" cy="256" r="4" fill="#8A65C4" opacity="0.3"/>
+
+  <!-- Strategic arrow from upper-left toward center -->
+  <line x1="108" y1="108" x2="214" y2="214" stroke="url(#gr)" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
+  <!-- Arrowhead at (214,214) pointing toward bottom-right -->
+  <polygon points="214,214 194,207 207,194" fill="url(#gr)" filter="url(#glow)"/>
+
+  <!-- Center soft glow -->
+  <circle cx="256" cy="256" r="26" fill="#7DBCDB" opacity="0.1" filter="url(#softglow)"/>
+  <!-- Center dot -->
+  <circle cx="256" cy="256" r="18" fill="url(#g)" filter="url(#glow)"/>
+  <circle cx="256" cy="256" r="9" fill="white" opacity="0.95"/>
+</svg>
