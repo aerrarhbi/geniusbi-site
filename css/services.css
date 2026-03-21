@@ -35,7 +35,11 @@
 .svc-sub p{font-size:0.76rem;color:var(--text-body);line-height:1.5;margin-top:0;}
 
 /* Visual side — larger */
-.svc-visual{flex:1;display:flex;align-items:center;justify-content:center;min-height:520px;position:relative;}
+.svc-visual{flex:1;display:flex;align-items:center;justify-content:center;min-height:520px;position:relative;overflow:visible;}
+
+/* Parallax entry — slide from outside (horizontal) */
+.svc-visual.blur-fade:not(.visible){transform:translateX(60px) scale(0.94);}
+.svc:nth-child(even) .svc-visual.blur-fade:not(.visible){transform:translateX(-60px) scale(0.94);}
 
 /* Service images */
 .svc-img{width:100%;max-width:420px;height:auto;object-fit:contain;animation:svcImgFloat 6s ease infinite;filter:drop-shadow(0 20px 40px rgba(138,101,196,0.15)) drop-shadow(0 8px 16px rgba(0,0,0,0.1));}

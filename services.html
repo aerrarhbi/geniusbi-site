@@ -323,6 +323,43 @@ a.skip-to-content:focus{top:12px;}
     window.addEventListener('scroll', () => {
       if (tabsNav) tabsNav.classList.toggle('has-shadow', window.scrollY > 400);
     });
+
+    // === Scroll parallax on service visuals ===
+    (function () {
+      const visuals = Array.from(document.querySelectorAll('.svc-visual'));
+      const live = new Set();
+
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            setTimeout(() => {
+              if (!live.has(e.target)) {
+                live.add(e.target);
+                e.target.style.transition = 'none';
+                e.target.style.willChange = 'transform';
+              }
+            }, 1100);
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      visuals.forEach(v => obs.observe(v));
+
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          const vh = window.innerHeight;
+          live.forEach(v => {
+            const r = v.getBoundingClientRect();
+            const offset = (r.top + r.height / 2 - vh / 2) * 0.13;
+            v.style.transform = `translateY(${offset}px)`;
+          });
+          ticking = false;
+        });
+      }, { passive: true });
+    }());
   </script>
 </body>
 </html>
