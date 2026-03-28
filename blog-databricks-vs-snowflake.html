@@ -134,14 +134,81 @@ a.skip-to-content:focus{top:12px;}
 <p>Points forts : <strong>performance SQL exceptionnelle</strong>, <strong>data sharing</strong> natif entre organisations, <strong>Snowpark</strong> pour le développement en Python/Java/Scala, et une facilité d'utilisation remarquable. Snowflake est idéal pour les équipes BI et les workloads SQL-first.</p>
 
 <h2>Comparatif point par point</h2>
-<p><strong>Performance SQL</strong> : Snowflake domine sur les requêtes SQL analytiques complexes. Databricks rattrape son retard avec Photon mais reste en dessous sur les workloads purement SQL. <strong>ML/AI</strong> : Databricks est largement en avance grâce à Spark, MLflow et les GPU clusters natifs. <strong>Pricing</strong> : Snowflake facture au crédit (consommation), Databricks facture en DBU. Les deux peuvent être coûteux sans optimisation.</p>
-<p><strong>Gouvernance</strong> : Unity Catalog (Databricks) et Horizon (Snowflake) offrent des capacités similaires. <strong>Écosystème</strong> : Snowflake a plus de connecteurs natifs BI. Databricks a un écosystème ML plus riche. <strong>Facilité</strong> : Snowflake est plus simple à prendre en main pour les équipes SQL.</p>
+<div style="margin:32px 0;overflow-x:auto;border-radius:14px;border:1px solid var(--gray-100);">
+  <table style="width:100%;border-collapse:collapse;font-size:0.875rem;">
+    <thead>
+      <tr>
+        <th style="padding:14px 20px;text-align:left;background:var(--off-white);color:var(--text-dark);font-family:var(--font-heading);font-weight:600;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;border-bottom:2px solid var(--gray-100);">Critère</th>
+        <th style="padding:14px 20px;text-align:center;background:#f0ebfa;color:#8A65C4;font-family:var(--font-heading);font-weight:700;font-size:0.9rem;border-bottom:2px solid #d9cef5;">⚡ Databricks</th>
+        <th style="padding:14px 20px;text-align:center;background:#e8f4fd;color:#1a7cbf;font-family:var(--font-heading);font-weight:700;font-size:0.9rem;border-bottom:2px solid #c0dff5;">❄️ Snowflake</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid var(--gray-100);">
+        <td style="padding:13px 20px;font-weight:600;color:var(--text-dark);font-family:var(--font-heading);">Performance SQL</td>
+        <td style="padding:13px 20px;text-align:center;color:var(--text-body);">★★★☆☆ Photon</td>
+        <td style="padding:13px 20px;text-align:center;color:var(--text-body);">★★★★★ Natif</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-100);background:#fafafa;">
+        <td style="padding:13px 20px;font-weight:600;color:var(--text-dark);font-family:var(--font-heading);">ML / AI</td>
+        <td style="padding:13px 20px;text-align:center;color:var(--text-body);">★★★★★ MLflow, GPU</td>
+        <td style="padding:13px 20px;text-align:center;color:var(--text-body);">★★★☆☆ Snowpark</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-100);">
+        <td style="padding:13px 20px;font-weight:600;color:var(--text-dark);font-family:var(--font-heading);">Streaming</td>
+        <td style="padding:13px 20px;text-align:center;color:var(--text-body);">★★★★★ Spark natif</td>
+        <td style="padding:13px 20px;text-align:center;color:var(--text-body);">★★☆☆☆ Limité</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-100);background:#fafafa;">
+        <td style="padding:13px 20px;font-weight:600;color:var(--text-dark);font-family:var(--font-heading);">Facilité d'usage</td>
+        <td style="padding:13px 20px;text-align:center;color:var(--text-body);">★★★☆☆ Technique</td>
+        <td style="padding:13px 20px;text-align:center;color:var(--text-body);">★★★★★ SQL-first</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-100);">
+        <td style="padding:13px 20px;font-weight:600;color:var(--text-dark);font-family:var(--font-heading);">Data Sharing</td>
+        <td style="padding:13px 20px;text-align:center;color:var(--text-body);">★★★☆☆ Delta Sharing</td>
+        <td style="padding:13px 20px;text-align:center;color:var(--text-body);">★★★★★ Natif</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-100);background:#fafafa;">
+        <td style="padding:13px 20px;font-weight:600;color:var(--text-dark);font-family:var(--font-heading);">Gouvernance</td>
+        <td style="padding:13px 20px;text-align:center;color:var(--text-body);">Unity Catalog</td>
+        <td style="padding:13px 20px;text-align:center;color:var(--text-body);">Horizon</td>
+      </tr>
+      <tr>
+        <td style="padding:13px 20px;font-weight:600;color:var(--text-dark);font-family:var(--font-heading);">Idéal pour</td>
+        <td style="padding:13px 20px;text-align:center;font-weight:700;color:#8A65C4;font-family:var(--font-heading);">Data Science & ML</td>
+        <td style="padding:13px 20px;text-align:center;font-weight:700;color:#1a7cbf;font-family:var(--font-heading);">BI & Analytics SQL</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <h2>Quand choisir Databricks ?</h2>
 <p>Choisissez Databricks si votre priorité est la <strong>data science et le ML</strong>, si vous avez des <strong>workloads streaming</strong>, si vous voulez une architecture <strong>lakehouse ouverte</strong> (Delta Lake, Apache Iceberg), ou si vos équipes sont <strong>techniques</strong> (Python, Spark, SQL avancé).</p>
 
 <h2>Quand choisir Snowflake ?</h2>
 <p>Choisissez Snowflake si votre priorité est l'<strong>analytics et la BI</strong>, si vous avez besoin de <strong>data sharing</strong> avec des partenaires, si vos équipes sont principalement <strong>SQL</strong>, ou si vous cherchez la <strong>simplicité</strong> d'administration.</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;">
+  <div style="padding:24px;background:#f0ebfa;border-radius:14px;border-left:4px solid #8A65C4;">
+    <div style="font-family:var(--font-heading);font-weight:700;color:#8A65C4;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px;">⚡ Choisissez Databricks si…</div>
+    <ul style="margin:0;padding-left:16px;color:var(--text-body);font-size:0.875rem;line-height:1.8;">
+      <li>Priorité ML / Data Science</li>
+      <li>Workloads streaming temps réel</li>
+      <li>Architecture lakehouse ouverte</li>
+      <li>Équipes Python & Spark</li>
+    </ul>
+  </div>
+  <div style="padding:24px;background:#e8f4fd;border-radius:14px;border-left:4px solid #1a7cbf;">
+    <div style="font-family:var(--font-heading);font-weight:700;color:#1a7cbf;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px;">❄️ Choisissez Snowflake si…</div>
+    <ul style="margin:0;padding-left:16px;color:var(--text-body);font-size:0.875rem;line-height:1.8;">
+      <li>Priorité analytics & BI</li>
+      <li>Data sharing inter-organisations</li>
+      <li>Équipes SQL-first</li>
+      <li>Simplicité d'administration</li>
+    </ul>
+  </div>
+</div>
 
 <h2>Et Microsoft Fabric dans tout ça ?</h2>
 <p>Microsoft Fabric propose une <strong>troisième voie</strong> : une plateforme unifiée qui combine lakehouse, warehouse, data science et Power BI natif. Pour les organisations déjà dans l'écosystème Microsoft, Fabric offre l'avantage de l'intégration complète avec OneLake comme couche de stockage unique. C'est une option à considérer sérieusement, surtout pour les entreprises qui utilisent déjà Power BI et Azure.</p>

@@ -133,9 +133,87 @@ a.skip-to-content:focus{top:12px;}
 <p><strong>Data Engineering</strong> : environnement Apache Spark pour le traitement de données à grande échelle avec notebooks et pipelines. <strong>Data Warehouse</strong> : SQL analytics avec T-SQL standard, compatible avec les outils BI existants. <strong>Real-Time Intelligence</strong> : ingestion et analyse de données en streaming pour les cas d'usage temps réel.</p>
 <p><strong>Data Science</strong> : environnement ML intégré avec MLflow pour le tracking des expériences. <strong>Data Factory</strong> : orchestration ETL/ELT avec plus de 150 connecteurs. <strong>Power BI</strong> : business intelligence intégrée nativement, sans besoin de déplacer les données.</p>
 
+<div style="margin:32px 0;padding:28px;background:var(--off-white);border-radius:16px;border:1px solid var(--gray-100);">
+  <div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-body);text-align:center;margin-bottom:20px;">Architecture Microsoft Fabric</div>
+  <!-- Top layer: Workloads -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px;">
+    <div style="background:#fff;border:1px solid #e2dcf5;border-radius:10px;padding:14px 10px;text-align:center;">
+      <div style="font-size:1.2rem;margin-bottom:4px;">📊</div>
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:0.78rem;color:var(--text-dark);">Power BI</div>
+      <div style="font-size:0.68rem;color:var(--text-body);margin-top:2px;">Reporting & BI</div>
+    </div>
+    <div style="background:#fff;border:1px solid #e2dcf5;border-radius:10px;padding:14px 10px;text-align:center;">
+      <div style="font-size:1.2rem;margin-bottom:4px;">🔬</div>
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:0.78rem;color:var(--text-dark);">Data Science</div>
+      <div style="font-size:0.68rem;color:var(--text-body);margin-top:2px;">ML & Notebooks</div>
+    </div>
+    <div style="background:#fff;border:1px solid #e2dcf5;border-radius:10px;padding:14px 10px;text-align:center;">
+      <div style="font-size:1.2rem;margin-bottom:4px;">⚡</div>
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:0.78rem;color:var(--text-dark);">Real-Time Analytics</div>
+      <div style="font-size:0.68rem;color:var(--text-body);margin-top:2px;">Streaming & KQL</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px;">
+    <div style="background:#fff;border:1px solid #e2dcf5;border-radius:10px;padding:14px 10px;text-align:center;">
+      <div style="font-size:1.2rem;margin-bottom:4px;">⚙️</div>
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:0.78rem;color:var(--text-dark);">Data Engineering</div>
+      <div style="font-size:0.68rem;color:var(--text-body);margin-top:2px;">Spark & Lakehouse</div>
+    </div>
+    <div style="background:#fff;border:1px solid #e2dcf5;border-radius:10px;padding:14px 10px;text-align:center;">
+      <div style="font-size:1.2rem;margin-bottom:4px;">🏭</div>
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:0.78rem;color:var(--text-dark);">Data Factory</div>
+      <div style="font-size:0.68rem;color:var(--text-body);margin-top:2px;">ETL & Pipelines</div>
+    </div>
+    <div style="background:#fff;border:1px solid #e2dcf5;border-radius:10px;padding:14px 10px;text-align:center;">
+      <div style="font-size:1.2rem;margin-bottom:4px;">🗄️</div>
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:0.78rem;color:var(--text-dark);">Data Warehouse</div>
+      <div style="font-size:0.68rem;color:var(--text-body);margin-top:2px;">SQL Analytics</div>
+    </div>
+  </div>
+  <!-- Foundation layer: OneLake -->
+  <div style="background:linear-gradient(135deg,#8A65C4,#7DBCDB);border-radius:10px;padding:16px;text-align:center;">
+    <div style="font-family:var(--font-heading);font-weight:700;color:#fff;font-size:0.9rem;">🌊 OneLake</div>
+    <div style="font-size:0.75rem;color:rgba(255,255,255,0.85);margin-top:4px;">Couche de stockage unifiée — une seule copie de vos données</div>
+  </div>
+</div>
+
 <h2>Fabric vs Synapse Analytics : quelles différences ?</h2>
 <p>La principale différence est le modèle de déploiement. <strong>Synapse est PaaS</strong> (Platform as a Service) : vous gérez les pools SQL, les clusters Spark et le stockage séparément. <strong>Fabric est SaaS</strong> : tout est intégré et géré par Microsoft.</p>
 <p>Le <strong>pricing</strong> diffère aussi. Synapse facture à la consommation par service. Fabric utilise un modèle de <strong>capacité</strong> (CU) partagée entre tous les workloads, ce qui simplifie la prédiction des coûts. <strong>OneLake</strong> remplace les storage accounts multiples de Synapse par un data lake unique avec gouvernance intégrée via Purview.</p>
+
+<div style="margin:28px 0;overflow-x:auto;border-radius:14px;border:1px solid var(--gray-100);">
+  <table style="width:100%;border-collapse:collapse;font-size:0.875rem;">
+    <thead>
+      <tr>
+        <th style="padding:12px 18px;text-align:left;background:var(--off-white);font-family:var(--font-heading);font-weight:600;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-body);border-bottom:2px solid var(--gray-100);">Aspect</th>
+        <th style="padding:12px 18px;text-align:center;background:#f0ebfa;font-family:var(--font-heading);font-weight:700;color:#8A65C4;border-bottom:2px solid #d9cef5;">Microsoft Fabric</th>
+        <th style="padding:12px 18px;text-align:center;background:#e8f4fd;font-family:var(--font-heading);font-weight:700;color:#1a7cbf;border-bottom:2px solid #c0dff5;">Synapse Analytics</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid var(--gray-100);">
+        <td style="padding:12px 18px;font-weight:600;font-family:var(--font-heading);color:var(--text-dark);">Interface</td>
+        <td style="padding:12px 18px;text-align:center;color:var(--text-body);">Unifiée (un seul portail)</td>
+        <td style="padding:12px 18px;text-align:center;color:var(--text-body);">Multiple outils</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-100);background:#fafafa;">
+        <td style="padding:12px 18px;font-weight:600;font-family:var(--font-heading);color:var(--text-dark);">Stockage</td>
+        <td style="padding:12px 18px;text-align:center;color:var(--text-body);">OneLake (centralisé)</td>
+        <td style="padding:12px 18px;text-align:center;color:var(--text-body);">ADLS Gen2 séparé</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-100);">
+        <td style="padding:12px 18px;font-weight:600;font-family:var(--font-heading);color:var(--text-dark);">Power BI</td>
+        <td style="padding:12px 18px;text-align:center;color:var(--text-body);">Intégration native</td>
+        <td style="padding:12px 18px;text-align:center;color:var(--text-body);">Connecteur externe</td>
+      </tr>
+      <tr style="background:#fafafa;">
+        <td style="padding:12px 18px;font-weight:600;font-family:var(--font-heading);color:var(--text-dark);">Maturité</td>
+        <td style="padding:12px 18px;text-align:center;color:var(--text-body);">GA depuis 2023 (récent)</td>
+        <td style="padding:12px 18px;text-align:center;color:var(--text-body);">GA depuis 2020 (stable)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <h2>Cas d'usage concrets</h2>
 <p><strong>Reporting unifié</strong> : les équipes finance, marketing et opérations accèdent aux mêmes données via OneLake, éliminant les versions contradictoires. <strong>Lakehouse pour PME</strong> : Fabric démocratise l'architecture lakehouse, auparavant réservée aux grandes entreprises. <strong>Dashboards temps réel</strong> : les données streaming sont disponibles instantanément dans Power BI. <strong>ML intégré</strong> : les data scientists entraînent et déploient des modèles sans quitter la plateforme.</p>

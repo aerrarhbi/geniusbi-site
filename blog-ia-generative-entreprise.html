@@ -140,6 +140,25 @@ a.skip-to-content:focus{top:12px;}
 
 <h2>Les 4 familles de cas d'usage à explorer</h2>
 
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0 32px;">
+  <div style="padding:20px;background:var(--off-white);border:1px solid var(--gray-100);border-radius:14px;border-left:3px solid #8A65C4;">
+    <div style="font-family:var(--font-heading);font-weight:700;color:var(--text-dark);font-size:0.9rem;margin-bottom:6px;">💬 Copilots Data</div>
+    <div style="font-size:0.8rem;color:var(--text-body);line-height:1.6;">Interroger ses données en langage naturel. L'analyste pose une question, l'IA génère la requête SQL.</div>
+  </div>
+  <div style="padding:20px;background:var(--off-white);border:1px solid var(--gray-100);border-radius:14px;border-left:3px solid #7DBCDB;">
+    <div style="font-family:var(--font-heading);font-weight:700;color:var(--text-dark);font-size:0.9rem;margin-bottom:6px;">📝 Documentation auto</div>
+    <div style="font-size:0.8rem;color:var(--text-body);line-height:1.6;">Génération automatique de specs techniques, dictionnaires de données et rapports d'analyse.</div>
+  </div>
+  <div style="padding:20px;background:var(--off-white);border:1px solid var(--gray-100);border-radius:14px;border-left:3px solid #f0b429;">
+    <div style="font-family:var(--font-heading);font-weight:700;color:var(--text-dark);font-size:0.9rem;margin-bottom:6px;">🚀 Accélération migrations</div>
+    <div style="font-size:0.8rem;color:var(--text-body);line-height:1.6;">Conversion automatique de code SQL legacy, réécriture de pipelines, génération de tests.</div>
+  </div>
+  <div style="padding:20px;background:var(--off-white);border:1px solid var(--gray-100);border-radius:14px;border-left:3px solid #e85454;">
+    <div style="font-family:var(--font-heading);font-weight:700;color:var(--text-dark);font-size:0.9rem;margin-bottom:6px;">🧪 Automatisation tests</div>
+    <div style="font-size:0.8rem;color:var(--text-body);line-height:1.6;">Génération de cas de test, détection d'anomalies, validation automatique de la qualité data.</div>
+  </div>
+</div>
+
 <h3>1. Copilots Data : interroger ses données en langage naturel</h3>
 <p>C'est le cas d'usage le plus immédiatement actionnable. Un copilot connecté à vos bases de données ou vos rapports Power BI permet aux équipes métier de poser des questions en français et d'obtenir des réponses chiffrées, des graphiques ou des analyses. L'adoption est forte car l'interface est intuitive et la valeur est immédiate.</p>
 
@@ -153,6 +172,27 @@ a.skip-to-content:focus{top:12px;}
 <p>La génération automatique de scénarios de tests, de jeux de données et de rapports de couverture est un domaine où l'IA générative apporte une valeur directe. Elle permet d'augmenter la couverture des tests tout en réduisant le temps de préparation.</p>
 
 <h2>Le cadre de déploiement : 3 phases</h2>
+
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:24px 0 32px;">
+  <div style="padding:20px;background:linear-gradient(135deg,#f0ebfa,#e8e2f8);border-radius:14px;text-align:center;border:1px solid #d9cef5;">
+    <div style="font-size:1.4rem;margin-bottom:8px;">🧪</div>
+    <div style="font-family:var(--font-heading);font-weight:700;color:#8A65C4;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:6px;">Phase 1</div>
+    <div style="font-family:var(--font-heading);font-weight:600;color:var(--text-dark);font-size:0.9rem;margin-bottom:6px;">Expérimenter</div>
+    <div style="font-size:0.75rem;color:var(--text-body);line-height:1.5;">1-2 cas d'usage pilotes, équipe restreinte, mesure du ROI réel.</div>
+  </div>
+  <div style="padding:20px;background:linear-gradient(135deg,#e8f4fd,#dceefa);border-radius:14px;text-align:center;border:1px solid #c0dff5;">
+    <div style="font-size:1.4rem;margin-bottom:8px;">📋</div>
+    <div style="font-family:var(--font-heading);font-weight:700;color:#1a7cbf;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:6px;">Phase 2</div>
+    <div style="font-family:var(--font-heading);font-weight:600;color:var(--text-dark);font-size:0.9rem;margin-bottom:6px;">Cadrer</div>
+    <div style="font-size:0.75rem;color:var(--text-body);line-height:1.5;">Politique IA, gouvernance, choix d'outils, formation des équipes.</div>
+  </div>
+  <div style="padding:20px;background:linear-gradient(135deg,#eef7ee,#e0f2e0);border-radius:14px;text-align:center;border:1px solid #b8e0b8;">
+    <div style="font-size:1.4rem;margin-bottom:8px;">🏭</div>
+    <div style="font-family:var(--font-heading);font-weight:700;color:#2d7a2d;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:6px;">Phase 3</div>
+    <div style="font-family:var(--font-heading);font-weight:600;color:var(--text-dark);font-size:0.9rem;margin-bottom:6px;">Industrialiser</div>
+    <div style="font-size:0.75rem;color:var(--text-body);line-height:1.5;">Déploiement à l'échelle, MLOps, monitoring, amélioration continue.</div>
+  </div>
+</div>
 
 <h3>Phase 1 — Expérimenter (1-2 mois)</h3>
 <p>Identifiez 2 à 3 cas d'usage à faible risque. Utilisez les API existantes (Azure OpenAI, par exemple) dans un environnement contrôlé. L'objectif n'est pas la production mais la validation de la pertinence et la mesure de la qualité des résultats.</p>

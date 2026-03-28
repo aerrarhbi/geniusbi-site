@@ -129,11 +129,79 @@ a.skip-to-content:focus{top:12px;}
 <p><strong>Clarté avant tout.</strong> Chaque visuel doit avoir un objectif clair. Si vous ne pouvez pas expliquer en une phrase ce qu'un graphique montre, il ne devrait probablement pas être là. <strong>Storytelling.</strong> Un dashboard raconte une histoire : situation actuelle, tendances, actions à prendre. <strong>Hiérarchie visuelle.</strong> Les KPIs les plus importants doivent sauter aux yeux en haut de page. <strong>Less is more.</strong> 5 à 7 visuels par page maximum. Au-delà, l'attention se disperse.</p>
 
 <h2>Structurer votre dashboard en 3 niveaux</h2>
+<div style="margin:24px 0 32px;padding:24px;background:var(--off-white);border-radius:16px;border:1px solid var(--gray-100);">
+  <div style="font-family:var(--font-heading);font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-body);margin-bottom:16px;">🏗️ Structure en 3 niveaux</div>
+  <div style="display:grid;gap:10px;">
+    <div style="background:linear-gradient(135deg,#8A65C4,#9b74d0);border-radius:12px;padding:18px 20px;color:#fff;">
+      <div style="font-family:var(--font-heading);font-weight:700;font-size:0.85rem;margin-bottom:4px;">Niveau 1 — Vue Exécutive</div>
+      <div style="font-size:0.78rem;opacity:0.9;">3-5 KPIs stratégiques. Lecture en 10 secondes. Destiné au CODIR.</div>
+      <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;">
+        <span style="background:rgba(255,255,255,0.2);padding:3px 10px;border-radius:20px;font-size:0.7rem;">CA</span>
+        <span style="background:rgba(255,255,255,0.2);padding:3px 10px;border-radius:20px;font-size:0.7rem;">Marge</span>
+        <span style="background:rgba(255,255,255,0.2);padding:3px 10px;border-radius:20px;font-size:0.7rem;">Croissance</span>
+      </div>
+    </div>
+    <div style="background:linear-gradient(135deg,#7DBCDB,#5aa8cc);border-radius:12px;padding:18px 20px;color:#fff;">
+      <div style="font-family:var(--font-heading);font-weight:700;font-size:0.85rem;margin-bottom:4px;">Niveau 2 — Vue Opérationnelle</div>
+      <div style="font-size:0.78rem;opacity:0.9;">Suivi des performances par département. Pour les managers.</div>
+      <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;">
+        <span style="background:rgba(255,255,255,0.2);padding:3px 10px;border-radius:20px;font-size:0.7rem;">Ventes / région</span>
+        <span style="background:rgba(255,255,255,0.2);padding:3px 10px;border-radius:20px;font-size:0.7rem;">Budget vs réel</span>
+      </div>
+    </div>
+    <div style="background:var(--off-white);border:1px solid var(--gray-100);border-radius:12px;padding:18px 20px;">
+      <div style="font-family:var(--font-heading);font-weight:700;font-size:0.85rem;color:var(--text-dark);margin-bottom:4px;">Niveau 3 — Vue Analytique</div>
+      <div style="font-size:0.78rem;color:var(--text-body);">Exploration détaillée, drill-through, filtres avancés. Pour les analystes data.</div>
+      <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;">
+        <span style="background:var(--gray-100);padding:3px 10px;border-radius:20px;font-size:0.7rem;color:var(--text-body);">Détail transaction</span>
+        <span style="background:var(--gray-100);padding:3px 10px;border-radius:20px;font-size:0.7rem;color:var(--text-body);">Drill-down</span>
+      </div>
+    </div>
+  </div>
+</div>
 <p><strong>Niveau 1 — Vue exécutive.</strong> La première page affiche les KPIs clés sous forme de cartes : chiffre d'affaires, marge, nombre de clients, objectif vs réalisé. Un dirigeant doit comprendre la situation en 10 secondes.</p>
 <p><strong>Niveau 2 — Vue analytique.</strong> Les pages suivantes permettent d'explorer les tendances (courbes temporelles), les comparaisons (barres empilées) et les répartitions (treemaps, cartes géographiques). C'est le niveau d'analyse pour les managers.</p>
 <p><strong>Niveau 3 — Vue détaillée.</strong> Le drill-down vers les données granulaires : tableaux détaillés, filtres avancés, exports. Destiné aux analystes qui ont besoin d'investiguer.</p>
 
 <h2>Choisir les bons visuels</h2>
+<div style="margin:24px 0;overflow-x:auto;border-radius:12px;border:1px solid var(--gray-100);">
+  <table style="width:100%;border-collapse:collapse;font-size:0.82rem;">
+    <thead>
+      <tr>
+        <th style="padding:12px 16px;text-align:left;background:var(--off-white);font-family:var(--font-heading);font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-body);border-bottom:2px solid var(--gray-100);">Si vous voulez montrer…</th>
+        <th style="padding:12px 16px;text-align:left;background:var(--off-white);font-family:var(--font-heading);font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-body);border-bottom:2px solid var(--gray-100);">Utilisez…</th>
+        <th style="padding:12px 16px;text-align:left;background:var(--off-white);font-family:var(--font-heading);font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-body);border-bottom:2px solid var(--gray-100);">Évitez…</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid var(--gray-100);">
+        <td style="padding:11px 16px;color:var(--text-dark);font-weight:500;">Une évolution dans le temps</td>
+        <td style="padding:11px 16px;color:#2d7a2d;font-weight:600;">📈 Courbe / Graphique linéaire</td>
+        <td style="padding:11px 16px;color:#c0392b;">Graphique à barres</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-100);background:#fafafa;">
+        <td style="padding:11px 16px;color:var(--text-dark);font-weight:500;">Une comparaison entre catégories</td>
+        <td style="padding:11px 16px;color:#2d7a2d;font-weight:600;">📊 Barres horizontales</td>
+        <td style="padding:11px 16px;color:#c0392b;">Camembert</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-100);">
+        <td style="padding:11px 16px;color:var(--text-dark);font-weight:500;">Une répartition (parts)</td>
+        <td style="padding:11px 16px;color:#2d7a2d;font-weight:600;">🍩 Anneau (Donut)</td>
+        <td style="padding:11px 16px;color:#c0392b;">3D pie chart</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-100);background:#fafafa;">
+        <td style="padding:11px 16px;color:var(--text-dark);font-weight:500;">Un KPI unique</td>
+        <td style="padding:11px 16px;color:#2d7a2d;font-weight:600;">🎯 Carte / Card visuel</td>
+        <td style="padding:11px 16px;color:#c0392b;">Tableau complet</td>
+      </tr>
+      <tr>
+        <td style="padding:11px 16px;color:var(--text-dark);font-weight:500;">Une corrélation entre 2 variables</td>
+        <td style="padding:11px 16px;color:#2d7a2d;font-weight:600;">🔵 Nuage de points (Scatter)</td>
+        <td style="padding:11px 16px;color:#c0392b;">Barres groupées</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 <p><strong>Barres</strong> pour comparer des catégories. <strong>Lignes</strong> pour montrer des tendances temporelles. <strong>Cartes KPI</strong> pour les chiffres clés avec indicateurs de tendance. <strong>Treemaps</strong> pour les répartitions hiérarchiques. <strong>Matrices</strong> pour les analyses croisées. <strong>Cartes géographiques</strong> pour les données spatiales. Évitez les camemberts (pie charts) : ils sont difficiles à lire au-delà de 3 catégories.</p>
 
 <h2>Les erreurs de design les plus courantes</h2>

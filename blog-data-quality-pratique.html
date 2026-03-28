@@ -126,6 +126,38 @@ a.skip-to-content:focus{top:12px;}
 <p>"Garbage in, garbage out." Cet adage résume parfaitement l'enjeu de la qualité des données. La fiabilité de vos analyses, dashboards et modèles IA dépend directement de la qualité des données qui les alimentent.</p>
 
 <h2>Les 6 dimensions de la qualité des données</h2>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0 32px;">
+  <div style="padding:18px;background:var(--off-white);border-radius:12px;border:1px solid var(--gray-100);border-top:3px solid #8A65C4;text-align:center;">
+    <div style="font-size:1.3rem;margin-bottom:8px;">🎯</div>
+    <div style="font-family:var(--font-heading);font-weight:700;color:var(--text-dark);font-size:0.85rem;margin-bottom:4px;">Exactitude</div>
+    <div style="font-size:0.75rem;color:var(--text-body);line-height:1.5;">Les données reflètent la réalité sans erreurs.</div>
+  </div>
+  <div style="padding:18px;background:var(--off-white);border-radius:12px;border:1px solid var(--gray-100);border-top:3px solid #7DBCDB;text-align:center;">
+    <div style="font-size:1.3rem;margin-bottom:8px;">✅</div>
+    <div style="font-family:var(--font-heading);font-weight:700;color:var(--text-dark);font-size:0.85rem;margin-bottom:4px;">Complétude</div>
+    <div style="font-size:0.75rem;color:var(--text-body);line-height:1.5;">Aucun champ critique n'est vide ou manquant.</div>
+  </div>
+  <div style="padding:18px;background:var(--off-white);border-radius:12px;border:1px solid var(--gray-100);border-top:3px solid #f0b429;text-align:center;">
+    <div style="font-size:1.3rem;margin-bottom:8px;">⏱️</div>
+    <div style="font-family:var(--font-heading);font-weight:700;color:var(--text-dark);font-size:0.85rem;margin-bottom:4px;">Fraîcheur</div>
+    <div style="font-size:0.75rem;color:var(--text-body);line-height:1.5;">Les données sont à jour et disponibles à temps.</div>
+  </div>
+  <div style="padding:18px;background:var(--off-white);border-radius:12px;border:1px solid var(--gray-100);border-top:3px solid #e85454;text-align:center;">
+    <div style="font-size:1.3rem;margin-bottom:8px;">🔗</div>
+    <div style="font-family:var(--font-heading);font-weight:700;color:var(--text-dark);font-size:0.85rem;margin-bottom:4px;">Cohérence</div>
+    <div style="font-size:0.75rem;color:var(--text-body);line-height:1.5;">Même donnée = même valeur sur tous les systèmes.</div>
+  </div>
+  <div style="padding:18px;background:var(--off-white);border-radius:12px;border:1px solid var(--gray-100);border-top:3px solid #5a9e5a;text-align:center;">
+    <div style="font-size:1.3rem;margin-bottom:8px;">🆔</div>
+    <div style="font-family:var(--font-heading);font-weight:700;color:var(--text-dark);font-size:0.85rem;margin-bottom:4px;">Unicité</div>
+    <div style="font-size:0.75rem;color:var(--text-body);line-height:1.5;">Pas de doublons. Chaque entité n'existe qu'une fois.</div>
+  </div>
+  <div style="padding:18px;background:var(--off-white);border-radius:12px;border:1px solid var(--gray-100);border-top:3px solid #7B68EE;text-align:center;">
+    <div style="font-size:1.3rem;margin-bottom:8px;">📐</div>
+    <div style="font-family:var(--font-heading);font-weight:700;color:var(--text-dark);font-size:0.85rem;margin-bottom:4px;">Validité</div>
+    <div style="font-size:0.75rem;color:var(--text-body);line-height:1.5;">Les données respectent les formats et règles métier.</div>
+  </div>
+</div>
 <p><strong>Exactitude.</strong> Les données reflètent-elles la réalité ? Un client avec un code postal erroné fausse toutes les analyses géographiques. <strong>Complétude.</strong> Les champs obligatoires sont-ils renseignés ? Un fichier clients avec 40% d'emails manquants limite les campagnes marketing.</p>
 <p><strong>Cohérence.</strong> Les mêmes données sont-elles identiques dans tous les systèmes ? Si le CRM dit 500 clients et la facturation dit 480, il y a un problème. <strong>Fraîcheur.</strong> Les données sont-elles à jour ? Un stock mis à jour une fois par semaine ne permet pas de piloter en temps réel.</p>
 <p><strong>Unicité.</strong> Y a-t-il des doublons ? Un même client enregistré 3 fois fausse le comptage et les analyses. <strong>Validité.</strong> Les données respectent-elles le format attendu ? Un numéro de téléphone à 8 chiffres au lieu de 10 est invalide.</p>
@@ -139,9 +171,60 @@ a.skip-to-content:focus{top:12px;}
 <p><strong>Profiling automatisé.</strong> Analysez régulièrement les données pour détecter les anomalies : distributions statistiques, valeurs nulles, doublons, outliers. <strong>Monitoring continu.</strong> Mettez en place des alertes quand les indicateurs de qualité passent sous un seuil critique.</p>
 
 <h2>Les outils pour la Data Quality</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0;">
+  <div style="padding:18px;background:var(--off-white);border:1px solid var(--gray-100);border-radius:12px;">
+    <div style="font-family:var(--font-heading);font-weight:700;color:var(--text-dark);font-size:0.85rem;margin-bottom:10px;">🛠️ Outils Open Source</div>
+    <ul style="margin:0;padding-left:16px;font-size:0.8rem;color:var(--text-body);line-height:1.9;">
+      <li><strong>Great Expectations</strong> — Tests de données Python</li>
+      <li><strong>dbt tests</strong> — Qualité dans les pipelines</li>
+      <li><strong>Apache Griffin</strong> — Monitoring qualité</li>
+    </ul>
+  </div>
+  <div style="padding:18px;background:var(--off-white);border:1px solid var(--gray-100);border-radius:12px;">
+    <div style="font-family:var(--font-heading);font-weight:700;color:var(--text-dark);font-size:0.85rem;margin-bottom:10px;">☁️ Outils Cloud / Enterprise</div>
+    <ul style="margin:0;padding-left:16px;font-size:0.8rem;color:var(--text-body);line-height:1.9;">
+      <li><strong>Microsoft Purview</strong> — Gouvernance & qualité Azure</li>
+      <li><strong>Databricks Unity Catalog</strong> — Lakehouse</li>
+      <li><strong>Ataccama / Talend</strong> — Enterprise DQ</li>
+    </ul>
+  </div>
+</div>
 <p><strong>Azure Purview</strong> (maintenant Microsoft Purview) : gouvernance et catalogage des données à l'échelle de l'entreprise. <strong>Great Expectations</strong> : bibliothèque Python open source pour définir et exécuter des tests de qualité sur les données. <strong>dbt tests</strong> : validations intégrées dans les pipelines de transformation. <strong>Power Query (M)</strong> : nettoyage et standardisation directement dans Power BI. <strong>Informatica</strong> : solution enterprise pour le data quality management à grande échelle.</p>
 
 <h2>Mesurer la qualité : les KPIs à suivre</h2>
+<div style="margin:24px 0;overflow-x:auto;border-radius:12px;border:1px solid var(--gray-100);">
+  <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
+    <thead>
+      <tr>
+        <th style="padding:12px 16px;text-align:left;background:var(--off-white);font-family:var(--font-heading);font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-body);border-bottom:2px solid var(--gray-100);">KPI</th>
+        <th style="padding:12px 16px;text-align:left;background:var(--off-white);font-family:var(--font-heading);font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-body);border-bottom:2px solid var(--gray-100);">Formule</th>
+        <th style="padding:12px 16px;text-align:center;background:var(--off-white);font-family:var(--font-heading);font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-body);border-bottom:2px solid var(--gray-100);">Cible</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid var(--gray-100);">
+        <td style="padding:12px 16px;font-weight:600;font-family:var(--font-heading);color:var(--text-dark);">Taux de complétude</td>
+        <td style="padding:12px 16px;color:var(--text-body);font-size:0.8rem;">Champs remplis / Total champs</td>
+        <td style="padding:12px 16px;text-align:center;color:#2d7a2d;font-weight:600;">&gt; 95%</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-100);background:#fafafa;">
+        <td style="padding:12px 16px;font-weight:600;font-family:var(--font-heading);color:var(--text-dark);">Taux de doublons</td>
+        <td style="padding:12px 16px;color:var(--text-body);font-size:0.8rem;">Enregistrements dupliqués / Total</td>
+        <td style="padding:12px 16px;text-align:center;color:#2d7a2d;font-weight:600;">&lt; 1%</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--gray-100);">
+        <td style="padding:12px 16px;font-weight:600;font-family:var(--font-heading);color:var(--text-dark);">Score de conformité</td>
+        <td style="padding:12px 16px;color:var(--text-body);font-size:0.8rem;">Règles respectées / Total règles</td>
+        <td style="padding:12px 16px;text-align:center;color:#2d7a2d;font-weight:600;">&gt; 98%</td>
+      </tr>
+      <tr>
+        <td style="padding:12px 16px;font-weight:600;font-family:var(--font-heading);color:var(--text-dark);">Fraîcheur moyenne</td>
+        <td style="padding:12px 16px;color:var(--text-body);font-size:0.8rem;">Délai moyen depuis la source</td>
+        <td style="padding:12px 16px;text-align:center;color:#1a7cbf;font-weight:600;">Selon SLA</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 <p><strong>Taux de complétude</strong> : pourcentage de champs renseignés sur les champs obligatoires. Cible : >95%. <strong>Taux de doublons</strong> : pourcentage d'enregistrements en double. Cible : <2%. <strong>Score de conformité</strong> : pourcentage de données respectant les règles de validation. Cible : >98%. <strong>Freshness index</strong> : délai moyen entre la création/modification d'une donnée et sa disponibilité dans les systèmes analytiques.</p>
 <p>La qualité des données n'est pas un projet ponctuel mais un <strong>processus continu</strong>. Investir dans un cadre de gouvernance adapté est le meilleur moyen de garantir la fiabilité de toutes vos initiatives data et IA.</p>
   </div>

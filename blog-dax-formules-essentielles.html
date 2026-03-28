@@ -131,24 +131,148 @@ a.skip-to-content:focus{top:12px;}
 <p><strong>AVERAGE</strong> : calcule la moyenne. <strong>MIN / MAX</strong> : récupère les extremums. Ces 6 fonctions couvrent 60% des besoins de base.</p>
 
 <h2>CALCULATE : la formule la plus puissante</h2>
+<div style="margin:20px 0;border-radius:12px;overflow:hidden;border:1px solid #2d2d4e;">
+  <div style="background:#1e1e3a;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-family:var(--font-heading);font-size:0.72rem;font-weight:600;color:#7DBCDB;text-transform:uppercase;letter-spacing:0.05em;">DAX — CALCULATE</span>
+    <span style="font-size:0.68rem;color:#666;font-style:italic;">Power BI / Analysis Services</span>
+  </div>
+  <div style="background:#0d0d1a;padding:20px;overflow-x:auto;">
+    <pre style="margin:0;font-family:'Courier New',Consolas,monospace;font-size:0.85rem;line-height:1.8;color:#e0e0e0;"><span style="color:#7DBCDB;">-- Ventes filtrées sur une région</span>
+<span style="color:#c792ea;">Ventes_Region</span> =
+<span style="color:#82aaff;">CALCULATE</span>(
+    <span style="color:#82aaff;">SUM</span>(<span style="color:#f78c6c;">Sales</span>[<span style="color:#c3e88d;">Amount</span>]),
+    <span style="color:#f78c6c;">Geography</span>[<span style="color:#c3e88d;">Region</span>] = <span style="color:#c3e88d;">"Casablanca"</span>
+)
+
+<span style="color:#7DBCDB;">-- Ventes YTD (Year-to-Date)</span>
+<span style="color:#c792ea;">Ventes_YTD</span> =
+<span style="color:#82aaff;">CALCULATE</span>(
+    <span style="color:#82aaff;">SUM</span>(<span style="color:#f78c6c;">Sales</span>[<span style="color:#c3e88d;">Amount</span>]),
+    <span style="color:#82aaff;">DATESYTD</span>(<span style="color:#f78c6c;">Calendar</span>[<span style="color:#c3e88d;">Date</span>])
+)</pre>
+  </div>
+</div>
 <p>CALCULATE est la fonction la plus importante de DAX. Elle évalue une expression dans un <strong>contexte de filtre modifié</strong>. Exemple : <code>Ventes Paris = CALCULATE(SUM(Ventes[Montant]), Magasins[Ville] = "Paris")</code>.</p>
 <p>CALCULATE permet de créer des mesures dynamiques qui répondent aux filtres de la page tout en ajoutant des conditions supplémentaires. C'est la clé pour créer des comparaisons (vs objectif, vs année précédente, vs moyenne) au sein d'un même visuel.</p>
 
 <h2>Les fonctions de filtre</h2>
+<div style="margin:20px 0;border-radius:12px;overflow:hidden;border:1px solid #2d2d4e;">
+  <div style="background:#1e1e3a;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-family:var(--font-heading);font-size:0.72rem;font-weight:600;color:#7DBCDB;text-transform:uppercase;letter-spacing:0.05em;">DAX — FILTER & ALL</span>
+    <span style="font-size:0.68rem;color:#666;font-style:italic;">Power BI / Analysis Services</span>
+  </div>
+  <div style="background:#0d0d1a;padding:20px;overflow-x:auto;">
+    <pre style="margin:0;font-family:'Courier New',Consolas,monospace;font-size:0.85rem;line-height:1.8;color:#e0e0e0;"><span style="color:#7DBCDB;">-- % du total (ALL supprime les filtres)</span>
+<span style="color:#c792ea;">Part_du_Total</span> =
+<span style="color:#82aaff;">DIVIDE</span>(
+    <span style="color:#82aaff;">SUM</span>(<span style="color:#f78c6c;">Sales</span>[<span style="color:#c3e88d;">Amount</span>]),
+    <span style="color:#82aaff;">CALCULATE</span>(
+        <span style="color:#82aaff;">SUM</span>(<span style="color:#f78c6c;">Sales</span>[<span style="color:#c3e88d;">Amount</span>]),
+        <span style="color:#82aaff;">ALL</span>(<span style="color:#f78c6c;">Sales</span>)
+    )
+)
+
+<span style="color:#7DBCDB;">-- Produits avec CA > 10 000</span>
+<span style="color:#c792ea;">Top_Produits</span> =
+<span style="color:#82aaff;">FILTER</span>(
+    <span style="color:#82aaff;">ALL</span>(<span style="color:#f78c6c;">Products</span>),
+    <span style="color:#82aaff;">CALCULATE</span>(<span style="color:#82aaff;">SUM</span>(<span style="color:#f78c6c;">Sales</span>[<span style="color:#c3e88d;">Amount</span>])) > <span style="color:#f78c6c;">10000</span>
+)</pre>
+  </div>
+</div>
 <p><strong>FILTER</strong> : retourne une table filtrée selon une condition. Utile dans CALCULATE pour des filtres complexes. <strong>ALL</strong> : supprime tous les filtres d'une table ou colonne. Indispensable pour calculer des pourcentages du total. Exemple : <code>% du Total = DIVIDE(SUM(Ventes[Montant]), CALCULATE(SUM(Ventes[Montant]), ALL(Ventes)))</code>.</p>
 <p><strong>ALLEXCEPT</strong> : supprime tous les filtres sauf ceux spécifiés. <strong>VALUES</strong> : retourne les valeurs distinctes d'une colonne dans le contexte actuel. <strong>SELECTEDVALUE</strong> : retourne la valeur sélectionnée si elle est unique, sinon une valeur par défaut.</p>
 
 <h2>Time Intelligence</h2>
+<div style="margin:20px 0;border-radius:12px;overflow:hidden;border:1px solid #2d2d4e;">
+  <div style="background:#1e1e3a;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-family:var(--font-heading);font-size:0.72rem;font-weight:600;color:#7DBCDB;text-transform:uppercase;letter-spacing:0.05em;">DAX — Time Intelligence</span>
+    <span style="font-size:0.68rem;color:#666;font-style:italic;">Power BI / Analysis Services</span>
+  </div>
+  <div style="background:#0d0d1a;padding:20px;overflow-x:auto;">
+    <pre style="margin:0;font-family:'Courier New',Consolas,monospace;font-size:0.85rem;line-height:1.8;color:#e0e0e0;"><span style="color:#7DBCDB;">-- Ventes du même mois l'année dernière</span>
+<span style="color:#c792ea;">Ventes_SPLY</span> =
+<span style="color:#82aaff;">CALCULATE</span>(
+    <span style="color:#82aaff;">SUM</span>(<span style="color:#f78c6c;">Sales</span>[<span style="color:#c3e88d;">Amount</span>]),
+    <span style="color:#82aaff;">SAMEPERIODLASTYEAR</span>(<span style="color:#f78c6c;">Calendar</span>[<span style="color:#c3e88d;">Date</span>])
+)
+
+<span style="color:#7DBCDB;">-- Croissance vs année précédente</span>
+<span style="color:#c792ea;">Croissance_YoY</span> =
+<span style="color:#82aaff;">DIVIDE</span>(
+    [<span style="color:#c3e88d;">Ventes_Total</span>] - [<span style="color:#c3e88d;">Ventes_SPLY</span>],
+    [<span style="color:#c3e88d;">Ventes_SPLY</span>]
+)</pre>
+  </div>
+</div>
 <p><strong>DATEADD</strong> : décale une période dans le temps. Exemple : <code>Ventes M-1 = CALCULATE(SUM(Ventes[Montant]), DATEADD(Calendrier[Date], -1, MONTH))</code>. <strong>SAMEPERIODLASTYEAR</strong> : compare avec la même période l'année précédente.</p>
 <p><strong>TOTALYTD</strong> : calcule le cumul depuis le début de l'année. <strong>DATESYTD</strong> : retourne les dates depuis le 1er janvier. Ces fonctions nécessitent une table calendrier complète et continue pour fonctionner correctement.</p>
 
 <h2>Les itérateurs</h2>
+<div style="margin:20px 0;border-radius:12px;overflow:hidden;border:1px solid #2d2d4e;">
+  <div style="background:#1e1e3a;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-family:var(--font-heading);font-size:0.72rem;font-weight:600;color:#7DBCDB;text-transform:uppercase;letter-spacing:0.05em;">DAX — Itérateurs (X functions)</span>
+    <span style="font-size:0.68rem;color:#666;font-style:italic;">Power BI / Analysis Services</span>
+  </div>
+  <div style="background:#0d0d1a;padding:20px;overflow-x:auto;">
+    <pre style="margin:0;font-family:'Courier New',Consolas,monospace;font-size:0.85rem;line-height:1.8;color:#e0e0e0;"><span style="color:#7DBCDB;">-- CA = Quantité × Prix (ligne par ligne)</span>
+<span style="color:#c792ea;">CA_Total</span> =
+<span style="color:#82aaff;">SUMX</span>(
+    <span style="color:#f78c6c;">Sales</span>,
+    <span style="color:#f78c6c;">Sales</span>[<span style="color:#c3e88d;">Quantity</span>] * <span style="color:#f78c6c;">Sales</span>[<span style="color:#c3e88d;">Unit_Price</span>]
+)
+
+<span style="color:#7DBCDB;">-- Marge moyenne pondérée</span>
+<span style="color:#c792ea;">Marge_Moyenne</span> =
+<span style="color:#82aaff;">AVERAGEX</span>(
+    <span style="color:#f78c6c;">Products</span>,
+    <span style="color:#f78c6c;">Products</span>[<span style="color:#c3e88d;">Prix_Vente</span>] - <span style="color:#f78c6c;">Products</span>[<span style="color:#c3e88d;">Prix_Revient</span>]
+)</pre>
+  </div>
+</div>
 <p><strong>SUMX</strong> : parcourt une table ligne par ligne et additionne le résultat d'une expression. Exemple : <code>CA = SUMX(Lignes, Lignes[Quantité] * Lignes[PrixUnitaire])</code>. Contrairement à SUM qui ne peut additionner qu'une seule colonne, SUMX peut évaluer des expressions complexes.</p>
 <p><strong>AVERAGEX</strong> et <strong>MAXX</strong> fonctionnent sur le même principe. Attention : les itérateurs sont plus lents que les agrégations simples sur de grandes tables.</p>
 
 <h2>Formules avancées pour aller plus loin</h2>
 <p><strong>RANKX</strong> : classe les valeurs. <code>Rang = RANKX(ALL(Produits), [Total Ventes], , DESC)</code>. <strong>SWITCH</strong> : remplace les IF imbriqués. <strong>DIVIDE</strong> : division sécurisée qui retourne un résultat alternatif en cas de division par zéro (au lieu d'une erreur). <strong>HASONEVALUE</strong> : vérifie si un filtre ne retourne qu'une seule valeur, utile pour les titres dynamiques.</p>
 <p>Pour aller plus loin dans la maîtrise de DAX, découvrez notre <a href="/formation-powerbi-avance">formation Power BI Avancé</a> qui couvre en profondeur les contextes d'évaluation et les patterns DAX avancés.</p>
+<div style="margin:40px 0 20px;padding:24px;background:var(--off-white);border-radius:16px;border:1px solid var(--gray-100);">
+  <div style="font-family:var(--font-heading);font-weight:700;color:var(--text-dark);font-size:1rem;margin-bottom:16px;">📋 Récapitulatif — Les fonctions DAX essentielles</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+    <div style="background:#fff;border:1px solid var(--gray-100);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;">
+      <span style="font-family:'Courier New',monospace;font-size:0.8rem;font-weight:700;color:#8A65C4;background:#f0ebfa;padding:2px 8px;border-radius:6px;">CALCULATE</span>
+      <span style="font-size:0.78rem;color:var(--text-body);">Modifier le contexte de filtre</span>
+    </div>
+    <div style="background:#fff;border:1px solid var(--gray-100);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;">
+      <span style="font-family:'Courier New',monospace;font-size:0.8rem;font-weight:700;color:#8A65C4;background:#f0ebfa;padding:2px 8px;border-radius:6px;">SUMX</span>
+      <span style="font-size:0.78rem;color:var(--text-body);">Itérer et sommer ligne par ligne</span>
+    </div>
+    <div style="background:#fff;border:1px solid var(--gray-100);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;">
+      <span style="font-family:'Courier New',monospace;font-size:0.8rem;font-weight:700;color:#7DBCDB;background:#e8f8f5;padding:2px 8px;border-radius:6px;">FILTER</span>
+      <span style="font-size:0.78rem;color:var(--text-body);">Retourner un sous-ensemble de table</span>
+    </div>
+    <div style="background:#fff;border:1px solid var(--gray-100);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;">
+      <span style="font-family:'Courier New',monospace;font-size:0.8rem;font-weight:700;color:#7DBCDB;background:#e8f8f5;padding:2px 8px;border-radius:6px;">ALL</span>
+      <span style="font-size:0.78rem;color:var(--text-body);">Ignorer les filtres actifs</span>
+    </div>
+    <div style="background:#fff;border:1px solid var(--gray-100);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;">
+      <span style="font-family:'Courier New',monospace;font-size:0.8rem;font-weight:700;color:#f0b429;background:#fef9e8;padding:2px 8px;border-radius:6px;">SAMEPERIODLASTYEAR</span>
+      <span style="font-size:0.78rem;color:var(--text-body);">Comparaison N-1</span>
+    </div>
+    <div style="background:#fff;border:1px solid var(--gray-100);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;">
+      <span style="font-family:'Courier New',monospace;font-size:0.8rem;font-weight:700;color:#f0b429;background:#fef9e8;padding:2px 8px;border-radius:6px;">DATESYTD</span>
+      <span style="font-size:0.78rem;color:var(--text-body);">Cumul depuis début d'année</span>
+    </div>
+    <div style="background:#fff;border:1px solid var(--gray-100);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;">
+      <span style="font-family:'Courier New',monospace;font-size:0.8rem;font-weight:700;color:#e85454;background:#fff0f0;padding:2px 8px;border-radius:6px;">DIVIDE</span>
+      <span style="font-size:0.78rem;color:var(--text-body);">Division sécurisée (évite les erreurs)</span>
+    </div>
+    <div style="background:#fff;border:1px solid var(--gray-100);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;">
+      <span style="font-family:'Courier New',monospace;font-size:0.8rem;font-weight:700;color:#e85454;background:#fff0f0;padding:2px 8px;border-radius:6px;">RELATED</span>
+      <span style="font-size:0.78rem;color:var(--text-body);">Accéder à une table liée (lookup)</span>
+    </div>
+  </div>
+</div>
   </div>
 
   <div class="article-author-box" style="margin-left:auto;margin-right:auto;max-width:720px;padding-left:24px;padding-right:24px;">
