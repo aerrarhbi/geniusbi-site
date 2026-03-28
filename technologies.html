@@ -24,6 +24,8 @@
   <meta name="twitter:description" content="Stack technologique GeniusBI : Microsoft Fabric, Power BI, Azure, Snowflake, Databricks, Foundry. Expertise certifiée sur les plateformes data modernes.">
   <meta name="twitter:image" content="https://geniusbi.ma/og/og-technologies.png">
   <meta name="twitter:site" content="@geniusbi_ai">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Technologies Data & IA — GeniusBI","url":"https://geniusbi.ma/technologies","description":"Stack technologique GeniusBI : Microsoft Fabric, Power BI, Azure, Snowflake, Databricks, Foundry. Expertise certifiée sur les plateformes data modernes.","dateModified":"2026-03-28","inLanguage":"fr","isPartOf":{"@type":"WebSite","url":"https://geniusbi.ma","name":"GeniusBI"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quelle est la différence entre Microsoft Fabric et Azure Synapse Analytics ?","acceptedAnswer":{"@type":"Answer","text":"Microsoft Fabric est le successeur et l'évolution d'Azure Synapse. Là où Synapse nécessitait de jongler entre plusieurs services (Data Factory, Synapse Analytics, Power BI), Fabric unifie tout dans une seule plateforme SaaS avec un stockage OneLake commun. Pour les nouveaux projets, GeniusBI recommande systématiquement Fabric. Pour les projets existants sur Synapse, nous évaluons la migration au cas par cas."}},{"@type":"Question","name":"Quand choisir Databricks plutôt que Microsoft Fabric ?","acceptedAnswer":{"@type":"Answer","text":"Databricks s'impose quand votre équipe est principalement data science (Python/Spark), que vous opérez sur plusieurs clouds (AWS, GCP, Azure) ou que votre charge de travail ML/IA est très intense. Microsoft Fabric convient mieux aux organisations Microsoft-first, avec des équipes BI fortes et un besoin d'intégration native avec Power BI et Teams. Les deux peuvent coexister dans une même architecture."}},{"@type":"Question","name":"Power BI est-il compatible avec Snowflake et Databricks ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Power BI dispose de connecteurs natifs et certifiés pour Snowflake et Databricks. Les connexions DirectQuery et Import sont supportées dans les deux cas. Chez GeniusBI, nous déployons régulièrement des architectures où Power BI se connecte à Snowflake ou à Databricks SQL Warehouse comme couche sémantique."}},{"@type":"Question","name":"Comment Microsoft Purview s'intègre-t-il dans un projet Fabric ?","acceptedAnswer":{"@type":"Answer","text":"Microsoft Purview et Microsoft Fabric sont conçus pour fonctionner ensemble. Purview scanne automatiquement les assets du OneLake (tables Delta, dataflows, pipelines) et les enrichit dans son Data Catalog. La classification des données sensibles et le lineage sont disponibles nativement. C'est la combinaison que GeniusBI recommande pour toute organisation souhaitant une gouvernance robuste."}},{"@type":"Question","name":"Faut-il migrer vers Microsoft Fabric si on utilise déjà Azure Data Factory et Azure Synapse ?","acceptedAnswer":{"@type":"Answer","text":"Pas nécessairement en urgence. Azure Data Factory et Synapse restent supportés par Microsoft. La migration vers Fabric est pertinente si vous souhaitez réduire les coûts de maintenance, unifier votre plateforme ou bénéficier des nouveaux services Fabric (Real-Time Intelligence, AI Skills). GeniusBI accompagne ce type de migration avec une analyse ROI en amont."}}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://geniusbi.ma/"},{"@type":"ListItem","position":2,"name":"Technologies"}]}</script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -40,24 +42,7 @@
   <link rel="stylesheet" href="css/shared.css">
   <link rel="stylesheet" href="css/magic-animations.css">
   <style>
-.tech-hero-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.tech-card{background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-lg);padding:32px 28px;transition:all 0.5s var(--ease);position:relative;overflow:hidden;}
-.tech-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--teal));transform:scaleX(0);transform-origin:left;transition:transform 0.5s var(--ease);}
-.tech-card:hover::after{transform:scaleX(1);}
-.tech-card:hover{box-shadow:0 12px 40px rgba(26,31,54,0.08);transform:translateY(-5px);}
-.tech-card-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:all 0.4s var(--ease);}
-.tech-card:hover .tech-card-icon{transform:rotate(-5deg) scale(1.08);}
-.tech-card:nth-child(odd) .tech-card-icon{background:var(--purple-soft);} .tech-card:nth-child(odd) .tech-card-icon svg{color:var(--purple);}
-.tech-card:nth-child(even) .tech-card-icon{background:var(--teal-soft);} .tech-card:nth-child(even) .tech-card-icon svg{color:var(--teal);}
-.tech-card-icon svg{width:22px;height:22px;}
-.tech-card h3{font-family:var(--font-heading);font-size:1.05rem;font-weight:600;color:var(--text-dark);margin-bottom:8px;}
-.tech-card p{font-size:0.82rem;color:var(--text-body);line-height:1.55;}
-.arch-banner{max-width:1200px;margin:0 auto;background:var(--navy);border-radius:var(--radius-xl);padding:56px;position:relative;overflow:hidden;}
-.arch-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 20%,rgba(138,101,196,0.12),transparent 50%),radial-gradient(ellipse at 80% 80%,rgba(125,188,219,0.1),transparent 50%);}
-.arch-banner h3{font-family:var(--font-heading);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:700;color:var(--white);max-width:500px;line-height:1.2;position:relative;letter-spacing:-0.02em;}
-.arch-banner p{color:rgba(255,255,255,0.5);font-size:0.9rem;margin-top:12px;position:relative;}
-@media(max-width:1024px){.tech-hero-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:768px){.tech-hero-grid{grid-template-columns:1fr;}}
+/* ── Breadcrumb & skip ── */
 .page-breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.8rem;margin-bottom:16px;flex-wrap:wrap;}
 .page-breadcrumb a{color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.3s ease;}
 .page-breadcrumb a:hover{color:#fff;}
@@ -65,11 +50,84 @@
 .page-breadcrumb .bc-current{color:rgba(255,255,255,0.8);font-weight:500;}
 a.skip-to-content{position:absolute;top:-100%;left:16px;z-index:9999;padding:8px 16px;background:var(--purple);color:#fff;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;transition:top 0.3s ease;}
 a.skip-to-content:focus{top:12px;}
-</style>
+
+/* ── Hero stats pills ── */
+.hero-stats{display:flex;align-items:center;gap:12px;margin-top:28px;flex-wrap:wrap;}
+.hero-stat{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:8px 16px;}
+.hero-stat-num{font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--white);}
+.hero-stat-label{font-size:0.78rem;color:rgba(255,255,255,0.5);}
+
+/* ── Stack section ── */
+.tech-grid{display:flex;flex-direction:column;gap:16px;max-width:1200px;margin:0 auto;}
+.tech-card{display:grid;grid-template-columns:80px 1fr auto;gap:28px;align-items:center;background:var(--white);border:1px solid var(--gray-100);border-radius:18px;padding:28px 32px;transition:all 0.4s var(--ease);position:relative;overflow:hidden;}
+.tech-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--purple),var(--teal));transform:scaleY(0);transform-origin:top;transition:transform 0.4s var(--ease);}
+.tech-card:hover::before{transform:scaleY(1);}
+.tech-card:hover{box-shadow:0 8px 32px rgba(26,31,54,0.07);transform:translateY(-2px);}
+.tech-logo{width:64px;height:64px;border-radius:14px;background:var(--off-white);border:1px solid var(--gray-100);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform 0.4s var(--ease);}
+.tech-card:hover .tech-logo{transform:scale(1.06) rotate(-4deg);}
+.tech-logo img{width:38px;height:38px;object-fit:contain;}
+.tech-layer-badge{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-heading);font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;padding:3px 10px;border-radius:100px;margin-bottom:6px;}
+.layer-bi{background:rgba(138,101,196,0.1);color:var(--purple);}
+.layer-platform{background:rgba(0,120,212,0.08);color:#0078d4;}
+.layer-cloud{background:rgba(0,164,239,0.08);color:#00a4ef;}
+.layer-engineering{background:rgba(255,70,50,0.08);color:#ff4632;}
+.layer-ai{background:rgba(125,188,219,0.12);color:var(--teal);}
+.layer-governance{background:rgba(0,150,136,0.08);color:#009688;}
+.layer-warehouse{background:rgba(41,182,246,0.08);color:#29b6f6;}
+.tech-info h3{font-family:var(--font-heading);font-size:1.05rem;font-weight:600;color:var(--text-dark);margin-bottom:6px;line-height:1.3;}
+.tech-info p{font-size:0.83rem;color:var(--text-body);line-height:1.6;max-width:580px;margin-bottom:0;}
+.tech-links{display:flex;flex-direction:column;gap:8px;flex-shrink:0;}
+.tech-link{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;font-family:var(--font-heading);font-size:0.74rem;font-weight:500;text-decoration:none;transition:all 0.3s ease;white-space:nowrap;}
+.tech-link.site{background:var(--off-white);color:var(--text-dark);border:1px solid var(--gray-100);}
+.tech-link.site:hover{border-color:var(--purple);color:var(--purple);}
+.tech-link.docs{background:var(--purple-soft);color:var(--purple);border:1px solid rgba(138,101,196,0.1);}
+.tech-link.docs:hover{background:var(--purple);color:#fff;}
+@media(max-width:1024px){.tech-card{grid-template-columns:64px 1fr;}.tech-links{flex-direction:row;grid-column:1/-1;}}
+@media(max-width:640px){.tech-card{grid-template-columns:1fr;padding:24px 20px;}.tech-logo{margin-bottom:4px;}.tech-links{flex-direction:row;flex-wrap:wrap;}}
+
+/* ── Decision matrix ── */
+.decision-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:1200px;margin:0 auto;}
+.decision-card{background:var(--white);border:1px solid var(--gray-100);border-radius:16px;padding:28px;transition:box-shadow 0.3s ease;}
+.decision-card:hover{box-shadow:0 6px 24px rgba(26,31,54,0.06);}
+.decision-card-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-heading);font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--purple);background:var(--purple-soft);padding:4px 12px;border-radius:100px;margin-bottom:12px;}
+.decision-card h3{font-family:var(--font-heading);font-size:0.95rem;font-weight:600;color:var(--text-dark);margin-bottom:10px;line-height:1.35;}
+.decision-card p{font-size:0.82rem;color:var(--text-body);line-height:1.55;margin-bottom:12px;}
+.decision-stack{display:flex;flex-wrap:wrap;gap:6px;}
+.decision-stack span{font-family:var(--font-heading);font-size:0.72rem;font-weight:500;padding:4px 10px;border-radius:6px;background:var(--off-white);color:var(--text-dark);border:1px solid var(--gray-100);}
+@media(max-width:768px){.decision-grid{grid-template-columns:1fr;}}
+
+
+/* ── FAQ ── */
+.faq-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:8px;}
+.faq-item{background:var(--white);border:1px solid var(--gray-100);border-radius:14px;overflow:hidden;transition:border-color 0.3s ease;}
+.faq-item:hover{border-color:rgba(138,101,196,0.3);}
+.faq-item summary{list-style:none;padding:22px 24px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:var(--font-heading);font-size:0.95rem;font-weight:600;color:var(--text-dark);user-select:none;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-chevron{width:20px;height:20px;min-width:20px;border-radius:50%;background:var(--purple-soft);display:flex;align-items:center;justify-content:center;transition:transform 0.3s var(--ease);}
+.faq-chevron svg{width:10px;height:10px;color:var(--purple);}
+.faq-item[open] .faq-chevron{transform:rotate(180deg);background:var(--purple);color:#fff;}
+.faq-item[open] .faq-chevron svg{color:#fff;}
+.faq-item[open]{border-color:rgba(138,101,196,0.25);box-shadow:0 4px 16px rgba(138,101,196,0.06);}
+.faq-body{padding:0 24px 22px;font-size:0.87rem;color:var(--text-body);line-height:1.7;}
+
+/* ── Blog cards ── */
+.blog-cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto;}
+.blog-card-mini{background:var(--white);border:1px solid var(--gray-100);border-radius:16px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:all 0.4s var(--ease);}
+.blog-card-mini:hover{box-shadow:0 8px 28px rgba(26,31,54,0.08);transform:translateY(-4px);}
+.blog-card-mini-img{width:100%;height:160px;object-fit:cover;display:block;}
+.blog-card-mini-body{padding:20px;flex:1;display:flex;flex-direction:column;}
+.blog-card-mini-tag{font-family:var(--font-heading);font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--purple);margin-bottom:8px;}
+.blog-card-mini-body h3{font-family:var(--font-heading);font-size:0.92rem;font-weight:600;color:var(--text-dark);line-height:1.4;margin-bottom:8px;}
+.blog-card-mini-body p{font-size:0.8rem;color:var(--text-body);line-height:1.55;margin-bottom:0;flex:1;}
+.blog-card-mini-footer{padding:12px 20px;border-top:1px solid var(--gray-100);font-family:var(--font-heading);font-size:0.75rem;font-weight:500;color:var(--purple);display:flex;align-items:center;gap:6px;}
+@media(max-width:1024px){.blog-cards-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:640px){.blog-cards-grid{grid-template-columns:1fr;}}
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
   <div class="scroll-progress"></div>
+
   <nav class="navbar" id="navbar">
     <div class="navbar-inner">
       <a href="/" class="navbar-logo"><svg viewBox="0 0 259.77 42.09" xmlns="http://www.w3.org/2000/svg"><g><path fill="#fff" d="M92,13.62h-4.35c-2.07-4.77-6.57-7.84-12.51-7.84-8.21,0-14.52,5.94-14.52,15.53s6.31,15.58,14.52,15.58c7.79,0,13.51-5.25,14.1-13.67h-15.58v-3.02h19.5v2.7c-.58,9.8-7.9,17.33-18.02,17.33s-18.34-7.79-18.34-18.92,7.95-18.92,18.34-18.92c7.95,0,14.2,4.19,16.85,11.24Z"/><path fill="#fff" d="M109.8,40.28c-8.21,0-14.2-5.72-14.2-14.89s5.88-14.89,14.2-14.89,13.67,6.04,13.67,13.41c0,1.17,0,1.91-.11,2.92h-24.01c.32,6.78,5.03,10.33,10.44,10.33,4.93,0,8.27-2.6,9.33-6.46h3.92c-1.32,5.46-5.99,9.59-13.25,9.59ZM99.36,23.79h20.35c.16-6.73-4.72-10.12-10.07-10.12s-9.86,3.39-10.28,10.12Z"/><path fill="#fff" d="M149.28,23.32c0-6.41-3.5-9.7-8.8-9.7s-9.17,3.39-9.17,10.44v15.79h-3.71V10.92h3.71v4.93c1.85-3.6,5.56-5.46,9.86-5.46,6.57,0,11.76,4.03,11.76,12.51v16.96h-3.66v-16.53Z"/><path fill="#fff" d="M157.65,2.7c0-1.59,1.22-2.7,2.7-2.7s2.7,1.11,2.7,2.7-1.22,2.76-2.7,2.76-2.7-1.17-2.7-2.76ZM158.5,10.92h3.71v28.93h-3.71V10.92Z"/><path fill="#fff" d="M193.05,39.85h-3.71v-5.09c-1.75,3.66-5.56,5.56-9.86,5.56-6.57,0-11.76-4.03-11.76-12.51V10.92h3.66v16.48c0,6.41,3.5,9.7,8.8,9.7s9.17-3.39,9.17-10.44v-15.74h3.71v28.93Z"/><path fill="#fff" d="M208.84,40.28c-6.57,0-11.18-3.29-11.66-8.58h3.82c.32,3.18,3.07,5.46,7.79,5.46,4.13,0,6.46-2.23,6.46-4.98,0-7.15-17.38-2.97-17.38-13.83,0-4.29,4.08-7.84,10.17-7.84s10.28,3.29,10.6,8.85h-3.71c-.21-3.23-2.6-5.67-7-5.67-3.87,0-6.31,2.07-6.31,4.61,0,7.84,17.12,3.66,17.28,13.88,0,4.66-4.08,8.11-10.07,8.11Z"/><path fill="#fff" d="M237.72,39.85h-14.73V3.02h14.04c7.79,0,11.92,4.29,11.92,9.49,0,4.45-2.7,7.15-6.25,8.43,3.92.69,7.1,4.61,7.1,9.01,0,5.62-4.56,9.91-12.08,9.91ZM236.51,7.95h-7.47v10.55h7.47c3.92,0,6.31-1.85,6.31-5.25s-2.38-5.3-6.31-5.3ZM236.98,23.42h-7.95v11.5h8.16c4.08,0,6.57-2.07,6.57-5.62s-2.76-5.88-6.78-5.88Z"/><path fill="#fff" d="M253.73,3.02h6.04v36.83h-6.04V3.02Z"/></g><rect fill="#7DBCDB" x="22.89" y="31.51" width="6.92" height="10.58" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="22.81" y="22.32" width="7.08" height="7.08" rx="3.54" ry="3.54"/><rect fill="#7DBCDB" x="11.37" y="13.47" width="7.08" height="7.08" rx="3.54" ry="3.54"/><rect fill="#8A65C4" x="0" y="27.15" width="6.92" height="14.94" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="11.45" y="22.67" width="6.92" height="19.42" rx="3.46" ry="3.46"/><rect fill="#7DBCDB" x="34.34" y="17.7" width="6.92" height="24.39" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="11.45" y=".78" width="6.92" height="10.58" rx="3.46" ry="3.46" transform="translate(29.82 12.14) rotate(-180)"/><rect fill="#7DBCDB" x="34.34" y=".78" width="6.92" height="14.94" rx="3.46" ry="3.46" transform="translate(75.6 16.5) rotate(-180)"/><rect fill="#7DBCDB" x="22.89" y=".78" width="6.92" height="19.42" rx="3.46" ry="3.46" transform="translate(52.71 20.98) rotate(180)"/><rect fill="#8A65C4" x="0" y=".78" width="6.92" height="24.39" rx="3.46" ry="3.46" transform="translate(6.92 25.95) rotate(180)"/></svg></a>
@@ -84,83 +142,367 @@ a.skip-to-content:focus{top:12px;}
       <button type="button" class="navbar-toggle" aria-label="Menu"><span></span><span></span><span></span><svg class="close-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
     </div>
   </nav>
-  <section class="page-hero" id="main-content"><div class="page-hero-grid"></div>
-    <div class="page-hero-grid-bright"></div><div class="page-hero-orb1 parallax-orb"></div><div class="page-hero-orb2 parallax-orb"></div><div class="page-hero-content">
+
+  <!-- ── Hero ── -->
+  <section class="page-hero" id="main-content">
+    <div class="page-hero-grid"></div>
+    <div class="page-hero-grid-bright"></div>
+    <div class="page-hero-orb1 parallax-orb"></div>
+    <div class="page-hero-orb2 parallax-orb"></div>
+    <div class="page-hero-content">
       <nav class="page-breadcrumb" aria-label="Fil d'Ariane">
         <a href="/">Accueil</a><span class="bc-sep">/</span><span class="bc-current">Technologies</span>
       </nav>
-      <h1>Technologies Data & IA <span class="gradient-text-animated">pour la décision</span></h1><p>Une stack éprouvée, sécurisée et scalable pour concevoir des plateformes fiables et orientées usage.</p></div></section>
-  <section class="section-light"><div class="container"><div class="section-header blur-fade"><span class="section-tag">Notre stack technologique</span><h2 class="section-title">Des outils de référence pour chaque couche de votre plateforme</h2></div>
-      <div class="tech-grid">
-        <div class="tech-card blur-fade">
-          <div class="tech-logo"><img src="logos/fabric.svg" width="40" height="40" loading="lazy" alt="Microsoft Fabric" style="width:40px;height:40px;"></div>
-          <div class="tech-info"><h3>Microsoft Fabric</h3><p>Plateforme analytique unifiée couvrant l'ingestion, la transformation, le lakehouse, le temps réel et le reporting dans un seul environnement SaaS.</p></div>
-          <div class="tech-links">
-            <a href="https://www.microsoft.com/en-us/microsoft-fabric" target="_blank" rel="noopener noreferrer" class="tech-link site"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Site officiel</a>
-            <a href="https://learn.microsoft.com/en-us/fabric/" target="_blank" rel="noopener noreferrer" class="tech-link docs"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Documentation</a>
-          </div>
-        </div>
-        <div class="tech-card blur-fade">
-          <div class="tech-logo"><img src="logos/powerbi.svg" width="40" height="40" loading="lazy" alt="Power BI" style="width:40px;height:40px;"></div>
-          <div class="tech-info"><h3>Power BI</h3><p>Solution de Business Intelligence de référence pour la visualisation de données et le pilotage décisionnel.</p></div>
-          <div class="tech-links">
-            <a href="https://powerbi.microsoft.com/" target="_blank" rel="noopener noreferrer" class="tech-link site"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Site officiel</a>
-            <a href="https://learn.microsoft.com/en-us/power-bi/" target="_blank" rel="noopener noreferrer" class="tech-link docs"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Documentation</a>
-          </div>
-        </div>
-        <div class="tech-card blur-fade">
-          <div class="tech-logo"><img src="logos/azure.svg" width="40" height="40" loading="lazy" alt="Microsoft Azure" style="width:40px;height:40px;"></div>
-          <div class="tech-info"><h3>Microsoft Azure</h3><p>Plateforme Cloud complète pour héberger, sécuriser et faire évoluer vos projets Data, IA et GenAI.</p></div>
-          <div class="tech-links">
-            <a href="https://azure.microsoft.com/" target="_blank" rel="noopener noreferrer" class="tech-link site"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Site officiel</a>
-            <a href="https://learn.microsoft.com/en-us/azure/" target="_blank" rel="noopener noreferrer" class="tech-link docs"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Documentation</a>
-          </div>
-        </div>
-        <div class="tech-card blur-fade">
-          <div class="tech-logo"><img src="logos/databricks.svg" width="40" height="40" loading="lazy" alt="Azure Databricks" style="width:40px;height:40px;"></div>
-          <div class="tech-info"><h3>Azure Databricks</h3><p>Plateforme unifiée d'analytics et d'IA pour le data engineering, la data science et le machine learning à l'échelle.</p></div>
-          <div class="tech-links">
-            <a href="https://azure.microsoft.com/en-us/products/databricks" target="_blank" rel="noopener noreferrer" class="tech-link site"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Site officiel</a>
-            <a href="https://learn.microsoft.com/en-us/azure/databricks/" target="_blank" rel="noopener noreferrer" class="tech-link docs"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Documentation</a>
-          </div>
-        </div>
-        <div class="tech-card blur-fade">
-          <div class="tech-logo"><img src="logos/foundry.svg" width="40" height="40" loading="lazy" alt="Microsoft Foundry" style="width:40px;height:40px;"></div>
-          <div class="tech-info"><h3>Microsoft Foundry</h3><p>Plateforme unifiée pour construire, déployer et gérer des agents et applications IA à l'échelle de l'entreprise avec sécurité et gouvernance intégrées.</p></div>
-          <div class="tech-links">
-            <a href="https://ai.azure.com/" target="_blank" rel="noopener noreferrer" class="tech-link site"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Site officiel</a>
-            <a href="https://learn.microsoft.com/en-us/azure/ai-foundry/" target="_blank" rel="noopener noreferrer" class="tech-link docs"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Documentation</a>
-          </div>
-        </div>
-        <div class="tech-card blur-fade">
-          <div class="tech-logo"><img src="logos/purview.webp" width="40" height="40" loading="lazy" alt="Microsoft Purview" style="width:40px;height:40px;object-fit:contain;"></div>
-          <div class="tech-info"><h3>Microsoft Purview</h3><p>Solution de gouvernance des données unifiée pour cataloguer, classifier et tracer vos données.</p></div>
-          <div class="tech-links">
-            <a href="https://www.microsoft.com/en-us/security/business/microsoft-purview" target="_blank" rel="noopener noreferrer" class="tech-link site"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Site officiel</a>
-            <a href="https://learn.microsoft.com/en-us/purview/" target="_blank" rel="noopener noreferrer" class="tech-link docs"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Documentation</a>
-          </div>
-        </div>
-        <div class="tech-card blur-fade">
-          <div class="tech-logo"><img src="logos/snowflake.svg" width="40" height="40" loading="lazy" alt="Snowflake" style="width:40px;height:40px;"></div>
-          <div class="tech-info"><h3>Snowflake</h3><p>Plateforme Cloud multi-cloud pour le stockage, le traitement et le partage de données à grande échelle.</p></div>
-          <div class="tech-links">
-            <a href="https://www.snowflake.com/" target="_blank" rel="noopener noreferrer" class="tech-link site"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Site officiel</a>
-            <a href="https://docs.snowflake.com/" target="_blank" rel="noopener noreferrer" class="tech-link docs"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px;"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Documentation</a>
-          </div>
-        </div>
-      </div>
-  </div></section>
-  <section class="cta-section">
-    <div class="cta-box border-beam reveal-scale">
-      <span class="section-tag">Prêt à avancer ?</span>
-      <h2>Besoin d'aide pour choisir la bonne stack ?</h2>
-      <p>Nous vous aidons à sélectionner et déployer les technologies adaptées à vos besoins.</p>
-      <div class="cta-actions">
-        <a href="/contact" class="btn-primary">Parler à un expert <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-        <a href="/contact" class="btn-outline">Démarrer un diagnostic</a>
+      <h1>Une stack Data & IA <span class="gradient-text-animated">éprouvée et certifiée</span></h1>
+      <p>Nous travaillons exclusivement avec les plateformes leaders du marché — choisies pour leur robustesse, leur interopérabilité et leur capacité à s'industrialiser en entreprise.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="hero-stat-num">7</span><span class="hero-stat-label">technologies maîtrisées</span></div>
+        <div class="hero-stat"><span class="hero-stat-num">5</span><span class="hero-stat-label">couches d'architecture couvertes</span></div>
+        <div class="hero-stat"><span class="hero-stat-num">100%</span><span class="hero-stat-label">orienté entreprise</span></div>
       </div>
     </div>
   </section>
+
+  <!-- ── Stack technologique ── -->
+  <section class="section-light" id="stack">
+    <div class="container">
+      <div class="section-header blur-fade">
+        <span class="section-tag">Notre stack technologique</span>
+        <h2 class="section-title">Des outils de référence, organisés par couche</h2>
+        <p class="section-subtitle">Chaque technologie occupe une place précise dans l'architecture. Ensemble, elles couvrent l'intégralité du cycle de vie de la donnée — de l'ingestion au pilotage décisionnel.</p>
+      </div>
+      <div class="tech-grid">
+
+        <!-- Power BI -->
+        <div class="tech-card blur-fade">
+          <div class="tech-logo">
+            <img src="logos/powerbi.svg" width="38" height="38" loading="lazy" alt="Microsoft Power BI">
+          </div>
+          <div class="tech-info">
+            <div class="tech-layer-badge layer-bi">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="18" rx="1"/><rect x="14" y="8" width="7" height="13" rx="1"/></svg>
+              Visualisation & BI
+            </div>
+            <h3>Microsoft Power BI</h3>
+            <p>Leader du marché BI, Power BI permet de créer des rapports interactifs, des tableaux de bord temps réel et des modèles sémantiques partagés. Intégré nativement à Fabric, Azure et Teams.</p>
+          </div>
+          <div class="tech-links">
+            <a href="https://powerbi.microsoft.com/" target="_blank" rel="noopener noreferrer" class="tech-link site"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Site officiel</a>
+            <a href="https://learn.microsoft.com/en-us/power-bi/" target="_blank" rel="noopener noreferrer" class="tech-link docs"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg> Documentation</a>
+          </div>
+        </div>
+
+        <!-- Microsoft Fabric -->
+        <div class="tech-card blur-fade blur-fade-delay-1">
+          <div class="tech-logo">
+            <img src="logos/fabric.svg" width="38" height="38" loading="lazy" alt="Microsoft Fabric">
+          </div>
+          <div class="tech-info">
+            <div class="tech-layer-badge layer-platform">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"/></svg>
+              Plateforme Data Unifiée
+            </div>
+            <h3>Microsoft Fabric</h3>
+            <p>Plateforme SaaS qui réunit en un seul environnement l'ingestion, le stockage OneLake, la transformation, le temps réel, le Machine Learning et le reporting. Le successeur d'Azure Synapse.</p>
+          </div>
+          <div class="tech-links">
+            <a href="https://www.microsoft.com/en-us/microsoft-fabric" target="_blank" rel="noopener noreferrer" class="tech-link site"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Site officiel</a>
+            <a href="https://learn.microsoft.com/en-us/fabric/" target="_blank" rel="noopener noreferrer" class="tech-link docs"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg> Documentation</a>
+          </div>
+        </div>
+
+        <!-- Azure -->
+        <div class="tech-card blur-fade">
+          <div class="tech-logo">
+            <img src="logos/azure.svg" width="38" height="38" loading="lazy" alt="Microsoft Azure">
+          </div>
+          <div class="tech-info">
+            <div class="tech-layer-badge layer-cloud">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"/></svg>
+              Cloud & Infrastructure
+            </div>
+            <h3>Microsoft Azure</h3>
+            <p>Socle Cloud sur lequel reposent Fabric, Databricks et les services IA de GeniusBI. Azure fournit la sécurité, la scalabilité, le réseau, l'identité (Entra ID) et les services managés pour toute l'architecture.</p>
+          </div>
+          <div class="tech-links">
+            <a href="https://azure.microsoft.com/" target="_blank" rel="noopener noreferrer" class="tech-link site"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Site officiel</a>
+            <a href="https://learn.microsoft.com/en-us/azure/" target="_blank" rel="noopener noreferrer" class="tech-link docs"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg> Documentation</a>
+          </div>
+        </div>
+
+        <!-- Databricks -->
+        <div class="tech-card blur-fade blur-fade-delay-1">
+          <div class="tech-logo">
+            <img src="logos/databricks.svg" width="38" height="38" loading="lazy" alt="Azure Databricks">
+          </div>
+          <div class="tech-info">
+            <div class="tech-layer-badge layer-engineering">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"/></svg>
+              Data Engineering & ML
+            </div>
+            <h3>Azure Databricks</h3>
+            <p>Plateforme Spark unifiée pour le data engineering, la data science et le Machine Learning. Idéale pour les charges de travail Pythons intensives, les architectures multi-cloud et les pipelines Delta Lake à grande échelle.</p>
+          </div>
+          <div class="tech-links">
+            <a href="https://azure.microsoft.com/en-us/products/databricks" target="_blank" rel="noopener noreferrer" class="tech-link site"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Site officiel</a>
+            <a href="https://learn.microsoft.com/en-us/azure/databricks/" target="_blank" rel="noopener noreferrer" class="tech-link docs"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg> Documentation</a>
+          </div>
+        </div>
+
+        <!-- AI Foundry -->
+        <div class="tech-card blur-fade">
+          <div class="tech-logo">
+            <img src="logos/foundry.svg" width="38" height="38" loading="lazy" alt="Azure AI Foundry">
+          </div>
+          <div class="tech-info">
+            <div class="tech-layer-badge layer-ai">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+              IA Générative & Agents
+            </div>
+            <h3>Azure AI Foundry</h3>
+            <p>Plateforme Microsoft pour concevoir, déployer et gouverner des applications IA et des agents autonomes. Intègre GPT-4, Phi, les modèles open source et les outils de Responsible AI dans un environnement sécurisé.</p>
+          </div>
+          <div class="tech-links">
+            <a href="https://ai.azure.com/" target="_blank" rel="noopener noreferrer" class="tech-link site"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Site officiel</a>
+            <a href="https://learn.microsoft.com/en-us/azure/ai-foundry/" target="_blank" rel="noopener noreferrer" class="tech-link docs"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg> Documentation</a>
+          </div>
+        </div>
+
+        <!-- Purview -->
+        <div class="tech-card blur-fade blur-fade-delay-1">
+          <div class="tech-logo">
+            <img src="logos/purview.webp" width="38" height="38" loading="lazy" alt="Microsoft Purview" style="object-fit:contain;">
+          </div>
+          <div class="tech-info">
+            <div class="tech-layer-badge layer-governance">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+              Gouvernance & Catalog
+            </div>
+            <h3>Microsoft Purview</h3>
+            <p>Solution unifiée de gouvernance des données : catalogue, classification automatique, lineage, contrôle d'accès et conformité. S'intègre nativement avec Fabric, Azure et les sources on-premise.</p>
+          </div>
+          <div class="tech-links">
+            <a href="https://www.microsoft.com/en-us/security/business/microsoft-purview" target="_blank" rel="noopener noreferrer" class="tech-link site"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Site officiel</a>
+            <a href="https://learn.microsoft.com/en-us/purview/" target="_blank" rel="noopener noreferrer" class="tech-link docs"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg> Documentation</a>
+          </div>
+        </div>
+
+        <!-- Snowflake -->
+        <div class="tech-card blur-fade">
+          <div class="tech-logo">
+            <img src="logos/snowflake.svg" width="38" height="38" loading="lazy" alt="Snowflake">
+          </div>
+          <div class="tech-info">
+            <div class="tech-layer-badge layer-warehouse">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg>
+              Data Warehouse
+            </div>
+            <h3>Snowflake</h3>
+            <p>Entrepôt de données Cloud multi-cloud (Azure, AWS, GCP) pour le stockage et l'analyse de données à grande échelle. Recommandé pour les architectures multi-cloud ou les organisations qui ont déjà investi dans l'écosystème Snowflake.</p>
+          </div>
+          <div class="tech-links">
+            <a href="https://www.snowflake.com/" target="_blank" rel="noopener noreferrer" class="tech-link site"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg> Site officiel</a>
+            <a href="https://docs.snowflake.com/" target="_blank" rel="noopener noreferrer" class="tech-link docs"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg> Documentation</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Quelle stack pour vous ? ── -->
+  <section class="section-gray" id="choix">
+    <div class="container">
+      <div class="section-header blur-fade">
+        <span class="section-tag">Aide à la décision</span>
+        <h2 class="section-title">Quelle stack pour votre contexte ?</h2>
+        <p class="section-subtitle">Pas de stack universelle. Nos recommandations dépendent de votre environnement existant, de votre équipe et de vos priorités business.</p>
+      </div>
+      <div class="decision-grid">
+
+        <div class="decision-card blur-fade">
+          <div class="decision-card-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Vous êtes 100% Microsoft
+          </div>
+          <h3>Stack recommandée : Fabric + Power BI + Purview</h3>
+          <p>L'intégration native entre Fabric, Power BI et Purview vous donne une plateforme unifiée sans friction. Vous réduisez les coûts d'infrastructure, simplifiiez la gouvernance et accélérez le time-to-insight.</p>
+          <div class="decision-stack">
+            <span>Microsoft Fabric</span><span>Power BI</span><span>Microsoft Purview</span><span>Azure AI Foundry</span>
+          </div>
+        </div>
+
+        <div class="decision-card blur-fade blur-fade-delay-1">
+          <div class="decision-card-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Équipe data science forte
+          </div>
+          <h3>Stack recommandée : Databricks + Snowflake + Power BI</h3>
+          <p>Si votre équipe travaille principalement en Python/Spark et que les workloads ML sont intensifs, Databricks s'impose. Snowflake assure le serving layer, Power BI la restitution.</p>
+          <div class="decision-stack">
+            <span>Azure Databricks</span><span>Snowflake</span><span>Power BI</span>
+          </div>
+        </div>
+
+        <div class="decision-card blur-fade">
+          <div class="decision-card-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Priorité IA générative
+          </div>
+          <h3>Stack recommandée : Azure AI Foundry + Fabric + Power BI</h3>
+          <p>Pour déployer des Copilots, des agents autonomes ou des applications RAG en entreprise, Azure AI Foundry avec Fabric en backend garantit une architecture sécurisée, gouvernée et scalable.</p>
+          <div class="decision-stack">
+            <span>Azure AI Foundry</span><span>Microsoft Fabric</span><span>Power BI</span><span>Microsoft Purview</span>
+          </div>
+        </div>
+
+        <div class="decision-card blur-fade blur-fade-delay-1">
+          <div class="decision-card-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Gouvernance avant tout
+          </div>
+          <h3>Stack recommandée : Purview + Fabric + Azure</h3>
+          <p>Quand la conformité, la traçabilité et le contrôle des données sensibles sont la priorité — secteur financier, assurance, secteur public — Purview couplé à Fabric offre le niveau de gouvernance le plus robuste du marché.</p>
+          <div class="decision-stack">
+            <span>Microsoft Purview</span><span>Microsoft Fabric</span><span>Azure</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="section-gray" id="faq">
+    <div class="container">
+      <div class="section-header blur-fade">
+        <span class="section-tag">Questions fréquentes</span>
+        <h2 class="section-title">Vos questions sur notre stack</h2>
+        <p class="section-subtitle">Les comparatifs et choix technologiques que nos clients nous posent le plus souvent.</p>
+      </div>
+      <div class="faq-list">
+
+        <details class="faq-item blur-fade">
+          <summary>
+            Quelle est la différence entre Microsoft Fabric et Azure Synapse Analytics ?
+            <span class="faq-chevron"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span>
+          </summary>
+          <div class="faq-body">
+            Microsoft Fabric est le successeur et l'évolution d'Azure Synapse. Là où Synapse nécessitait de jongler entre plusieurs services distincts — Data Factory, Synapse Analytics, Power BI — Fabric unifie tout dans une seule plateforme SaaS avec un stockage OneLake commun. Pour les nouveaux projets, GeniusBI recommande systématiquement Fabric. Pour les projets existants sur Synapse, nous évaluons la migration au cas par cas selon le ROI et la complexité de l'existant.
+          </div>
+        </details>
+
+        <details class="faq-item blur-fade blur-fade-delay-1">
+          <summary>
+            Quand choisir Databricks plutôt que Microsoft Fabric ?
+            <span class="faq-chevron"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span>
+          </summary>
+          <div class="faq-body">
+            Databricks s'impose dans trois cas : votre équipe est principalement data science (Python/Spark natif), vous opérez sur plusieurs clouds simultanément (AWS, GCP, Azure), ou vos workloads ML et IA sont très intensifs. Microsoft Fabric convient mieux aux organisations Microsoft-first avec des équipes BI fortes et un besoin d'intégration native Power BI + Teams + 365. Les deux peuvent coexister dans une même architecture — ce n'est pas un choix exclusif.
+          </div>
+        </details>
+
+        <details class="faq-item blur-fade">
+          <summary>
+            Power BI est-il compatible avec Snowflake et Databricks ?
+            <span class="faq-chevron"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span>
+          </summary>
+          <div class="faq-body">
+            Oui, Power BI dispose de connecteurs natifs certifiés pour Snowflake et Databricks. Les modes DirectQuery et Import sont supportés dans les deux cas. Chez GeniusBI, nous déployons régulièrement des architectures où Power BI se connecte à Snowflake ou à Databricks SQL Warehouse comme couche sémantique. Les performances sont excellentes en DirectQuery dès lors que les tables sont correctement optimisées et clusterisées.
+          </div>
+        </details>
+
+        <details class="faq-item blur-fade blur-fade-delay-1">
+          <summary>
+            Comment Microsoft Purview s'intègre-t-il dans un projet Fabric ?
+            <span class="faq-chevron"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span>
+          </summary>
+          <div class="faq-body">
+            Microsoft Purview et Fabric sont conçus pour fonctionner ensemble nativement. Purview scanne automatiquement les assets du OneLake (tables Delta, dataflows, pipelines) et les enrichit dans son Data Catalog. La classification des données sensibles et le lineage bout-en-bout sont disponibles sans développement supplémentaire. C'est la combinaison que GeniusBI recommande pour toute organisation qui place la gouvernance au cœur de sa stratégie data.
+          </div>
+        </details>
+
+        <details class="faq-item blur-fade">
+          <summary>
+            Faut-il migrer vers Fabric si on utilise déjà Azure Data Factory et Synapse ?
+            <span class="faq-chevron"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span>
+          </summary>
+          <div class="faq-body">
+            Pas nécessairement en urgence. ADF et Synapse restent supportés par Microsoft sur le long terme. La migration vers Fabric est pertinente si vous souhaitez réduire les coûts de maintenance, unifier votre plateforme sous une licence Fabric F-SKU, ou bénéficier des services nouveaux (Real-Time Intelligence, AI Skills, Direct Lake). GeniusBI accompagne ce type de migration avec une analyse ROI en amont — nous n'encourageons jamais une migration pour la migration.
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Articles liés ── -->
+  <section class="section-light" id="ressources">
+    <div class="container">
+      <div class="section-header blur-fade">
+        <span class="section-tag">Nos guides techniques</span>
+        <h2 class="section-title">Approfondissez votre compréhension du stack</h2>
+        <p class="section-subtitle">Des articles rédigés par nos consultants pour vous aider à faire les bons choix d'architecture.</p>
+      </div>
+      <div class="blog-cards-grid">
+
+        <a href="/blog-microsoft-fabric-guide" class="blog-card-mini blur-fade">
+          <img src="og/og-blog-fabric.png" width="400" height="160" loading="lazy" alt="Guide Microsoft Fabric" class="blog-card-mini-img">
+          <div class="blog-card-mini-body">
+            <div class="blog-card-mini-tag">Plateforme Data</div>
+            <h3>Microsoft Fabric : guide complet pour comprendre la plateforme</h3>
+            <p>Architecture OneLake, composants clés, cas d'usage concrets et comment démarrer un projet Fabric en entreprise.</p>
+          </div>
+          <div class="blog-card-mini-footer">
+            Lire l'article
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="13" height="13"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+        </a>
+
+        <a href="/blog-databricks-vs-snowflake" class="blog-card-mini blur-fade blur-fade-delay-1">
+          <img src="og/og-blog-dbx-snow.png" width="400" height="160" loading="lazy" alt="Databricks vs Snowflake" class="blog-card-mini-img">
+          <div class="blog-card-mini-body">
+            <div class="blog-card-mini-tag">Comparatif</div>
+            <h3>Databricks vs Snowflake : lequel choisir pour votre projet ?</h3>
+            <p>Architecture, performance, pricing, cas d'usage et critères de décision pour choisir entre les deux plateformes leaders.</p>
+          </div>
+          <div class="blog-card-mini-footer">
+            Lire l'article
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="13" height="13"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+        </a>
+
+        <a href="/blog-lakehouse-vs-datamesh" class="blog-card-mini blur-fade">
+          <img src="og/og-blog-lakehouse.png" width="400" height="160" loading="lazy" alt="Lakehouse vs Data Mesh" class="blog-card-mini-img">
+          <div class="blog-card-mini-body">
+            <div class="blog-card-mini-tag">Architecture</div>
+            <h3>Lakehouse vs Data Mesh : quel modèle d'architecture choisir ?</h3>
+            <p>Avantages, limites et critères de choix selon votre maturité data, la taille de vos équipes et vos enjeux de gouvernance.</p>
+          </div>
+          <div class="blog-card-mini-footer">
+            Lire l'article
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="13" height="13"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="cta-section">
+    <div class="cta-box border-beam reveal-scale">
+      <span class="section-tag">Besoin d'un avis expert ?</span>
+      <h2>Vous ne savez pas quelle stack choisir ?</h2>
+      <p>En 30 minutes, nos consultants analysent votre contexte et vous donnent une recommandation claire et argumentée — sans engagement.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn-primary">Parler à un expert <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        <a href="/services" class="btn-outline">Voir nos services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
   <footer class="footer">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -181,77 +523,8 @@ a.skip-to-content:focus{top:12px;}
       </div>
     </div>
   </footer>
-  
-  
-  
-<script src="js/main.js" defer></script>
-<script src="js/magic-animations.js" defer></script>
-</body>
-</html>
 
-  <style>
-.tech-grid{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:20px;}
-.tech-card{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;background:var(--white);border:1px solid var(--gray-100);border-radius:16px;padding:32px;transition:all 0.4s var(--ease);}
-.tech-card:hover{box-shadow:0 8px 28px rgba(26,31,54,0.06);transform:translateY(-3px);}
-.tech-logo{width:72px;height:72px;border-radius:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform 0.4s var(--ease);}
-.tech-card:hover .tech-logo{transform:scale(1.06) rotate(-3deg);}
-.tech-logo.purple{background:var(--purple-soft);}
-.tech-logo.teal{background:var(--teal-soft);}
-.tech-logo svg{width:40px;height:40px;}
-.tech-info h3{font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--text-dark);margin-bottom:6px;}
-.tech-info p{font-size:0.84rem;color:var(--text-body);line-height:1.6;max-width:600px;}
-.tech-links{display:flex;flex-direction:column;gap:8px;flex-shrink:0;}
-.tech-link{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;font-family:var(--font-heading);font-size:0.75rem;font-weight:500;text-decoration:none;transition:all 0.3s ease;white-space:nowrap;}
-.tech-link.site{background:var(--off-white);color:var(--text-dark);border:1px solid var(--gray-100);}
-.tech-link.site:hover{border-color:var(--purple);color:var(--purple);}
-.tech-link.docs{background:var(--purple-soft);color:var(--purple);border:1px solid rgba(138,101,196,0.1);}
-.tech-link.docs:hover{background:var(--purple);color:#fff;}
-.tech-stack-banner{max-width:1200px;margin:0 auto;background:var(--navy);border-radius:20px;padding:48px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:32px;}
-.tech-stack-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 30%,rgba(138,101,196,0.12),transparent 50%),radial-gradient(ellipse at 80% 70%,rgba(125,188,219,0.1),transparent 50%);}
-.tech-stack-banner h3{font-family:var(--font-heading);font-size:clamp(1.3rem,2vw,1.7rem);font-weight:700;color:var(--white);line-height:1.25;position:relative;max-width:500px;letter-spacing:-0.02em;}
-.tech-stack-banner p{color:rgba(255,255,255,0.45);font-size:0.88rem;margin-top:8px;position:relative;}
-.tech-stack-banner .btn-primary{position:relative;}
-@media(max-width:1024px){.tech-card{grid-template-columns:auto 1fr;} .tech-links{flex-direction:row;grid-column:1/-1;}}
-@media(max-width:768px){.tech-card{grid-template-columns:1fr;text-align:center;} .tech-logo{margin:0 auto;} .tech-info p{max-width:100%;} .tech-links{flex-direction:row;justify-content:center;grid-column:auto;} .tech-stack-banner{flex-direction:column;text-align:center;padding:36px 24px;}}
-</style>
+  <script src="js/main.js" defer></script>
+  <script src="js/magic-animations.js" defer></script>
 </body>
 </html>
-
-  <style>
-.tech-grid{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:20px;}
-.tech-card{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;background:var(--white);border:1px solid var(--gray-100);border-radius:16px;padding:32px;transition:all 0.4s var(--ease);}
-.tech-card:hover{box-shadow:0 8px 28px rgba(26,31,54,0.06);transform:translateY(-3px);}
-.tech-logo{width:72px;height:72px;border-radius:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:var(--off-white);border:1px solid var(--gray-100);transition:transform 0.4s var(--ease);}
-.tech-card:hover .tech-logo{transform:scale(1.06) rotate(-3deg);}
-.tech-logo svg{width:40px;height:40px;}
-.tech-info h3{font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--text-dark);margin-bottom:6px;}
-.tech-info p{font-size:0.84rem;color:var(--text-body);line-height:1.6;max-width:600px;}
-.tech-links{display:flex;flex-direction:column;gap:8px;flex-shrink:0;}
-.tech-link{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;font-family:var(--font-heading);font-size:0.75rem;font-weight:500;text-decoration:none;transition:all 0.3s ease;white-space:nowrap;}
-.tech-link.site{background:var(--off-white);color:var(--text-dark);border:1px solid var(--gray-100);}
-.tech-link.site:hover{border-color:var(--purple);color:var(--purple);}
-.tech-link.docs{background:var(--purple-soft);color:var(--purple);border:1px solid rgba(138,101,196,0.1);}
-.tech-link.docs:hover{background:var(--purple);color:#fff;}
-@media(max-width:1024px){.tech-card{grid-template-columns:auto 1fr;} .tech-links{flex-direction:row;grid-column:1/-1;}}
-@media(max-width:768px){.tech-card{grid-template-columns:1fr;text-align:center;} .tech-logo{margin:0 auto;} .tech-info p{max-width:100%;} .tech-links{flex-direction:row;justify-content:center;grid-column:auto;}}
-</style>
-  
-  
-</body>
-</html>
-  <style>.tech-grid{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:20px;}
-.tech-card{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;background:var(--white);border:1px solid var(--gray-100);border-radius:16px;padding:32px;transition:all 0.4s var(--ease);}
-.tech-card:hover{box-shadow:0 8px 28px rgba(26,31,54,0.06);transform:translateY(-3px);}
-.tech-logo{width:72px;height:72px;border-radius:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:var(--off-white);border:1px solid var(--gray-100);transition:transform 0.4s var(--ease);}
-.tech-card:hover .tech-logo{transform:scale(1.06) rotate(-3deg);}
-.tech-logo svg{width:40px;height:40px;}
-.tech-info h3{font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--text-dark);margin-bottom:6px;}
-.tech-info p{font-size:0.84rem;color:var(--text-body);line-height:1.6;max-width:600px;}
-.tech-links{display:flex;flex-direction:column;gap:8px;flex-shrink:0;}
-.tech-link{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;font-family:var(--font-heading);font-size:0.75rem;font-weight:500;text-decoration:none;transition:all 0.3s ease;white-space:nowrap;}
-.tech-link.site{background:var(--off-white);color:var(--text-dark);border:1px solid var(--gray-100);}.tech-link.site:hover{border-color:var(--purple);color:var(--purple);}
-.tech-link.docs{background:var(--purple-soft);color:var(--purple);border:1px solid rgba(138,101,196,0.1);}.tech-link.docs:hover{background:var(--purple);color:#fff;}
-@media(max-width:1024px){.tech-card{grid-template-columns:auto 1fr;} .tech-links{flex-direction:row;grid-column:1/-1;}}
-@media(max-width:768px){.tech-card{grid-template-columns:1fr;text-align:center;} .tech-logo{margin:0 auto;} .tech-links{flex-direction:row;justify-content:center;}}</style>
-  
-</body></html>
