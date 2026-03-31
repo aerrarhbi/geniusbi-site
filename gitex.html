@@ -347,15 +347,15 @@
       <div class="gitex-dates">
         <div class="gitex-date-chip">
           <span class="day">7</span>
-          <span class="label">Lundi Avril</span>
-        </div>
-        <div class="gitex-date-chip">
-          <span class="day">8</span>
           <span class="label">Mardi Avril</span>
         </div>
         <div class="gitex-date-chip">
-          <span class="day">9</span>
+          <span class="day">8</span>
           <span class="label">Mercredi Avril</span>
+        </div>
+        <div class="gitex-date-chip">
+          <span class="day">9</span>
+          <span class="label">Jeudi Avril</span>
         </div>
       </div>
     </div>
@@ -376,9 +376,9 @@
 
       <!-- Mobile tabs -->
       <div class="cal-tabs" id="calTabs">
-        <button class="cal-tab active" data-day="2026-04-07">Lun 7</button>
-        <button class="cal-tab" data-day="2026-04-08">Mar 8</button>
-        <button class="cal-tab" data-day="2026-04-09">Mer 9</button>
+        <button class="cal-tab active" data-day="2026-04-07">Mar 7</button>
+        <button class="cal-tab" data-day="2026-04-08">Mer 8</button>
+        <button class="cal-tab" data-day="2026-04-09">Jeu 9</button>
       </div>
 
       <div class="cal-grid" id="calGrid">
@@ -495,7 +495,17 @@
           <svg fill="none" viewBox="0 0 24 24" stroke="#059669" stroke-width="2" style="width:28px;height:28px;"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
         </div>
         <h4>Rendez-vous confirmé !</h4>
-        <p>Merci pour votre réservation. Nous vous enverrons un email de confirmation avec les détails du rendez-vous.</p>
+        <p>Un email de confirmation a été envoyé avec les détails de votre rendez-vous.</p>
+        <div id="calendarActions" style="display:flex;flex-direction:column;gap:10px;margin-top:20px;">
+          <a id="googleCalLink" href="#" target="_blank" rel="noopener" class="btn-primary" style="justify-content:center;font-size:0.88rem;padding:12px 24px;text-decoration:none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+            Ajouter à Google Calendar
+          </a>
+          <button id="icsDownload" type="button" class="btn-outline-dark" style="justify-content:center;font-size:0.88rem;padding:12px 24px;width:100%;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+            Télécharger .ics (Outlook / Apple)
+          </button>
+        </div>
         <p style="margin-top:16px;font-size:0.82rem;color:var(--gray-400);">Vous pouvez fermer cette fenêtre.</p>
       </div>
     </div>
@@ -543,9 +553,9 @@
 
     // ===== CONFIG =====
     const DAYS = [
-      { date: '2026-04-07', weekday: 'Lundi', label: '7 Avril 2026' },
-      { date: '2026-04-08', weekday: 'Mardi', label: '8 Avril 2026' },
-      { date: '2026-04-09', weekday: 'Mercredi', label: '9 Avril 2026' },
+      { date: '2026-04-07', weekday: 'Mardi', label: '7 Avril 2026' },
+      { date: '2026-04-08', weekday: 'Mercredi', label: '8 Avril 2026' },
+      { date: '2026-04-09', weekday: 'Jeudi', label: '9 Avril 2026' },
     ];
     const SLOTS = [
       '09:00','09:30','10:00','10:30','11:00','11:30',
@@ -805,37 +815,67 @@
           if (!apiRes.ok) throw new Error('API save failed');
         }
 
-        // 2. Always notify via Web3Forms
-        const w3data = {
+        // 2. Notify owner via Web3Forms
+        const dayInfo = DAYS.find(d => d.date === data.date);
+        const slotDisplay = dayInfo ? dayInfo.weekday + ' ' + dayInfo.label + ' à ' + data.time : data.date + ' ' + data.time;
+
+        const w3owner = {
           access_key: '0902ec57-2f5d-426b-a88a-58f9c41bb16f',
-          subject: 'Nouveau RDV GITEX Africa 2026',
+          subject: 'Nouveau RDV GITEX — ' + data.name + ' — ' + slotDisplay,
           from_name: 'GeniusBI GITEX Booking',
+          replyto: data.email,
           name: data.name,
           email: data.email,
           phone: data.phone || '—',
           company: data.company || '—',
-          date: data.date,
-          time: data.time,
+          date: slotDisplay,
           duration: data.duration + ' minutes',
           service: data.service || '—',
           comment: data.comment || '—',
           demo: data.demo ? 'Oui' : 'Non',
         };
-        // Fire and forget (don't block on email notification)
         fetch(WEB3FORMS, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(w3data),
+          body: JSON.stringify(w3owner),
         }).catch(() => {});
 
-        // 3. Update local state (only safe fields)
+        // 3. Send confirmation email to booker
+        const w3booker = {
+          access_key: '0902ec57-2f5d-426b-a88a-58f9c41bb16f',
+          subject: 'Votre RDV GeniusBI — GITEX Africa 2026 confirmé',
+          from_name: 'GeniusBI',
+          replyto: 'contact@geniusbi.ma',
+          email: data.email,
+          name: data.name,
+          message: 'Bonjour ' + data.name + ',\n\n'
+            + 'Votre rendez-vous au GITEX Africa 2026 est confirmé :\n\n'
+            + '📅 ' + slotDisplay + '\n'
+            + '⏱ Durée : ' + data.duration + ' minutes\n'
+            + (data.service ? '💼 Service : ' + data.service + '\n' : '')
+            + '\nLieu : GITEX Africa 2026, Marrakech, Maroc'
+            + '\n\nÀ très bientôt !\nL\'équipe GeniusBI\ncontact@geniusbi.ma | +212 613 778 458',
+        };
+        fetch(WEB3FORMS, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(w3booker),
+        }).catch(() => {});
+
+        // 4. Update local state (only safe fields)
         bookings.push({
           date: data.date,
           time: data.time,
           duration: data.duration,
         });
 
-        // Show success
+        // 5. Show success + calendar links
+        const svc = data.service || '';
+        document.getElementById('googleCalLink').href = generateGoogleCalUrl(data.date, data.time, data.duration, svc);
+
+        const icsContent = generateICS(data.date, data.time, data.duration, svc, data.name);
+        document.getElementById('icsDownload').onclick = () => downloadICS(icsContent);
+
         formEl.style.display = 'none';
         successEl.style.display = 'block';
 
@@ -852,6 +892,85 @@
       submitBtn.disabled = false;
       submitBtn.innerHTML = 'Confirmer le rendez-vous <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>';
     });
+
+    // ===== CALENDAR GENERATION =====
+    function padZ(n) { return String(n).padStart(2, '0'); }
+
+    function getEventTimes(date, time, duration) {
+      const [y, m, d] = date.split('-').map(Number);
+      const [h, min] = time.split(':').map(Number);
+      const start = new Date(y, m - 1, d, h, min);
+      const end = new Date(start.getTime() + duration * 60000);
+      return { start, end };
+    }
+
+    function toICSDate(d) {
+      return d.getFullYear() + padZ(d.getMonth() + 1) + padZ(d.getDate()) + 'T' +
+             padZ(d.getHours()) + padZ(d.getMinutes()) + '00';
+    }
+
+    function generateGoogleCalUrl(date, time, duration, service) {
+      const { start, end } = getEventTimes(date, time, duration);
+      const fmt = (d) => toICSDate(d);
+      const title = 'RDV GeniusBI — GITEX Africa 2026';
+      const details = 'Rendez-vous avec GeniusBI au GITEX Africa 2026, Marrakech.'
+        + (service ? '\\nService : ' + service : '')
+        + '\\n\\nContact : contact@geniusbi.ma | +212 613 778 458';
+      const location = 'GITEX Africa 2026, Marrakech, Maroc';
+      const params = new URLSearchParams({
+        action: 'TEMPLATE',
+        text: title,
+        dates: fmt(start) + '/' + fmt(end),
+        details: details,
+        location: location,
+      });
+      return 'https://calendar.google.com/calendar/render?' + params.toString();
+    }
+
+    function generateICS(date, time, duration, service, name) {
+      const { start, end } = getEventTimes(date, time, duration);
+      const now = new Date();
+      const uid = Date.now() + '@geniusbi.ma';
+      const ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//GeniusBI//GITEX Booking//FR',
+        'CALSCALE:GREGORIAN',
+        'METHOD:PUBLISH',
+        'BEGIN:VEVENT',
+        'UID:' + uid,
+        'DTSTAMP:' + toICSDate(now) + 'Z',
+        'DTSTART:' + toICSDate(start),
+        'DTEND:' + toICSDate(end),
+        'SUMMARY:RDV GeniusBI — GITEX Africa 2026',
+        'DESCRIPTION:Rendez-vous avec GeniusBI au GITEX Africa 2026.' +
+          (service ? '\\nService : ' + service : '') +
+          '\\nContact : contact@geniusbi.ma | +212 613 778 458',
+        'LOCATION:GITEX Africa 2026\\, Marrakech\\, Maroc',
+        'ORGANIZER;CN=GeniusBI:mailto:contact@geniusbi.ma',
+        'STATUS:CONFIRMED',
+        'BEGIN:VALARM',
+        'TRIGGER:-PT30M',
+        'ACTION:DISPLAY',
+        'DESCRIPTION:RDV GeniusBI dans 30 minutes',
+        'END:VALARM',
+        'END:VEVENT',
+        'END:VCALENDAR',
+      ].join('\r\n');
+      return ics;
+    }
+
+    function downloadICS(icsContent) {
+      const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'rdv-geniusbi-gitex-2026.ics';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
 
     // ===== GRID SPOTLIGHT =====
     const heroGrid = document.querySelector('.page-hero-grid-bright') || document.querySelector('.gitex-hero .page-hero-grid-bright');
