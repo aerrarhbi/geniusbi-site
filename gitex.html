@@ -815,40 +815,19 @@
           if (!apiRes.ok) throw new Error('API save failed');
         }
 
-        // 2. Notify owner via Web3Forms (formulaire contact principal)
+        // 2. Notify owner + send auto-response to booker via Web3Forms (gitex_booking)
         const dayInfo = DAYS.find(d => d.date === data.date);
         const slotDisplay = dayInfo ? dayInfo.weekday + ' ' + dayInfo.label + ' à ' + data.time : data.date + ' ' + data.time;
+        const googleCalUrl = generateGoogleCalUrl(data.date, data.time, data.duration, data.service || '');
 
-        const w3owner = {
-          access_key: '0902ec57-2f5d-426b-a88a-58f9c41bb16f',
+        const w3data = {
+          access_key: 'd23a5c71-1b8d-482a-853c-594b0b6be90a',
           subject: 'Nouveau RDV GITEX — ' + data.name + ' — ' + slotDisplay,
           from_name: 'GeniusBI GITEX Booking',
           replyto: data.email,
-          name: data.name,
-          email: data.email,
-          phone: data.phone || '—',
-          company: data.company || '—',
-          date: slotDisplay,
-          duration: data.duration + ' minutes',
-          service: data.service || '—',
-          comment: data.comment || '—',
-          demo: data.demo ? 'Oui' : 'Non',
-        };
-        fetch(WEB3FORMS, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(w3owner),
-        }).catch(() => {});
-
-        // 3. Send confirmation to booker via Web3Forms (formulaire gitex_booking)
-        const googleCalUrl = generateGoogleCalUrl(data.date, data.time, data.duration, data.service || '');
-        const w3booker = {
-          access_key: 'd23a5c71-1b8d-482a-853c-594b0b6be90a',
-          subject: 'Votre RDV GeniusBI — GITEX Africa 2026 confirmé',
-          from_name: 'GeniusBI',
-          replyto: 'contact@geniusbi.ma',
           email: data.email,
           'Nom': data.name,
+          'Téléphone': data.phone || '—',
           'Entreprise': data.company || '—',
           'Date du rendez-vous': slotDisplay,
           'Durée': data.duration + ' minutes',
@@ -861,7 +840,7 @@
         fetch(WEB3FORMS, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(w3booker),
+          body: JSON.stringify(w3data),
         }).catch(() => {});
 
         // 4. Update local state (only safe fields)
