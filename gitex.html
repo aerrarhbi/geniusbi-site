@@ -815,7 +815,7 @@
           if (!apiRes.ok) throw new Error('API save failed');
         }
 
-        // 2. Notify owner via Web3Forms
+        // 2. Notify owner via Web3Forms (formulaire contact principal)
         const dayInfo = DAYS.find(d => d.date === data.date);
         const slotDisplay = dayInfo ? dayInfo.weekday + ' ' + dayInfo.label + ' à ' + data.time : data.date + ' ' + data.time;
 
@@ -840,21 +840,20 @@
           body: JSON.stringify(w3owner),
         }).catch(() => {});
 
-        // 3. Send confirmation email to booker
+        // 3. Send confirmation to booker via Web3Forms (formulaire gitex_booking)
         const w3booker = {
-          access_key: '0902ec57-2f5d-426b-a88a-58f9c41bb16f',
+          access_key: 'd23a5c71-1b8d-482a-853c-594b0b6be90a',
           subject: 'Votre RDV GeniusBI — GITEX Africa 2026 confirmé',
           from_name: 'GeniusBI',
           replyto: 'contact@geniusbi.ma',
           email: data.email,
           name: data.name,
-          message: 'Bonjour ' + data.name + ',\n\n'
-            + 'Votre rendez-vous au GITEX Africa 2026 est confirmé :\n\n'
-            + '📅 ' + slotDisplay + '\n'
-            + '⏱ Durée : ' + data.duration + ' minutes\n'
-            + (data.service ? '💼 Service : ' + data.service + '\n' : '')
-            + '\nLieu : GITEX Africa 2026, Marrakech, Maroc'
-            + '\n\nÀ très bientôt !\nL\'équipe GeniusBI\ncontact@geniusbi.ma | +212 613 778 458',
+          company: data.company || '—',
+          date: slotDisplay,
+          duration: data.duration + ' minutes',
+          service: data.service || '—',
+          demo: data.demo ? 'Oui' : 'Non',
+          comment: data.comment || '—',
         };
         fetch(WEB3FORMS, {
           method: 'POST',
