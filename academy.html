@@ -40,29 +40,51 @@
   <link rel="stylesheet" href="css/shared.css">
   <link rel="stylesheet" href="css/magic-animations.css">
   <style>
-.courses-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+/* Featured Power BI courses — hero row */
+.courses-featured{max-width:1200px;margin:0 auto 32px;display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.courses-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
 .course-card{background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-lg);padding:32px;transition:all 0.5s var(--ease);position:relative;overflow:hidden;text-decoration:none;display:block;}
 .course-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--teal));transform:scaleX(0);transform-origin:left;transition:transform 0.5s var(--ease);}
 .course-card:hover::after{transform:scaleX(1);}
 .course-card:hover{box-shadow:0 12px 40px rgba(26,31,54,0.08);transform:translateY(-5px);}
-.course-active{background:linear-gradient(135deg,rgba(250,204,21,0.08) 0%,rgba(255,255,255,1) 50%,rgba(30,58,138,0.08) 100%);border:1px solid rgba(250,204,21,0.25);box-shadow:0 4px 20px rgba(250,204,21,0.06),0 4px 20px rgba(30,58,138,0.04);}
-.course-active:hover{box-shadow:0 12px 40px rgba(250,204,21,0.12),0 12px 40px rgba(30,58,138,0.08);border-color:rgba(250,204,21,0.4);}
-.course-active::after{background:linear-gradient(90deg,#facc15,#1e3a8a);}
+/* Hero featured card */
+.course-card-featured{padding:48px 44px;border-radius:20px;}
+.course-card-featured .course-meta{font-size:0.82rem;margin-bottom:20px;}
+.course-card-featured h3{font-size:1.85rem;font-weight:700;margin-bottom:14px;line-height:1.2;}
+.course-card-featured p{font-size:1rem;line-height:1.65;margin-bottom:28px;}
+.course-card-featured .course-tag{font-size:0.78rem;padding:6px 16px;}
+.course-cta-link{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-size:0.9rem;font-weight:600;color:var(--purple);text-decoration:none;}
+.course-cta-link svg{width:16px;height:16px;transition:transform 0.3s ease;}
+.course-cta-link:hover svg{transform:translateX(4px);}
+.courses-featured{max-width:100%;margin-bottom:20px;}
+.courses-grid{max-width:100%;}
+.courses-all-wrap{background:linear-gradient(135deg,rgba(138,101,196,0.1) 0%,rgba(125,188,219,0.1) 100%);border-radius:24px;padding:32px;max-width:1200px;margin:0 auto;}
+.course-active{background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.8) !important;box-shadow:0 8px 32px rgba(138,101,196,0.12),0 2px 8px rgba(125,188,219,0.1);}
+.course-active::before{display:none;}
+.course-active:hover{background:rgba(255,255,255,0.72);box-shadow:0 20px 60px rgba(138,101,196,0.2),0 4px 16px rgba(125,188,219,0.15);transform:translateY(-6px);}
+.course-active::after{display:none;}
+.course-card-featured .course-meta{color:rgba(11,17,32,0.45);}
+.course-card-featured h3{color:#0B1120 !important;font-size:2.1rem;}
+.course-card-featured p{color:rgba(11,17,32,0.65);}
+.course-card-featured .ct-bi{background:rgba(138,101,196,0.12);color:var(--purple);}
+.course-cta-link{color:var(--purple);}
+.course-brand-icon{width:56px;height:56px;object-fit:contain;margin-bottom:20px;filter:drop-shadow(0 4px 12px rgba(235,187,20,0.3));}
 .course-disabled{opacity:0.5;pointer-events:none;filter:grayscale(0.4);}
 .course-disabled::after{display:none;}
-.course-soon{position:absolute;top:16px;right:16px;padding:4px 12px;border-radius:100px;font-size:0.68rem;font-weight:600;background:var(--gray-100);color:var(--gray-400);letter-spacing:0.02em;}
-.course-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;font-size:0.75rem;color:var(--gray-400);}
-.course-card h3{font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--text-dark);margin-bottom:8px;}
-.course-card p{font-size:0.84rem;color:var(--text-body);line-height:1.55;margin-bottom:16px;}
+.course-soon{position:absolute;top:14px;right:14px;padding:3px 10px;border-radius:100px;font-size:0.65rem;font-weight:600;background:var(--gray-100);color:var(--gray-400);letter-spacing:0.02em;}
+.course-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.75rem;color:var(--gray-400);}
+.course-card h3{font-family:var(--font-heading);font-size:0.95rem;font-weight:600;color:var(--text-dark);margin-bottom:6px;}
+.course-card p{font-size:0.8rem;color:var(--text-body);line-height:1.5;margin-bottom:12px;}
 .course-tag{display:inline-block;padding:4px 12px;border-radius:100px;font-size:0.72rem;font-weight:600;}
 .ct-bi{background:var(--purple-soft);color:var(--purple);} .ct-cloud{background:var(--teal-soft);color:var(--teal);} .ct-ai{background:rgba(74,222,128,0.1);color:#059669;}
+.soon-label{display:block;font-size:0.72rem;color:var(--gray-400);font-weight:500;margin-bottom:10px;letter-spacing:0.03em;text-transform:uppercase;}
 .benefits-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .benefit-card{text-align:center;padding:32px 24px;}
 .benefit-num{font-family:var(--font-heading);font-size:2.5rem;font-weight:800;color:var(--gray-100);margin-bottom:12px;letter-spacing:-0.04em;}
 .benefit-card h4{font-family:var(--font-heading);font-size:0.95rem;font-weight:600;color:var(--text-dark);margin-bottom:6px;}
 .benefit-card p{font-size:0.82rem;color:var(--text-body);line-height:1.5;}
-@media(max-width:1024px){.courses-grid,.benefits-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:768px){.courses-grid,.benefits-grid{grid-template-columns:1fr;}}
+@media(max-width:1024px){.courses-featured{grid-template-columns:1fr 1fr;}.courses-grid{grid-template-columns:1fr 1fr;}.benefits-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.courses-featured,.courses-grid,.benefits-grid{grid-template-columns:1fr;}.course-card-featured{padding:32px 28px;}.course-card-featured h3{font-size:1.4rem;}}
 .page-breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.8rem;margin-bottom:16px;flex-wrap:wrap;}
 .page-breadcrumb a{color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.3s ease;}
 .page-breadcrumb a:hover{color:#fff;}
@@ -109,14 +131,34 @@ a.skip-to-content:focus{top:12px;}
   <section class="section-light">
     <div class="container">
       <div class="section-header blur-fade"><span class="section-tag">Nos formations</span><h2 class="section-title">Nos formations conçues pour l'impact et l'autonomie</h2></div>
-      <div class="courses-grid stagger-children">
-        <a href="/formation-powerbi-fondamentaux" class="course-card course-active" data-tilt><div class="course-meta"><span>4 semaines · Débutant</span></div><h3>Power BI Fondamentaux</h3><p>Apprenez les bases de Power BI : connexion aux données, modélisation, DAX, création de dashboards orientés décision.</p><span class="course-tag ct-bi">BI & Dataviz</span></a>
-        <a href="/formation-powerbi-avance" class="course-card course-active" data-tilt><div class="course-meta"><span>4 semaines · Intermédiaire</span></div><h3>Power BI Avancé</h3><p>DAX avancé, modélisation complexe, Row Level Security, déploiement et gouvernance des rapports en entreprise.</p><span class="course-tag ct-bi">BI & Dataviz</span></a>
-        <div class="course-card course-disabled" data-tilt><div class="course-soon">Bientôt disponible</div><div class="course-meta"><span>8 semaines · Intermédiaire</span></div><h3>Azure Data Engineering</h3><p>Pipelines d'ingestion, Lakehouse, Data Factory, Databricks, orchestration et bonnes pratiques d'industrialisation.</p><span class="course-tag ct-cloud">Cloud & Data</span></div>
-        <div class="course-card course-disabled" data-tilt><div class="course-soon">Bientôt disponible</div><div class="course-meta"><span>6 semaines · Avancé</span></div><h3>IA Générative appliquée</h3><p>Copilots, RAG, prompt engineering, Azure AI Foundry, déploiement de cas d'usage IA en entreprise.</p><span class="course-tag ct-ai">IA & GenAI</span></div>
-        <div class="course-card course-disabled" data-tilt><div class="course-soon">Bientôt disponible</div><div class="course-meta"><span>4 semaines · Débutant</span></div><h3>SQL & Data Analytics</h3><p>Fondamentaux SQL, requêtes analytiques, optimisation, cas pratiques sur données réelles.</p><span class="course-tag ct-cloud">Cloud & Data</span></div>
-        <div class="course-card course-disabled" data-tilt><div class="course-soon">Bientôt disponible</div><div class="course-meta"><span>6 semaines · Intermédiaire</span></div><h3>Cloud Azure Fondamentaux</h3><p>Services Azure essentiels, sécurité, gestion des coûts, bonnes pratiques d'architecture Cloud.</p><span class="course-tag ct-cloud">Cloud & Data</span></div>
+      <div class="courses-all-wrap">
+      <!-- Formations vedettes Power BI -->
+      <div class="courses-featured stagger-children">
+        <a href="/formation-powerbi-fondamentaux" class="course-card course-active course-card-featured" data-tilt>
+          <img src="logos/powerbi.svg" alt="Power BI" class="course-brand-icon">
+          <div class="course-meta"><span>4 semaines · Débutant</span></div>
+          <h3>Power BI Fondamentaux</h3>
+          <p>Apprenez les bases de Power BI : connexion aux données, modélisation, DAX, création de dashboards orientés décision. Un parcours complet pour passer de zéro à opérationnel en entreprise.</p>
+          <span class="course-tag ct-bi">BI & Dataviz</span>
+          <span class="course-cta-link">Voir la formation <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </a>
+        <a href="/formation-powerbi-avance" class="course-card course-active course-card-featured" data-tilt>
+          <img src="logos/powerbi.svg" alt="Power BI" class="course-brand-icon">
+          <div class="course-meta"><span>4 semaines · Intermédiaire</span></div>
+          <h3>Power BI Avancé</h3>
+          <p>DAX avancé, modélisation complexe, Row Level Security, déploiement et gouvernance des rapports en entreprise. Maîtrisez Power BI à un niveau expert et industrialisez vos solutions.</p>
+          <span class="course-tag ct-bi">BI & Dataviz</span>
+          <span class="course-cta-link">Voir la formation <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </a>
       </div>
+      <!-- Prochaines formations -->
+      <div class="courses-grid stagger-children">
+        <div class="course-card course-disabled"><div class="course-soon">Bientôt disponible</div><div class="course-meta"><span>8 sem. · Intermédiaire</span></div><h3>Azure Data Engineering</h3><p>Pipelines, Lakehouse, Data Factory, Databricks et bonnes pratiques d'industrialisation.</p><span class="course-tag ct-cloud">Cloud & Data</span></div>
+        <div class="course-card course-disabled"><div class="course-soon">Bientôt disponible</div><div class="course-meta"><span>6 sem. · Avancé</span></div><h3>IA Générative appliquée</h3><p>Copilots, RAG, prompt engineering, Azure AI Foundry et cas d'usage IA en entreprise.</p><span class="course-tag ct-ai">IA & GenAI</span></div>
+        <div class="course-card course-disabled"><div class="course-soon">Bientôt disponible</div><div class="course-meta"><span>4 sem. · Débutant</span></div><h3>SQL & Data Analytics</h3><p>Fondamentaux SQL, requêtes analytiques, optimisation sur données réelles.</p><span class="course-tag ct-cloud">Cloud & Data</span></div>
+        <div class="course-card course-disabled"><div class="course-soon">Bientôt disponible</div><div class="course-meta"><span>6 sem. · Intermédiaire</span></div><h3>Cloud Azure Fondamentaux</h3><p>Services Azure essentiels, sécurité, gestion des coûts et architecture Cloud.</p><span class="course-tag ct-cloud">Cloud & Data</span></div>
+      </div>
+      </div><!-- /courses-all-wrap -->
     </div>
   </section>
   <section class="section-gray">
