@@ -1,3 +1,41 @@
+# ============================================
+# robots.txt - geniusbi.ma
+# Stratégie GEO : autoriser explicitement les bots IA
+# ============================================
+
+# --- Bots de recherche IA (visibilité) ---
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# --- Bots d'entraînement IA (autorisés en stratégie GEO offensive) ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# --- Tous les autres user-agents (Google, Bing, etc.) ---
 User-agent: *
 Allow: /
 
