@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="msvalidate.01" content="97341B57C32BE1FDCBA5F017692F7606" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formation Microsoft Fabric au Maroc | GeniusBI Academy</title>
+  <meta name="description" content="Formation Microsoft Fabric 5 jours (40h) en présentiel à Casablanca : OneLake, Lakehouse, Data Factory, Warehouse, Direct Lake et Power BI. 10 participants max, mini-projet end-to-end.">
+  <meta name="keywords" content="formation Microsoft Fabric Maroc, formation Fabric Casablanca, OneLake Lakehouse, Direct Lake Power BI, GeniusBI Academy">
+  <meta name="author" content="GeniusBI">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://geniusbi.ma/formation-microsoft-fabric">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Formation Microsoft Fabric — GeniusBI Academy | 5 jours · 40h · Casablanca">
+  <meta property="og:description" content="Maîtrisez Microsoft Fabric de A à Z : OneLake, Lakehouse, Data Warehouse, Real-Time, Data Science et Power BI Direct Lake. Mini-projet end-to-end inclus.">
+  <meta property="og:url" content="https://geniusbi.ma/formation-microsoft-fabric">
+  <meta property="og:image" content="https://geniusbi.ma/og/og-formation-pbi-fondamentaux.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="GeniusBI">
+  <meta property="og:locale" content="fr_MA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Formation Microsoft Fabric — GeniusBI Academy | 5 jours · 40h">
+  <meta name="twitter:description" content="Maîtrisez Microsoft Fabric de A à Z : OneLake, Lakehouse, Data Warehouse, Real-Time, Data Science et Power BI Direct Lake. Mini-projet end-to-end inclus.">
+  <meta name="twitter:image" content="https://geniusbi.ma/og/og-formation-pbi-fondamentaux.png">
+  <meta name="twitter:site" content="@geniusbi_ai">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"Formation Microsoft Fabric","description":"Formation intensive de 5 jours (40h) en présentiel à Casablanca sur Microsoft Fabric : OneLake, Lakehouse, Data Factory, Data Warehouse, Real-Time Intelligence, Data Science et Power BI en Direct Lake. 10 participants max, mini-projet end-to-end inclus.","url":"https://geniusbi.ma/formation-microsoft-fabric","provider":{"@type":"Organization","name":"GeniusBI Academy","url":"https://geniusbi.ma/academy","sameAs":"https://geniusbi.ma"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"onsite","courseWorkload":"PT40H","inLanguage":"fr","location":{"@type":"Place","name":"Casablanca, Maroc","address":{"@type":"PostalAddress","addressLocality":"Casablanca","addressCountry":"MA"}}},"inLanguage":"fr","teaches":["Microsoft Fabric","OneLake","Lakehouse","Data Factory","Data Warehouse","Direct Lake","Power BI","KQL","PySpark","MLflow"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://geniusbi.ma/"},{"@type":"ListItem","position":2,"name":"Academy","item":"https://geniusbi.ma/academy"},{"@type":"ListItem","position":3,"name":"Formation Microsoft Fabric"}]}</script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0B1120">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/magic-animations.css">
+
+<style>
+/* ====== Hero (dark navy, fabric flyer aesthetic) ====== */
+.fab-hero{position:relative;background:var(--navy);padding:140px 24px 80px;overflow:hidden;color:#fff;isolation:isolate;}
+.fab-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.035) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse 80% 70% at 60% 30%,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse 80% 70% at 60% 30%,#000 30%,transparent 80%);pointer-events:none;z-index:0;}
+.fab-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;}
+.fab-orb-1{width:560px;height:560px;background:radial-gradient(circle,rgba(138,101,196,0.45) 0%,transparent 70%);top:-220px;right:-160px;}
+.fab-orb-2{width:480px;height:480px;background:radial-gradient(circle,rgba(125,188,219,0.32) 0%,transparent 70%);bottom:-120px;left:-200px;}
+.fab-orb-3{width:300px;height:300px;background:radial-gradient(circle,rgba(138,101,196,0.30) 0%,transparent 70%);top:340px;right:-60px;}
+.fab-ring{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.07);pointer-events:none;z-index:0;}
+.fab-ring-1{width:760px;height:760px;top:-220px;right:-300px;}
+.fab-ring-2{width:520px;height:520px;top:-120px;right:-160px;border-color:rgba(138,101,196,0.10);}
+.fab-hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2;}
+.fab-breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.82rem;margin-bottom:24px;flex-wrap:wrap;}
+.fab-breadcrumb a{color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.3s ease;}
+.fab-breadcrumb a:hover{color:#fff;}
+.fab-breadcrumb .bc-sep{color:rgba(255,255,255,0.25);font-size:0.75rem;}
+.fab-breadcrumb .bc-current{color:rgba(255,255,255,0.85);font-weight:500;}
+.fab-hero-grid{display:grid;grid-template-columns:1fr 220px;gap:48px;align-items:start;}
+.fab-eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--font-heading);font-size:0.74rem;font-weight:600;text-transform:uppercase;letter-spacing:0.16em;color:var(--teal-light);}
+.fab-eyebrow::before{content:'';width:32px;height:2px;background:var(--teal);border-radius:2px;}
+.fab-pill{display:inline-flex;align-items:center;gap:8px;margin-left:10px;padding:5px 14px;border-radius:100px;background:rgba(138,101,196,0.18);border:1px solid rgba(138,101,196,0.35);color:#fff;font-family:var(--font-heading);font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;}
+.fab-title{font-family:var(--font-heading);font-weight:800;font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.0;letter-spacing:-0.04em;color:#fff;margin-top:18px;}
+.fab-title .accent{background:linear-gradient(90deg,var(--purple-light) 0%,var(--teal) 60%,var(--purple-light) 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:fab-shimmer 5s linear infinite;display:inline-block;}
+@keyframes fab-shimmer{0%{background-position:-200% center;}100%{background-position:200% center;}}
+.fab-sub{margin-top:18px;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.65);max-width:560px;}
+.fab-meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:24px;}
+.fab-meta-item{display:flex;align-items:center;gap:8px;font-size:0.84rem;color:rgba(255,255,255,0.5);}
+.fab-meta-item svg{width:16px;height:16px;color:var(--teal);opacity:0.8;}
+.fab-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;}
+.fab-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:100px;font-family:var(--font-body);font-size:0.92rem;font-weight:600;text-decoration:none;transition:all 0.3s ease;}
+.fab-cta svg{width:18px;height:18px;}
+.fab-cta-primary{background:var(--purple);color:#fff;box-shadow:0 12px 36px rgba(138,101,196,0.4);border:1px solid rgba(255,255,255,0.08);}
+.fab-cta-primary:hover{transform:translateY(-2px);box-shadow:0 16px 44px rgba(138,101,196,0.55);}
+.fab-cta-ghost{background:transparent;color:rgba(255,255,255,0.75);border:1px solid rgba(255,255,255,0.18);}
+.fab-cta-ghost:hover{background:rgba(255,255,255,0.06);color:#fff;border-color:rgba(255,255,255,0.35);transform:translateY(-2px);}
+/* Fabric mark */
+.fab-mark{width:220px;height:220px;border-radius:32px;background:linear-gradient(155deg,rgba(138,101,196,0.30) 0%,rgba(125,188,219,0.14) 60%,rgba(255,255,255,0.02) 100%);border:1px solid rgba(255,255,255,0.12);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;box-shadow:0 30px 80px rgba(138,101,196,0.25);}
+.fab-mark::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(138,101,196,0.45) 0%,transparent 60%);pointer-events:none;}
+.fab-mark img{width:96px;height:96px;position:relative;z-index:1;}
+.fab-mark .ms-label{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-family:var(--font-heading);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.2em;color:rgba(255,255,255,0.6);font-weight:600;}
+/* Stats row */
+.fab-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px;}
+.fab-stat{background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:18px 20px;backdrop-filter:blur(6px);position:relative;overflow:hidden;}
+.fab-stat::before{content:'';position:absolute;top:0;left:18px;right:18px;height:2px;background:linear-gradient(90deg,var(--purple),var(--teal));border-radius:2px;opacity:0.65;}
+.fab-stat .num{font-family:var(--font-heading);font-weight:700;font-size:1.85rem;line-height:1;letter-spacing:-0.03em;color:#fff;}
+.fab-stat .num span{color:#fff;font-weight:500;}
+.fab-stat .lbl{margin-top:8px;font-size:0.78rem;color:rgba(255,255,255,0.6);line-height:1.4;}
+@media(max-width:1024px){.fab-hero-grid{grid-template-columns:1fr;}.fab-mark{width:160px;height:160px;}.fab-mark img{width:72px;height:72px;}.fab-stats{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.fab-hero{padding-top:110px;}}
+
+/* ====== Audience banner ====== */
+.fab-audience{padding:80px 24px;background:var(--off-white);border-bottom:1px solid var(--gray-100);}
+.fab-audience-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;}
+.fab-tag{display:inline-flex;align-items:center;gap:8px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--purple);margin-bottom:14px;}
+.fab-tag::before{content:'';display:block;width:24px;height:2px;background:var(--purple);border-radius:2px;}
+.fab-audience h2{font-family:var(--font-heading);font-size:clamp(1.6rem,3vw,2.1rem);font-weight:800;color:var(--text-dark);letter-spacing:-0.03em;line-height:1.15;margin-bottom:14px;}
+.fab-audience .lead{font-size:0.95rem;color:var(--text-body);line-height:1.7;}
+.fab-audience-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.fab-audience-item{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-md);}
+.fab-audience-ico{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.fab-audience-ico.p{background:var(--purple-soft);}
+.fab-audience-ico.t{background:var(--teal-soft);}
+.fab-audience-ico svg{width:18px;height:18px;}
+.fab-audience-item .name{font-family:var(--font-heading);font-size:0.88rem;font-weight:600;color:var(--text-dark);}
+.fab-audience-item .desc{font-size:0.74rem;color:var(--gray-400);margin-top:2px;}
+@media(max-width:900px){.fab-audience-inner{grid-template-columns:1fr;gap:32px;}.fab-audience-list{grid-template-columns:1fr;}}
+
+/* ====== Section wrappers ====== */
+.fab-section{max-width:1100px;margin:0 auto;padding:80px 24px;}
+.fab-section-header{margin-bottom:36px;text-align:center;}
+.fab-section-header.left{text-align:left;}
+.fab-section-header h2{font-family:var(--font-heading);font-size:clamp(1.7rem,3vw,2.2rem);font-weight:800;color:var(--text-dark);letter-spacing:-0.03em;line-height:1.15;margin-top:8px;}
+.fab-section-header p{margin-top:12px;font-size:0.95rem;color:var(--text-body);line-height:1.7;max-width:680px;margin-left:auto;margin-right:auto;}
+.fab-section-header.left p{margin-left:0;}
+.fab-section-header .fab-tag{justify-content:center;}
+.fab-section-header.left .fab-tag{justify-content:flex-start;}
+
+/* ====== Objectifs ====== */
+.fab-objectifs{display:grid;grid-template-columns:1fr 1fr;gap:14px 32px;}
+.fab-obj-item{display:flex;align-items:flex-start;gap:12px;padding:6px 0;font-size:0.92rem;color:var(--text-body);line-height:1.55;}
+.fab-obj-check{width:24px;height:24px;border-radius:7px;background:rgba(125,188,219,0.12);border:1px solid rgba(125,188,219,0.22);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.fab-obj-check svg{width:13px;height:13px;color:var(--teal);}
+@media(max-width:720px){.fab-objectifs{grid-template-columns:1fr;}}
+
+/* ====== Programme jour par jour ====== */
+.fab-programme{background:var(--off-white);padding:80px 24px;border-top:1px solid var(--gray-100);border-bottom:1px solid var(--gray-100);}
+.fab-programme-inner{max-width:1200px;margin:0 auto;}
+.fab-days{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px;}
+.fab-day{background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-lg);padding:22px 20px;position:relative;overflow:hidden;transition:all 0.3s var(--ease);}
+.fab-day::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--teal));opacity:0.7;}
+.fab-day:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(26,31,54,0.08);}
+.fab-day .num{font-family:var(--font-heading);font-size:0.66rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--purple);}
+.fab-day h3{margin-top:8px;font-family:var(--font-heading);font-size:0.98rem;font-weight:700;line-height:1.25;color:var(--text-dark);letter-spacing:-0.015em;min-height:48px;}
+.fab-day-when{margin-top:6px;font-size:0.72rem;color:var(--gray-400);font-weight:500;}
+.fab-day ul{margin-top:14px;list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;}
+.fab-day li{font-size:0.78rem;line-height:1.4;color:var(--text-body);padding-left:12px;position:relative;}
+.fab-day li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:2px;background:var(--teal);border-radius:1px;}
+.fab-day--project{background:linear-gradient(165deg,rgba(138,101,196,0.08) 0%,rgba(125,188,219,0.04) 100%);border-color:rgba(138,101,196,0.25);}
+.fab-day--project .num{color:var(--teal);}
+@media(max-width:1024px){.fab-days{grid-template-columns:repeat(2,1fr);}.fab-day h3{min-height:auto;}}
+@media(max-width:600px){.fab-days{grid-template-columns:1fr;}}
+
+/* ====== Detailed accordion programme ====== */
+/* ==== Fabric ecosystem (HTML rebuild) ==== */
+.fab-eco{position:relative;margin-top:16px;padding:48px 56px 40px;border-radius:24px;background:#fff;text-align:center;box-shadow:0 24px 60px rgba(11,17,32,0.08);}
+.fab-eco::before{content:'';position:absolute;inset:0;border-radius:24px;padding:1.5px;background:linear-gradient(135deg,rgba(125,188,219,0.65),rgba(138,101,196,0.55) 50%,rgba(125,188,219,0.65));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;}
+.fab-eco-mark{display:flex;justify-content:center;margin-bottom:14px;}
+.fab-eco-mark img{width:67px;height:67px;object-fit:contain;}
+.fab-eco-title{font-family:var(--font-heading);font-size:clamp(2rem,4vw,2.8rem);font-weight:800;color:var(--text-dark);letter-spacing:-0.04em;line-height:1;margin-bottom:12px;}
+.fab-eco-tagline{font-family:var(--font-heading);font-size:clamp(0.95rem,1.6vw,1.25rem);font-weight:600;letter-spacing:-0.01em;background:linear-gradient(90deg,var(--teal) 0%,var(--purple-light) 35%,var(--purple) 65%,var(--teal) 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:fab-shimmer 5s linear infinite;margin-bottom:36px;display:inline-block;}
+.fab-eco-workloads{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:32px;}
+.fab-eco-tile{padding:22px 10px 18px;border-radius:14px;background:linear-gradient(180deg,#FAFBFD,#EEF1F8);border:1px solid var(--gray-100);display:flex;flex-direction:column;align-items:center;gap:14px;transition:all 0.3s var(--ease);}
+.fab-eco-tile:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(26,31,54,0.07);border-color:rgba(138,101,196,0.18);}
+.fab-eco-tile .icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;}
+.fab-eco-tile .icon img{width:100%;height:100%;object-fit:contain;}
+.fab-eco-tile .name{font-family:var(--font-heading);font-size:0.82rem;font-weight:600;color:var(--text-dark);text-align:center;line-height:1.25;letter-spacing:-0.01em;}
+.fab-eco-platform{padding:22px 28px 18px;border-radius:18px;border:1.5px solid var(--gray-100);position:relative;}
+.fab-eco-platform-label{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#fff;padding:0 14px;font-family:var(--font-heading);font-size:0.78rem;font-weight:600;color:var(--gray-600);letter-spacing:0.02em;}
+.fab-eco-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+.fab-eco-pillar{display:flex;align-items:center;justify-content:center;gap:14px;padding:10px 8px;}
+.fab-eco-pillar:not(:last-child){border-right:1px solid var(--gray-100);}
+.fab-eco-pillar .icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.fab-eco-pillar .icon img{width:100%;height:100%;object-fit:contain;}
+.fab-eco-pillar .name{font-family:var(--font-heading);font-size:1.05rem;font-weight:600;color:var(--text-dark);letter-spacing:-0.01em;}
+@media(max-width:1000px){.fab-eco{padding:36px 24px 28px;}.fab-eco-workloads{grid-template-columns:repeat(3,1fr);}.fab-eco-pillars{grid-template-columns:1fr;}.fab-eco-pillar:not(:last-child){border-right:0;border-bottom:1px solid var(--gray-100);}}
+@media(max-width:560px){.fab-eco-workloads{grid-template-columns:repeat(2,1fr);}}
+.fab-modules{margin-top:8px;}
+.fab-module{border:1px solid var(--gray-100);border-radius:var(--radius-lg);margin-bottom:12px;overflow:hidden;transition:all 0.3s ease;background:var(--white);}
+.fab-module:hover{border-color:rgba(138,101,196,0.18);box-shadow:0 4px 16px rgba(26,31,54,0.04);}
+.fab-module-header{padding:18px 22px;display:flex;align-items:center;gap:14px;cursor:pointer;user-select:none;}
+.fab-module-num{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:0.78rem;font-weight:700;flex-shrink:0;}
+.fab-module-num.p{background:var(--purple-soft);color:var(--purple);}
+.fab-module-num.t{background:var(--teal-soft);color:var(--teal);}
+.fab-module-title{font-family:var(--font-heading);font-size:0.95rem;font-weight:600;color:var(--text-dark);flex:1;}
+.fab-module-duration{font-size:0.76rem;color:var(--gray-400);white-space:nowrap;}
+.fab-module-content{padding:0 22px 20px 70px;display:none;}
+.fab-module.open .fab-module-content{display:block;}
+.fab-module-content h5{font-family:var(--font-heading);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--purple);margin:14px 0 8px;}
+.fab-module-content h5:first-child{margin-top:0;}
+.fab-module-content ul{list-style:none;padding:0;}
+.fab-module-content li{font-size:0.85rem;color:var(--text-body);line-height:1.6;padding:4px 0;padding-left:16px;position:relative;}
+.fab-module-content li::before{content:'';position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:50%;background:var(--purple);opacity:0.35;}
+.fab-module-chevron{width:20px;height:20px;color:var(--gray-400);transition:transform 0.3s ease;flex-shrink:0;}
+.fab-module.open .fab-module-chevron{transform:rotate(180deg);}
+
+/* ====== Tools / Workloads ====== */
+.fab-tools{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.fab-tool{background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-md);padding:18px 14px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;transition:all 0.3s ease;}
+.fab-tool:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,31,54,0.06);border-color:rgba(138,101,196,0.18);}
+.fab-tool img{height:34px;width:34px;object-fit:contain;}
+.fab-tool .glyph{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--purple),var(--purple-light));color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:800;font-size:0.78rem;}
+.fab-tool .glyph.t{background:linear-gradient(135deg,var(--teal),var(--teal-light));}
+.fab-tool .name{font-family:var(--font-heading);font-size:0.8rem;font-weight:600;color:var(--text-dark);}
+.fab-tool .lvl{font-size:0.68rem;color:var(--gray-400);}
+@media(max-width:768px){.fab-tools{grid-template-columns:repeat(2,1fr);}}
+
+/* ====== Speaker (Ayoub) ====== */
+.fab-speaker{padding:90px 24px;background:var(--white);}
+.fab-speaker-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:center;}
+.fab-speaker-photo{width:280px;height:340px;border-radius:24px;overflow:hidden;background:linear-gradient(165deg,#fff 0%,#f5edff 100%);border:1px solid rgba(138,101,196,0.20);box-shadow:0 14px 36px rgba(138,101,196,0.18);position:relative;}
+.fab-speaker-photo::before{content:'';position:absolute;inset:6px;border-radius:18px;background:linear-gradient(180deg,rgba(138,101,196,0.10) 0%,rgba(125,188,219,0.06) 100%);z-index:0;}
+.fab-speaker-photo img{position:relative;z-index:1;width:calc(100% - 12px);height:calc(100% - 12px);object-fit:cover;object-position:center 18%;border-radius:18px;margin:6px;display:block;}
+.fab-speaker-info .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:100px;background:var(--purple);color:#fff;font-family:var(--font-heading);font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;margin-bottom:18px;box-shadow:0 6px 16px rgba(138,101,196,0.30);}
+.fab-speaker-info .badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(255,255,255,0.25);}
+.fab-speaker-info h2{font-family:var(--font-heading);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:800;letter-spacing:-0.025em;color:var(--text-dark);margin-bottom:6px;}
+.fab-speaker-info .role{font-family:var(--font-heading);font-size:0.85rem;color:var(--purple);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:18px;}
+.fab-speaker-info p{font-size:0.95rem;color:var(--text-body);line-height:1.7;}
+@media(max-width:768px){.fab-speaker-inner{grid-template-columns:1fr;justify-items:center;text-align:center;}.fab-speaker-info{text-align:left;}}
+
+/* ====== FAQ ====== */
+.fab-faq{padding:80px 24px;background:var(--off-white);}
+.fab-faq-inner{max-width:880px;margin:0 auto;}
+.fab-faq-list{margin-top:24px;display:flex;flex-direction:column;gap:14px;}
+.fab-faq details{background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-md);padding:18px 24px;cursor:pointer;transition:all 0.3s ease;}
+.fab-faq details[open]{border-color:rgba(138,101,196,0.2);box-shadow:0 6px 22px rgba(26,31,54,0.05);}
+.fab-faq summary{font-family:var(--font-heading);font-weight:600;color:var(--text-dark);font-size:0.96rem;list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center;}
+.fab-faq summary::-webkit-details-marker{display:none;}
+.fab-faq summary::after{content:'+';font-size:1.4rem;font-weight:300;color:var(--purple);transition:transform 0.3s ease;}
+.fab-faq details[open] summary::after{content:'−';}
+.fab-faq p{margin-top:12px;font-size:0.9rem;color:var(--text-body);line-height:1.7;}
+
+/* ====== Bottom CTA ====== */
+.fab-bottom-cta{position:relative;background:var(--navy);color:#fff;padding:80px 24px;overflow:hidden;text-align:center;}
+.fab-bottom-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(138,101,196,0.18) 0%,transparent 60%);}
+.fab-bottom-cta-inner{max-width:720px;margin:0 auto;position:relative;z-index:2;}
+.fab-bottom-cta h2{font-family:var(--font-heading);font-size:clamp(1.7rem,3vw,2.2rem);font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1.2;margin-bottom:14px;}
+.fab-bottom-cta p{font-size:0.95rem;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:28px;}
+.fab-bottom-cta .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+a.skip-to-content{position:absolute;top:-100%;left:16px;z-index:9999;padding:8px 16px;background:var(--purple);color:#fff;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;transition:top 0.3s ease;}
+a.skip-to-content:focus{top:12px;}
+</style>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
+  <div class="scroll-progress"></div>
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-logo"><svg viewBox="0 0 259.77 42.09" xmlns="http://www.w3.org/2000/svg"><g><path fill="#fff" d="M92,13.62h-4.35c-2.07-4.77-6.57-7.84-12.51-7.84-8.21,0-14.52,5.94-14.52,15.53s6.31,15.58,14.52,15.58c7.79,0,13.51-5.25,14.1-13.67h-15.58v-3.02h19.5v2.7c-.58,9.8-7.9,17.33-18.02,17.33s-18.34-7.79-18.34-18.92,7.95-18.92,18.34-18.92c7.95,0,14.2,4.19,16.85,11.24Z"/><path fill="#fff" d="M109.8,40.28c-8.21,0-14.2-5.72-14.2-14.89s5.88-14.89,14.2-14.89,13.67,6.04,13.67,13.41c0,1.17,0,1.91-.11,2.92h-24.01c.32,6.78,5.03,10.33,10.44,10.33,4.93,0,8.27-2.6,9.33-6.46h3.92c-1.32,5.46-5.99,9.59-13.25,9.59ZM99.36,23.79h20.35c.16-6.73-4.72-10.12-10.07-10.12s-9.86,3.39-10.28,10.12Z"/><path fill="#fff" d="M149.28,23.32c0-6.41-3.5-9.7-8.8-9.7s-9.17,3.39-9.17,10.44v15.79h-3.71V10.92h3.71v4.93c1.85-3.6,5.56-5.46,9.86-5.46,6.57,0,11.76,4.03,11.76,12.51v16.96h-3.66v-16.53Z"/><path fill="#fff" d="M157.65,2.7c0-1.59,1.22-2.7,2.7-2.7s2.7,1.11,2.7,2.7-1.22,2.76-2.7,2.76-2.7-1.17-2.7-2.76ZM158.5,10.92h3.71v28.93h-3.71V10.92Z"/><path fill="#fff" d="M193.05,39.85h-3.71v-5.09c-1.75,3.66-5.56,5.56-9.86,5.56-6.57,0-11.76-4.03-11.76-12.51V10.92h3.66v16.48c0,6.41,3.5,9.7,8.8,9.7s9.17-3.39,9.17-10.44v-15.74h3.71v28.93Z"/><path fill="#fff" d="M208.84,40.28c-6.57,0-11.18-3.29-11.66-8.58h3.82c.32,3.18,3.07,5.46,7.79,5.46,4.13,0,6.46-2.23,6.46-4.98,0-7.15-17.38-2.97-17.38-13.83,0-4.29,4.08-7.84,10.17-7.84s10.28,3.29,10.6,8.85h-3.71c-.21-3.23-2.6-5.67-7-5.67-3.87,0-6.31,2.07-6.31,4.61,0,7.84,17.12,3.66,17.28,13.88,0,4.66-4.08,8.11-10.07,8.11Z"/><path fill="#fff" d="M237.72,39.85h-14.73V3.02h14.04c7.79,0,11.92,4.29,11.92,9.49,0,4.45-2.7,7.15-6.25,8.43,3.92.69,7.1,4.61,7.1,9.01,0,5.62-4.56,9.91-12.08,9.91ZM236.51,7.95h-7.47v10.55h7.47c3.92,0,6.31-1.85,6.31-5.25s-2.38-5.3-6.31-5.3ZM236.98,23.42h-7.95v11.5h8.16c4.08,0,6.57-2.07,6.57-5.62s-2.76-5.88-6.78-5.88Z"/><path fill="#fff" d="M253.73,3.02h6.04v36.83h-6.04V3.02Z"/></g><rect fill="#7DBCDB" x="22.89" y="31.51" width="6.92" height="10.58" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="22.81" y="22.32" width="7.08" height="7.08" rx="3.54" ry="3.54"/><rect fill="#7DBCDB" x="11.37" y="13.47" width="7.08" height="7.08" rx="3.54" ry="3.54"/><rect fill="#8A65C4" x="0" y="27.15" width="6.92" height="14.94" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="11.45" y="22.67" width="6.92" height="19.42" rx="3.46" ry="3.46"/><rect fill="#7DBCDB" x="34.34" y="17.7" width="6.92" height="24.39" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="11.45" y=".78" width="6.92" height="10.58" rx="3.46" ry="3.46" transform="translate(29.82 12.14) rotate(-180)"/><rect fill="#7DBCDB" x="34.34" y=".78" width="6.92" height="14.94" rx="3.46" ry="3.46" transform="translate(75.6 16.5) rotate(-180)"/><rect fill="#7DBCDB" x="22.89" y=".78" width="6.92" height="19.42" rx="3.46" ry="3.46" transform="translate(52.71 20.98) rotate(180)"/><rect fill="#8A65C4" x="0" y=".78" width="6.92" height="24.39" rx="3.46" ry="3.46" transform="translate(6.92 25.95) rotate(180)"/></svg></a>
+      <ul class="navbar-links">
+        <li><a href="/about">À propos</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/technologies">Technologies</a></li>
+        <li><a href="/academy">Academy</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact" class="navbar-cta">Contactez-nous</a></li>
+      </ul>
+      <button type="button" class="navbar-toggle" aria-label="Menu"><span></span><span></span><span></span><svg class="close-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="fab-hero" id="main-content">
+    <div class="fab-orb fab-orb-1"></div>
+    <div class="fab-orb fab-orb-2"></div>
+    <div class="fab-orb fab-orb-3"></div>
+    <div class="fab-ring fab-ring-1"></div>
+    <div class="fab-ring fab-ring-2"></div>
+    <div class="fab-hero-inner">
+      <nav class="fab-breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a><span class="bc-sep">/</span><a href="/academy">Academy</a><span class="bc-sep">/</span><span class="bc-current">Microsoft Fabric</span>
+      </nav>
+      <div class="fab-hero-grid">
+        <div>
+          <span class="fab-eyebrow">Formation Professionnelle <span class="fab-pill">Microsoft Fabric</span></span>
+          <h1 class="fab-title">Maîtrisez<br><span class="accent">Microsoft Fabric</span><br>de A à Z.</h1>
+          <p class="fab-sub">5 jours intensifs (40h) pour ingérer, modéliser et visualiser vos données sur la plateforme analytique unifiée de Microsoft — du Lakehouse au rapport Power BI en Direct Lake. Format week-end, 10 participants max.</p>
+          <div class="fab-meta">
+            <div class="fab-meta-item"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>5 jours (40h) · 3 week-ends</div>
+            <div class="fab-meta-item"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"/></svg>10 participants max</div>
+            <div class="fab-meta-item"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>Mini-projet end-to-end</div>
+            <div class="fab-meta-item"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>Casablanca · Présentiel</div>
+          </div>
+          <div class="fab-ctas">
+            <a href="/inscription?formation=microsoft-fabric" class="fab-cta fab-cta-primary">Réserver ma place <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+            <a href="#programme" class="fab-cta fab-cta-ghost">Voir le programme</a>
+          </div>
+        </div>
+        <div class="fab-mark">
+          <img src="logos/fabric-color.svg" alt="Microsoft Fabric">
+          <div class="ms-label">Microsoft Fabric</div>
+        </div>
+      </div>
+      <div class="fab-stats">
+        <div class="fab-stat"><div class="num">40<span>h</span></div><div class="lbl">de formation animée par un expert senior data &amp; analytics</div></div>
+        <div class="fab-stat"><div class="num">5<span>j</span></div><div class="lbl">étalés sur 3 week-ends consécutifs (Sam &amp; Dim)</div></div>
+        <div class="fab-stat"><div class="num">10</div><div class="lbl">participants max. en petit comité, accompagnement personnalisé</div></div>
+        <div class="fab-stat"><div class="num">60<span>%</span></div><div class="lbl">de pratique + mini-projet end-to-end en équipes</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIENCE -->
+  <section class="fab-audience">
+    <div class="fab-audience-inner">
+      <div>
+        <span class="fab-tag">Pour qui ?</span>
+        <h2>Une formation pensée<br>pour les profils data en montée en compétences</h2>
+        <p class="lead">Conçue pour les analystes, ingénieurs juniors et chefs de projet qui veulent unifier leur stack analytique sur la plateforme SaaS de Microsoft. Bases SQL et environnement Windows requis.</p>
+      </div>
+      <div class="fab-audience-list">
+        <div class="fab-audience-item">
+          <div class="fab-audience-ico p"><svg fill="none" viewBox="0 0 24 24" stroke="var(--purple)" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5"/></svg></div>
+          <div><div class="name">Analystes &amp; BI Developers</div></div>
+        </div>
+        <div class="fab-audience-item">
+          <div class="fab-audience-ico t"><svg fill="none" viewBox="0 0 24 24" stroke="var(--teal)" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z"/></svg></div>
+          <div><div class="name">Data Engineers juniors</div></div>
+        </div>
+        <div class="fab-audience-item">
+          <div class="fab-audience-ico p"><svg fill="none" viewBox="0 0 24 24" stroke="var(--purple)" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg></div>
+          <div><div class="name">Chefs de projet data</div></div>
+        </div>
+        <div class="fab-audience-item">
+          <div class="fab-audience-ico t"><svg fill="none" viewBox="0 0 24 24" stroke="var(--teal)" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.306a11.95 11.95 0 015.814-5.518l2.74-1.22m0 0l-5.94-2.281m5.94 2.28l-2.28 5.941"/></svg></div>
+          <div><div class="name">Contrôleurs de gestion</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBJECTIFS -->
+  <section class="fab-section">
+    <div class="fab-section-header left">
+      <span class="fab-tag">Objectifs pédagogiques</span>
+      <h2>Ce que vous allez maîtriser</h2>
+    </div>
+    <div class="fab-objectifs">
+      <div class="fab-obj-item"><div class="fab-obj-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>L'architecture SaaS et les 7 expériences (workloads) de Microsoft Fabric</div>
+      <div class="fab-obj-item"><div class="fab-obj-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>Ingérer des données depuis 200+ sources vers OneLake</div>
+      <div class="fab-obj-item"><div class="fab-obj-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>Construire un Lakehouse en architecture médaillon (Bronze → Gold)</div>
+      <div class="fab-obj-item"><div class="fab-obj-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>Transformer en code (PySpark) ou low-code (Dataflows Gen2)</div>
+      <div class="fab-obj-item"><div class="fab-obj-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>Modéliser un Data Warehouse en T-SQL avec sécurité (RLS)</div>
+      <div class="fab-obj-item"><div class="fab-obj-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>Mettre en place un flux Real-Time Intelligence (Eventstream + KQL)</div>
+      <div class="fab-obj-item"><div class="fab-obj-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>Entraîner et déployer un modèle ML avec MLflow</div>
+      <div class="fab-obj-item"><div class="fab-obj-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>Créer des rapports Power BI en Direct Lake (DAX, time intelligence)</div>
+      <div class="fab-obj-item"><div class="fab-obj-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>Gouverner avec workspaces, lineage et sensitivity labels (Purview)</div>
+      <div class="fab-obj-item"><div class="fab-obj-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div>Livrer un pipeline analytique end-to-end en mini-projet d'équipe</div>
+    </div>
+  </section>
+
+  <!-- PROGRAMME (5 days summary) -->
+  <section class="fab-programme" id="programme">
+    <div class="fab-programme-inner">
+      <div class="fab-section-header">
+        <span class="fab-tag">Programme jour par jour</span>
+        <h2>5 jours intensifs sur 3 week-ends</h2>
+        <p>Sam. &amp; Dim. · 09h–18h · 40% théorie / 60% pratique. Format pensé pour préserver votre activité en semaine.</p>
+      </div>
+      <div class="fab-days">
+        <div class="fab-day">
+          <div class="num">Jour 01</div>
+          <h3>Fondamentaux &amp; OneLake</h3>
+          <div class="fab-day-when">Week-end 1 · Samedi</div>
+          <ul>
+            <li>Architecture SaaS</li>
+            <li>7 expériences (workloads)</li>
+            <li>Delta Lake &amp; Parquet</li>
+            <li>Atelier OneLake</li>
+            <li>Quiz interactif</li>
+          </ul>
+        </div>
+        <div class="fab-day">
+          <div class="num">Jour 02</div>
+          <h3>Data Engineering &amp; Lakehouse</h3>
+          <div class="fab-day-when">Week-end 1 · Dimanche</div>
+          <ul>
+            <li>Data Factory pipelines</li>
+            <li>Médaillon Bronze→Gold</li>
+            <li>Notebooks PySpark</li>
+            <li>Dataflows Gen2</li>
+            <li>Endpoint SQL Lakehouse</li>
+          </ul>
+        </div>
+        <div class="fab-day">
+          <div class="num">Jour 03</div>
+          <h3>Warehouse &amp; Real-Time</h3>
+          <div class="fab-day-when">Week-end 2 · Samedi</div>
+          <ul>
+            <li>Modèle en étoile T-SQL</li>
+            <li>RLS &amp; sécurité colonnes</li>
+            <li>Eventstream &amp; KQL</li>
+            <li>Activator (alertes)</li>
+            <li>Cross-database queries</li>
+          </ul>
+        </div>
+        <div class="fab-day">
+          <div class="num">Jour 04</div>
+          <h3>Data Science &amp; Power BI</h3>
+          <div class="fab-day-when">Week-end 2 · Dimanche</div>
+          <ul>
+            <li>ML scikit-learn + MLflow</li>
+            <li>Modèle sémantique</li>
+            <li>Direct Lake &amp; DAX</li>
+            <li>Time intelligence</li>
+            <li>Gouvernance Purview</li>
+          </ul>
+        </div>
+        <div class="fab-day fab-day--project">
+          <div class="num">Jour 05 · Projet</div>
+          <h3>Mini-projet en équipes</h3>
+          <div class="fab-day-when">Week-end 3 · Samedi</div>
+          <ul>
+            <li>Cas d'entreprise réaliste</li>
+            <li>Pipeline end-to-end</li>
+            <li>Travail collaboratif</li>
+            <li>Restitution finale</li>
+            <li>Évaluation &amp; certificats</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ECOSYSTEME FABRIC -->
+  <section class="fab-section">
+    <div class="fab-section-header left">
+      <span class="fab-tag">L'écosystème Microsoft Fabric</span>
+      <h2>Une plateforme unifiée pour la data &amp; l'IA</h2>
+      <p>Microsoft Fabric regroupe, dans un seul environnement SaaS, toutes les briques de la chaîne analytique — ingestion, stockage, modélisation, visualisation, temps réel et gouvernance. Six expériences spécialisées (Data Factory, Analytics, Databases, Real-Time Intelligence, IQ et Power BI) s'appuient sur une fondation commune : OneLake (le data lake unifié), Copilot (l'IA intégrée) et Governance. C'est ce qui en fait la première vraie plateforme analytique unifiée du marché — et l'objet de cette formation.</p>
+    </div>
+    <div class="fab-eco" role="img" aria-label="Microsoft Fabric — plateforme de données unifiée pour la transformation IA. Six expériences : Data Factory, Analytics, Databases, Real-Time Intelligence, IQ et Power BI. Trois piliers : Copilot, OneLake, Governance.">
+      <div class="fab-eco-mark">
+        <img src="fabric-icons/fabric.png" alt="" loading="lazy">
+      </div>
+      <h3 class="fab-eco-title">Microsoft Fabric</h3>
+      <p class="fab-eco-tagline">The unified data platform for AI transformation</p>
+
+      <div class="fab-eco-workloads">
+        <div class="fab-eco-tile">
+          <div class="icon"><img src="fabric-icons/datafactory.png" alt="" loading="lazy"></div>
+          <span class="name">Data Factory</span>
+        </div>
+        <div class="fab-eco-tile">
+          <div class="icon"><img src="fabric-icons/analytics.png" alt="" loading="lazy"></div>
+          <span class="name">Analytics</span>
+        </div>
+        <div class="fab-eco-tile">
+          <div class="icon"><img src="fabric-icons/databases.svg" alt="" loading="lazy"></div>
+          <span class="name">Databases</span>
+        </div>
+        <div class="fab-eco-tile">
+          <div class="icon"><img src="fabric-icons/realtimeIntelligence.png" alt="" loading="lazy"></div>
+          <span class="name">Real-Time<br>Intelligence</span>
+        </div>
+        <div class="fab-eco-tile">
+          <div class="icon"><img src="fabric-icons/IQ.svg" alt="" loading="lazy"></div>
+          <span class="name">IQ</span>
+        </div>
+        <div class="fab-eco-tile">
+          <div class="icon"><img src="fabric-icons/powerbi.png" alt="" loading="lazy"></div>
+          <span class="name">Power BI</span>
+        </div>
+      </div>
+
+      <div class="fab-eco-platform">
+        <span class="fab-eco-platform-label">Fabric Platform</span>
+        <div class="fab-eco-pillars">
+          <div class="fab-eco-pillar">
+            <div class="icon"><img src="fabric-icons/copilot.png" alt="" loading="lazy"></div>
+            <span class="name">Copilot</span>
+          </div>
+          <div class="fab-eco-pillar">
+            <div class="icon"><img src="fabric-icons/onelake.png" alt="" loading="lazy"></div>
+            <span class="name">OneLake</span>
+          </div>
+          <div class="fab-eco-pillar">
+            <div class="icon"><img src="fabric-icons/governance.png" alt="" loading="lazy"></div>
+            <span class="name">Governance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKER -->
+  <section class="fab-speaker">
+    <div class="fab-speaker-inner">
+      <div class="fab-speaker-photo">
+        <img src="images/ayoub-formateur.png" alt="Ayoub ERRARHBI — Formateur Microsoft Fabric" loading="lazy">
+      </div>
+      <div class="fab-speaker-info">
+        <span class="badge">Votre formateur</span>
+        <h2>Ayoub ERRARHBI</h2>
+        <div class="role">Consultant Senior Data &amp; Analytics</div>
+        <p>Plus de 8 ans d'expérience sur la stack Microsoft Data — Power BI, Azure Synapse et désormais Fabric. Fondateur de GeniusBI, il accompagne grands comptes et PME marocaines dans leur transformation analytique. Sa pédagogie privilégie le concret : 60% de pratique, exemples tirés de missions réelles, et le mini-projet d'équipe pour ancrer les acquis.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fab-faq">
+    <div class="fab-faq-inner">
+      <div class="fab-section-header">
+        <span class="fab-tag">Questions fréquentes</span>
+        <h2>Tout ce qu'il faut savoir avant de réserver</h2>
+      </div>
+      <div class="fab-faq-list">
+        <details>
+          <summary>Quels sont les prérequis pour suivre la formation Microsoft Fabric ?</summary>
+          <p><strong>Indispensables :</strong> notions de bases en bases de données (tables, lignes, colonnes), connaissance basique de SQL (SELECT, WHERE, JOIN), familiarité avec Windows et le web. <strong>Recommandés :</strong> bases en Excel (TCD), notions Power BI Desktop (un atout), concepts de programmation pour le module Data Science. Un test de positionnement peut être organisé en amont.</p>
+        </details>
+        <details>
+          <summary>Le format week-end est-il compatible avec une activité professionnelle ?</summary>
+          <p>Oui, c'est précisément l'objectif. La formation se déroule sur 3 week-ends consécutifs (Samedi + Dimanche, 09h–18h), ce qui vous permet de conserver votre activité en semaine et de digérer les concepts entre deux sessions. Nous évitons les périodes de Ramadan et de fêtes pour garantir l'assiduité.</p>
+        </details>
+        <details>
+          <summary>Faut-il acheter une licence Microsoft Fabric pour suivre la formation ?</summary>
+          <p>Non, l'essai gratuit de 60 jours est largement suffisant pour la durée de la formation. Si votre entreprise souhaite continuer à utiliser Fabric après, une capacité F2 dédiée coûte environ 2 600 MAD/mois. Cette licence n'est pas incluse dans le tarif de formation.</p>
+        </details>
+        <details>
+          <summary>Quels livrables et certificats sont remis à la fin ?</summary>
+          <p>Une attestation de formation nominative GeniusBI Academy est délivrée à chaque participant. Vous repartez avec un livrable concret : un pipeline analytique end-to-end fonctionnel sur Microsoft Fabric, un rapport Power BI en Direct Lake et un document d'architecture. Pas seulement de la théorie.</p>
+        </details>
+        <details>
+          <summary>Où se déroule la formation ?</summary>
+          <p>La formation se tient exclusivement en présentiel à Casablanca (lieu confirmé à l'inscription). Ce choix garantit la qualité de l'encadrement, la dynamique d'équipe pendant les ateliers et une expérience optimale du mini-projet du Jour 5.</p>
+        </details>
+        <details>
+          <summary>Que se passe-t-il si moins de 10 personnes s'inscrivent ?</summary>
+          <p>La session démarre à partir de 5 inscrits. Si l'effectif minimum n'est pas atteint, nous proposons un report sur la session suivante (sans frais) ou un remboursement intégral. La taille maximale de 10 garantit un encadrement réellement personnalisé.</p>
+        </details>
+        <details>
+          <summary>Quelles sont les modalités de paiement ?</summary>
+          <p>100% à l'inscription pour réserver votre place. Facture émise au nom du participant ou de son entreprise. Un accord de prise en charge OPCO/CPF n'est pas applicable au Maroc, mais nous fournissons toute la documentation utile sur demande.</p>
+        </details>
+      </div>
+    </div>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quels sont les prérequis pour suivre la formation Microsoft Fabric ?","acceptedAnswer":{"@type":"Answer","text":"Indispensables : notions de bases en bases de données, SQL basique (SELECT, WHERE, JOIN), familiarité Windows. Recommandés : Excel, Power BI Desktop, notions de programmation. Un test de positionnement peut être organisé en amont."}},{"@type":"Question","name":"Le format week-end est-il compatible avec une activité professionnelle ?","acceptedAnswer":{"@type":"Answer","text":"Oui. La formation se déroule sur 3 week-ends consécutifs (Samedi + Dimanche, 09h–18h), ce qui permet de conserver son activité en semaine et de digérer les concepts entre deux sessions."}},{"@type":"Question","name":"Faut-il acheter une licence Microsoft Fabric pour suivre la formation ?","acceptedAnswer":{"@type":"Answer","text":"Non, l'essai gratuit de 60 jours est suffisant. Si l'entreprise souhaite continuer après, une capacité F2 coûte environ 2 600 MAD/mois. Cette licence n'est pas incluse dans le tarif."}},{"@type":"Question","name":"Quels livrables et certificats sont remis à la fin ?","acceptedAnswer":{"@type":"Answer","text":"Attestation de formation nominative GeniusBI Academy. Livrable concret : pipeline analytique end-to-end fonctionnel sur Microsoft Fabric, rapport Power BI Direct Lake et document d'architecture."}},{"@type":"Question","name":"Où se déroule la formation ?","acceptedAnswer":{"@type":"Answer","text":"Exclusivement en présentiel à Casablanca (lieu confirmé à l'inscription)."}},{"@type":"Question","name":"Que se passe-t-il si moins de 10 personnes s'inscrivent ?","acceptedAnswer":{"@type":"Answer","text":"La session démarre à partir de 5 inscrits. Sinon, report sur la session suivante sans frais, ou remboursement intégral."}},{"@type":"Question","name":"Quelles sont les modalités de paiement ?","acceptedAnswer":{"@type":"Answer","text":"100% à l'inscription pour réserver votre place. Facture émise au nom du participant ou de son entreprise."}}]}</script>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="fab-bottom-cta">
+    <div class="fab-bottom-cta-inner">
+      <h2>Prêt à devenir opérationnel sur Microsoft Fabric ?</h2>
+      <p>Places limitées à 10 participants par session. Présentiel à Casablanca, 5 jours intensifs étalés sur 3 week-ends. Réservation rapide conseillée.</p>
+      <div class="ctas">
+        <a href="/inscription?formation=microsoft-fabric" class="fab-cta fab-cta-primary">Réserver ma place <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        <a href="/contact" class="fab-cta fab-cta-ghost">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/"><svg viewBox="0 0 259.77 42.09" xmlns="http://www.w3.org/2000/svg"><g><path fill="#fff" d="M92,13.62h-4.35c-2.07-4.77-6.57-7.84-12.51-7.84-8.21,0-14.52,5.94-14.52,15.53s6.31,15.58,14.52,15.58c7.79,0,13.51-5.25,14.1-13.67h-15.58v-3.02h19.5v2.7c-.58,9.8-7.9,17.33-18.02,17.33s-18.34-7.79-18.34-18.92,7.95-18.92,18.34-18.92c7.95,0,14.2,4.19,16.85,11.24Z"/><path fill="#fff" d="M109.8,40.28c-8.21,0-14.2-5.72-14.2-14.89s5.88-14.89,14.2-14.89,13.67,6.04,13.67,13.41c0,1.17,0,1.91-.11,2.92h-24.01c.32,6.78,5.03,10.33,10.44,10.33,4.93,0,8.27-2.6,9.33-6.46h3.92c-1.32,5.46-5.99,9.59-13.25,9.59ZM99.36,23.79h20.35c.16-6.73-4.72-10.12-10.07-10.12s-9.86,3.39-10.28,10.12Z"/><path fill="#fff" d="M149.28,23.32c0-6.41-3.5-9.7-8.8-9.7s-9.17,3.39-9.17,10.44v15.79h-3.71V10.92h3.71v4.93c1.85-3.6,5.56-5.46,9.86-5.46,6.57,0,11.76,4.03,11.76,12.51v16.96h-3.66v-16.53Z"/><path fill="#fff" d="M157.65,2.7c0-1.59,1.22-2.7,2.7-2.7s2.7,1.11,2.7,2.7-1.22,2.76-2.7,2.76-2.7-1.17-2.7-2.76ZM158.5,10.92h3.71v28.93h-3.71V10.92Z"/><path fill="#fff" d="M193.05,39.85h-3.71v-5.09c-1.75,3.66-5.56,5.56-9.86,5.56-6.57,0-11.76-4.03-11.76-12.51V10.92h3.66v16.48c0,6.41,3.5,9.7,8.8,9.7s9.17-3.39,9.17-10.44v-15.74h3.71v28.93Z"/><path fill="#fff" d="M208.84,40.28c-6.57,0-11.18-3.29-11.66-8.58h3.82c.32,3.18,3.07,5.46,7.79,5.46,4.13,0,6.46-2.23,6.46-4.98,0-7.15-17.38-2.97-17.38-13.83,0-4.29,4.08-7.84,10.17-7.84s10.28,3.29,10.6,8.85h-3.71c-.21-3.23-2.6-5.67-7-5.67-3.87,0-6.31,2.07-6.31,4.61,0,7.84,17.12,3.66,17.28,13.88,0,4.66-4.08,8.11-10.07,8.11Z"/><path fill="#fff" d="M237.72,39.85h-14.73V3.02h14.04c7.79,0,11.92,4.29,11.92,9.49,0,4.45-2.7,7.15-6.25,8.43,3.92.69,7.1,4.61,7.1,9.01,0,5.62-4.56,9.91-12.08,9.91ZM236.51,7.95h-7.47v10.55h7.47c3.92,0,6.31-1.85,6.31-5.25s-2.38-5.3-6.31-5.3ZM236.98,23.42h-7.95v11.5h8.16c4.08,0,6.57-2.07,6.57-5.62s-2.76-5.88-6.78-5.88Z"/><path fill="#fff" d="M253.73,3.02h6.04v36.83h-6.04V3.02Z"/></g><rect fill="#7DBCDB" x="22.89" y="31.51" width="6.92" height="10.58" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="22.81" y="22.32" width="7.08" height="7.08" rx="3.54" ry="3.54"/><rect fill="#7DBCDB" x="11.37" y="13.47" width="7.08" height="7.08" rx="3.54" ry="3.54"/><rect fill="#8A65C4" x="0" y="27.15" width="6.92" height="14.94" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="11.45" y="22.67" width="6.92" height="19.42" rx="3.46" ry="3.46"/><rect fill="#7DBCDB" x="34.34" y="17.7" width="6.92" height="24.39" rx="3.46" ry="3.46"/><rect fill="#8A65C4" x="11.45" y=".78" width="6.92" height="10.58" rx="3.46" ry="3.46" transform="translate(29.82 12.14) rotate(-180)"/><rect fill="#7DBCDB" x="34.34" y=".78" width="6.92" height="14.94" rx="3.46" ry="3.46" transform="translate(75.6 16.5) rotate(-180)"/><rect fill="#7DBCDB" x="22.89" y=".78" width="6.92" height="19.42" rx="3.46" ry="3.46" transform="translate(52.71 20.98) rotate(180)"/><rect fill="#8A65C4" x="0" y=".78" width="6.92" height="24.39" rx="3.46" ry="3.46" transform="translate(6.92 25.95) rotate(180)"/></svg></a>
+        <p>Cabinet de conseil Data &amp; IA basé à Casablanca. Nous guidons les organisations de la stratégie à l'industrialisation.</p>
+      </div>
+      <div class="footer-col"><h4>Nos services</h4><ul><li><a href="/services#conseil">Conseil &amp; Stratégie</a></li><li><a href="/services#gouvernance">Gouvernance</a></li><li><a href="/services#architecture">Plateformes Data</a></li><li><a href="/services#acceleration">Accélération IA</a></li></ul></div>
+      <div class="footer-col"><h4>GeniusBI</h4><ul><li><a href="/about">À propos</a></li><li><a href="/services">Nos expertises</a></li><li><a href="/technologies">Technologies</a></li></ul></div>
+      <div class="footer-col"><h4>Academy</h4><ul><li><a href="/academy">L'Academy</a></li><li><a href="/academy">Formations</a></li><li><a href="/blog">Blog &amp; Actualités</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="/contact">Contactez-nous</a></li><li><a href="/rejoindre">Rejoindre l'équipe</a></li><li><a href="/politique-confidentialite">Confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>GeniusBI &copy; 2026. Tous droits réservés.</p>
+      <div class="footer-social">
+        <a href="https://linkedin.com/company/geniusbi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://x.com/geniusbi_ai?s=21" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://youtube.com/@geniusbi_ai?si=AAAgzUwq5IsjoJEh" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js" defer></script>
+  <script src="js/magic-animations.js" defer></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
