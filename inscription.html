@@ -167,14 +167,14 @@ a.skip-to-content:focus{top:12px;}
               <select name="formation" class="form-select" required>
                 <option value="">Sélectionnez une formation...</option>
                 <optgroup label="Disponibles">
-                  <option value="Power BI Fondamentaux">Power BI Fondamentaux — 4 semaines · Débutant</option>
-                  <option value="Power BI Avancé">Power BI Avancé — 4 semaines · Intermédiaire</option>
+                  <option value="Microsoft Fabric de A à Z" data-key="microsoft-fabric">Microsoft Fabric de A à Z — 5 jours (40h) · Intermédiaire</option>
                 </optgroup>
                 <optgroup label="Bientôt disponibles">
-                  <option value="Azure Data Engineering">Azure Data Engineering — 8 semaines · Intermédiaire</option>
-                  <option value="IA Générative appliquée">IA Générative appliquée — 6 semaines · Avancé</option>
-                  <option value="SQL & Data Analytics">SQL & Data Analytics — 4 semaines · Débutant</option>
-                  <option value="Cloud Azure Fondamentaux">Cloud Azure Fondamentaux — 6 semaines · Intermédiaire</option>
+                  <option value="Power BI Fondamentaux" data-key="powerbi-fondamentaux">Power BI Fondamentaux — 4 semaines · Débutant</option>
+                  <option value="Power BI Avancé" data-key="powerbi-avance">Power BI Avancé — 4 semaines · Intermédiaire</option>
+                  <option value="IA Générative appliquée" data-key="ia-generative">IA Générative appliquée — 6 semaines · Avancé</option>
+                  <option value="SQL &amp; Data Analytics" data-key="sql-data-analytics">SQL &amp; Data Analytics — 4 semaines · Débutant</option>
+                  <option value="Cloud Azure Fondamentaux" data-key="cloud-azure">Cloud Azure Fondamentaux — 6 semaines · Intermédiaire</option>
                 </optgroup>
               </select>
             </div>
@@ -293,6 +293,21 @@ a.skip-to-content:focus{top:12px;}
       }
       return false;
     });
+  </script>
+
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var key = params.get('formation');
+      if (!key) return;
+      var select = document.querySelector('select[name="formation"]');
+      if (!select) return;
+      var option = select.querySelector('option[data-key="' + key + '"]');
+      if (option) {
+        select.value = option.value;
+        select.dispatchEvent(new Event('change'));
+      }
+    })();
   </script>
 
   <script defer src="/_vercel/insights/script.js"></script>
