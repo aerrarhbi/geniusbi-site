@@ -215,7 +215,7 @@ a.skip-to-content:focus{top:12px;}
             <p style="font-size:0.9rem;color:var(--text-body);line-height:1.6;">Merci pour votre intérêt. Notre équipe pédagogique vous contactera sous 48h pour confirmer votre inscription.</p>
           </div>
           <div id="formError" style="display:none;text-align:center;padding:20px;margin-top:16px;background:rgba(239,68,68,0.08);border-radius:var(--radius-md);">
-            <p style="font-size:0.88rem;color:#DC2626;">Une erreur est survenue. Veuillez réessayer ou nous contacter à academy@geniusbi.ma</p>
+            <p id="formErrorText" style="font-size:0.88rem;color:#DC2626;">Une erreur est survenue. Veuillez réessayer ou nous contacter à academy@geniusbi.ma</p>
           </div>
         </div>
       </div>
@@ -278,12 +278,10 @@ a.skip-to-content:focus{top:12px;}
       errorMsg.style.display = 'none';
 
       try {
-        const formData = new FormData(form);
-        const json = JSON.stringify(Object.fromEntries(formData));
         const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: json
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
         });
         const data = await response.json();
 
@@ -292,11 +290,15 @@ a.skip-to-content:focus{top:12px;}
           successMsg.style.display = 'block';
           successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
+          console.error('Web3Forms a refusé l\'envoi :', data);
+          document.getElementById('formErrorText').textContent = (data && data.message ? data.message : 'Une erreur est survenue') + ' — réessayez ou écrivez à academy@geniusbi.ma';
           errorMsg.style.display = 'block';
           btn.disabled = false;
           btn.innerHTML = 'Envoyer ma demande d\'inscription ' + ARROW;
         }
       } catch (err) {
+        console.error('Échec de l\'envoi :', err);
+        document.getElementById('formErrorText').textContent = 'Connexion impossible (' + (err && err.message ? err.message : 'réseau') + ') — réessayez ou écrivez à academy@geniusbi.ma';
         errorMsg.style.display = 'block';
         btn.disabled = false;
         btn.innerHTML = 'Envoyer ma demande d\'inscription ' + ARROW;
