@@ -110,7 +110,6 @@
 .fp-photo-stage{position:relative;width:380px;height:450px;max-width:100%;}
 .fp-ring{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:340px;height:340px;border-radius:50%;background:conic-gradient(from 160deg,var(--purple),var(--teal),var(--purple-light),var(--purple));opacity:0.9;animation:spin 20s linear infinite;}
 .fp-ring::after{content:'';position:absolute;inset:16px;border-radius:50%;background:radial-gradient(circle at 50% 40%,#1a2238,var(--navy) 70%);}
-.fp-photo{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:372px;height:440px;background-image:url('images/wissal-batasse.png');background-size:contain;background-position:bottom center;background-repeat:no-repeat;filter:drop-shadow(0 22px 38px rgba(0,0,0,0.45));z-index:2;}
 .fp-pbi-badge{position:absolute;top:14px;right:0;z-index:3;width:62px;height:62px;border-radius:18px;background:rgba(255,255,255,0.96);box-shadow:0 14px 34px rgba(0,0,0,0.32);display:flex;align-items:center;justify-content:center;animation:orbFloat3 6s ease-in-out infinite;}
 .fp-pbi-badge img{width:32px;height:32px;}
 .fp-trainer-card{position:absolute;left:-8px;bottom:26px;z-index:3;display:flex;flex-direction:column;gap:2px;padding:13px 18px;border-radius:14px;background:rgba(17,24,39,0.84);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px);box-shadow:0 14px 34px rgba(0,0,0,0.32);}
@@ -158,7 +157,7 @@
 /* trainer section */
 .trainer-section{position:relative;overflow:hidden;background:var(--navy);border-radius:var(--radius-xl);padding:40px 44px;margin-bottom:56px;display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center;}
 .trainer-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 12% 15%,rgba(138,101,196,0.20),transparent 55%),radial-gradient(ellipse at 92% 95%,rgba(125,188,219,0.13),transparent 55%);}
-.trainer-photo{position:relative;z-index:1;width:148px;height:148px;border-radius:50%;background-image:url('images/wissal-batasse.png');background-size:180%;background-position:50% 16%;background-repeat:no-repeat;background-color:var(--navy-mid);border:3px solid rgba(255,255,255,0.12);flex-shrink:0;box-shadow:0 0 0 7px rgba(138,101,196,0.16);}
+.trainer-photo{position:relative;z-index:1;width:148px;height:148px;border-radius:50%;background-image:url('favicon.svg');background-size:58%;background-position:center;background-repeat:no-repeat;background-color:var(--navy-mid);border:3px solid rgba(255,255,255,0.12);flex-shrink:0;box-shadow:0 0 0 7px rgba(138,101,196,0.16);}
 .trainer-info{position:relative;z-index:1;}
 .trainer-info h3{font-family:var(--font-heading);font-size:1.3rem;color:#fff;font-weight:700;margin:5px 0 2px;}
 .trainer-role{font-size:0.85rem;color:var(--teal-light);margin-bottom:12px;}
@@ -199,7 +198,6 @@
 @media(max-width:480px){
   .formation-meta{grid-template-columns:1fr;}
   .fp-photo-stage{width:300px;height:390px;}
-  .fp-photo{width:300px;height:380px;}
   .fp-ring{width:280px;height:280px;}
 }
 </style>
@@ -289,12 +287,12 @@
     </div>
 
     <section class="trainer-section">
-      <div class="trainer-photo" role="img" aria-label="Wissal Batasse"></div>
+      <div class="trainer-photo" role="img" aria-label="Formateurs Genius BI"></div>
       <div class="trainer-info">
-        <span class="sec-eyebrow" style="color:var(--teal-light);">Votre formatrice</span>
-        <h3>Wissal Batasse</h3>
-        <p class="trainer-role">Business Intelligence &amp; Data Analytics</p>
-        <p>Spécialiste Business Intelligence et Data Analytics, Wissal accompagne les profils techniques et industriels dans la construction de tableaux de bord orientés décision. Sa pédagogie est résolument pratique : chaque concept est illustré par des cas concrets en finance, maintenance et production, du nettoyage des données jusqu'à l'industrialisation du reporting.</p>
+        <span class="sec-eyebrow" style="color:var(--teal-light);">Vos formateurs</span>
+        <h3>Formateurs certifiés Genius BI</h3>
+        <p class="trainer-role">Consultants certifiés Microsoft Power BI</p>
+        <p>Nos formateurs sont des consultants Genius BI qui interviennent au quotidien sur des projets Business Intelligence. Ils accompagnent les profils techniques et industriels dans la construction de tableaux de bord orientés décision, avec une pédagogie résolument pratique : chaque concept est illustré par des cas concrets en finance, maintenance et production, du nettoyage des données jusqu'à l'industrialisation du reporting.</p>
       </div>
     </section>
 
